@@ -1,8 +1,12 @@
 <template>
-  <v-app dark>
+  <v-app light>
     
     <v-content>
-      <v-container>
+      <router-link to="/">Home</router-link> | 
+      <router-link to="/post/test">Post Test</router-link> | 
+       <router-link to="/article/article-title-number-2">Article 2</router-link> | 
+
+      <v-container fluid>
         <nuxt />
       </v-container>
     </v-content>

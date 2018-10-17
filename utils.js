@@ -4,7 +4,7 @@ function sanitize(str) {
 }
 
 const getMetaTitle = function(data) {
-  return data[0].title.rendered
+  return data.title.rendered
 }
 
 const getMetaDescription = function(data) {
@@ -13,7 +13,7 @@ const getMetaDescription = function(data) {
   obj = {
     hid: 'description',
     name: 'description',
-    content: sanitize(data[0].content.rendered)
+    content: sanitize(data.content.rendered)
   }
   return obj
 }

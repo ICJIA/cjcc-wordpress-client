@@ -1,7 +1,7 @@
 <template>
     <div>
-     <!-- <breadcrumb/> -->
-       {{data}}
+      <breadcrumb/>
+      {{$store.state.returnedContent}}
       
     </div>
 </template>
@@ -14,16 +14,19 @@ import Breadcrumb from '@/components/Breadcrumb'
 
 export default {
   mounted() {},
-  components: {
-    Breadcrumb
-  },
 
-  async asyncData({ params, redirect }) {
-    const { data } = await axios.get(`${config.getArticleBySlug}${params.slug}`)
-    if (data.length === 0) {
+  async fetch({ store, params, redirect, route }) {
+    const request = {}
+    request['apiUrl'] = config.getArticleBySlug
+    request['slug'] = params.slug
+    request['route'] = route.path
+    await store.dispatch('GET_CONTENT', request)
+    if (store.state.returnedContent.length === 0) {
       return redirect(config.redirect404)
     }
-    return { data }
+  },
+  components: {
+    Breadcrumb
   },
   data() {
     return {}
@@ -31,8 +34,7 @@ export default {
   methods: {},
   head() {
     return {
-      title: getMetaTitle(this.data),
-      meta: [getMetaDescription(this.data)]
+      title: this.$store.state.returnedContent.title.rendered
     }
   },
 

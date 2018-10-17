@@ -8,7 +8,7 @@
       sm8
       md6>
       <div class="text-xs-center">
-       test
+       {{$store.state.siteMeta}}
       </div>
       
     </v-flex>
@@ -16,13 +16,5 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
-export default {
-  components: {
-    Logo,
-    VuetifyLogo
-  }
-}
+export default {}
 </script>

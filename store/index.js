@@ -5,7 +5,8 @@ export const state = () => ({
   siteMeta: [],
   posts: [],
   pages: [],
-  articles: []
+  articles: [],
+  returnedContent: []
 })
 
 export const mutations = {
@@ -35,10 +36,21 @@ export const mutations = {
   setRoutes(state) {
     const routes = state.siteMeta.map(x => x.route)
     state.routes = routes
+  },
+  setContent(state, data) {
+    state.returnedContent = data[0]
+    // let arr = state.contentCache
+    // arr.push(data[0])
   }
 }
 
 export const actions = {
+  async GET_CONTENT({ commit, redirect }, payload) {
+    const { data } = await axios.get(payload.apiUrl + payload.slug)
+    commit('setContent', data)
+    //console.log(payload)
+  },
+
   async nuxtServerInit({ commit }) {
     const meta = await axios.get('wp/v2/sitemeta/')
     const siteMeta = meta.data

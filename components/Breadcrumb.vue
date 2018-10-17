@@ -3,7 +3,7 @@
     <div class="crumb-container">
     <span class="crumb" >
        
-       <nuxt-link to="/">Home</nuxt-link>&nbsp;/&nbsp;{{title}}
+       <nuxt-link to="/">Home</nuxt-link>&nbsp;/&nbsp;{{type}}&nbsp;/&nbsp;{{title}}
        
        
     </span>
@@ -21,9 +21,10 @@ export default {
     const contentMeta = this.siteMeta.filter(m => {
       return m.route === $nuxt.$route.path
     })
-    console.log(contentMeta[0].title)
+    //console.log(contentMeta[0].title)
     // Convert to title case via lodash
     this.title = startCase(toLower(contentMeta[0].title))
+    this.type = startCase(toLower(contentMeta[0].type))
   },
   data() {
     return {
@@ -45,6 +46,5 @@ export default {
 
 .crumb-container {
   height: 50px;
-  background: #ccc;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div>
       <breadcrumb/>
-      {{$store.state.returnedContent}}
+      {{$store.state.contentObject}}
       
     </div>
 </template>
@@ -9,7 +9,7 @@
 <script>
 import axios from '@/plugins/axios'
 import config from '@/config'
-import { getMetaTitle, getMetaDescription } from '@/utils.js'
+import { getContentId } from '@/utils.js'
 import Breadcrumb from '@/components/Breadcrumb'
 
 export default {
@@ -20,8 +20,9 @@ export default {
     request['apiUrl'] = config.getPageBySlug
     request['slug'] = params.slug
     request['route'] = route.path
+    request['id'] = getContentId(store.state.siteMeta, route.path)
     await store.dispatch('GET_CONTENT', request)
-    if (store.state.returnedContent.length === 0) {
+    if (store.state.contentObject.length === 0) {
       return redirect(config.redirect404)
     }
   },
@@ -34,7 +35,7 @@ export default {
   methods: {},
   head() {
     return {
-      title: this.$store.state.returnedContent.title.rendered
+      title: this.$store.state.contentObject.title.rendered
     }
   },
 

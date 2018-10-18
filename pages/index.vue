@@ -28,6 +28,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: 'Home'
+    }
+  },
   watchQuery: true
 }
 </script>

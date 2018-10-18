@@ -7,7 +7,9 @@ const app = {
   getArticleBySlug: 'wp/v2/articles?slug=',
   getPostBySlug: 'wp/v2/posts?slug=',
   getPageBySlug: 'wp/v2/pages?slug=',
-  getRoutes: 'wp/v2/routes/'
+  getRoutes: 'wp/v2/routes/',
+  contentCacheEnabled: true,
+  contentCacheSize: 25
 }
 
 export default app

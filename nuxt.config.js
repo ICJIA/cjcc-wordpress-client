@@ -14,7 +14,9 @@ module.exports = {
     getArticleBySlug: process.env.GET_ARTICLE_BY_SLUG || 'wp/v2/articles?slug=',
     getPostBySlug: process.env.GET_POST_BY_SLUG || 'wp/v2/posts?slug=',
     getPageBySlug: process.env.GET_PAGE_BY_SLUG || 'wp/v2/pages?slug=',
-    getRoutes: process.env.GET_ROUTES || 'wp/v2/routes'
+    getRoutes: process.env.GET_ROUTES || 'wp/v2/routes',
+    contentCacheEnabled: process.env.CONTENT_CACHE_ENABLED || true,
+    contentCacheSize: process.env.CONTENT_CACHE_SIZE || 25
   },
 
   /*

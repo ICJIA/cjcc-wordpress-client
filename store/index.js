@@ -1,6 +1,7 @@
 import axios from '~/plugins/axios'
 import config from '@/config.js'
 import find from 'lodash.find'
+import findIndex from 'lodash.findindex'
 export const state = () => ({
   routes: [],
   siteMeta: [],
@@ -40,19 +41,30 @@ export const mutations = {
     state.routes = routes
   },
   setContent(state, data) {
-    state.contentObject = data[0]
+    state.contentObject = data
     // If the page is already cached, don't re-cache
-    if (!find(state.contentCache, { id: data[0].id })) {
-      state.contentCache.push(data[0])
-    }
+    // if (!find(state.contentCache, { id: data.id })) {
+    //state.contentCache.push(data)
+    // }
+  },
+  cacheContent(state, data) {
+    state.contentCache.push(data)
   }
 }
 
 export const actions = {
-  async GET_CONTENT({ commit }, payload) {
+  async GET_CONTENT({ commit, state }, payload) {
     console.log(payload)
-    const { data } = await axios.get(payload.apiUrl + payload.slug)
-    commit('setContent', data)
+    if (!find(state.contentCache, { id: payload.id })) {
+      const { data } = await axios.get(payload.apiUrl + payload.slug)
+      commit('setContent', data[0])
+      commit('cacheContent', data[0])
+      console.log('not found -- call axios')
+    } else {
+      console.log('found -- pull from cache')
+      const contentId = findIndex(state.contentCache, { id: payload.id })
+      commit('setContent', state.contentCache[contentId])
+    }
   },
 
   async nuxtServerInit({ commit }, { store, route, params }) {

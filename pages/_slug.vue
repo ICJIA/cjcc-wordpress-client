@@ -38,7 +38,14 @@ export default {
   methods: {},
   head() {
     return {
-      title: this.$store.state.contentObject.title.rendered
+      title: this.title
+    }
+  },
+  computed: {
+    title() {
+      return this.$store.state.contentObject.title.rendered
+        ? this.$store.state.contentObject.title.rendered
+        : config.defaultPageTitle
     }
   },
 

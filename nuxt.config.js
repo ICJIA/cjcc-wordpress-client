@@ -17,7 +17,8 @@ module.exports = {
     getSiteMeta: process.env.GET_SITE_META || 'wp/v2/sitemeta/',
     getRoutes: process.env.GET_ROUTES || 'wp/v2/routes',
     contentCacheEnabled: process.env.CONTENT_CACHE_ENABLED || true,
-    contentCacheSize: process.env.CONTENT_CACHE_SIZE || 10
+    contentCacheSize: process.env.CONTENT_CACHE_SIZE || 10,
+    defaultPageTitle: process.env.DEFAULT_PAGE_TITLE || 'CJCC'
   },
 
   /*

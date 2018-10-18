@@ -82,7 +82,7 @@ export const actions = {
   async nuxtServerInit({ commit }, { store, route, params }) {
     const meta = await axios.get(config.getSiteMeta)
     const siteMeta = meta.data
-
+    //console.log(siteMeta)
     commit('setSiteMeta', siteMeta)
     commit('setPosts')
     commit('setPages')

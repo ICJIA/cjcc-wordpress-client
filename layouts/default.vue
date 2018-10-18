@@ -4,6 +4,7 @@
     <v-content>
       
       <breadcrumb :key="$store.state.forceRender"></breadcrumb>
+     
 
       <v-container fluid>
         <nuxt />

@@ -1,9 +1,13 @@
 <template>
    <div>
+
+     
      
      <h1>{{$store.state.contentObject.title.rendered}}</h1>
 
      <div v-html="$store.state.contentObject.content.rendered"> </div>
+
+   
       
    </div>
 </template>
@@ -23,19 +27,26 @@ export default {
     request['route'] = route.path
     request['id'] = getContentId(store.state.siteMeta, route.path)
 
-    await store.dispatch('GET_CONTENT', request)
+    if (request.id === undefined) {
+      redirect(config.redirect404)
+    } else {
+      await store.dispatch('GET_CONTENT', request)
+    }
+
     if (store.state.contentObject.length === 0) {
       return redirect(config.redirect404)
     }
   },
 
   data() {
-    return {}
+    return {
+      title: ''
+    }
   },
 
   head() {
     return {
-      title: this.$store.state.contentObject.title.rendered
+      // title: this.$store.state.contentObject.title.rendered
     }
   },
 

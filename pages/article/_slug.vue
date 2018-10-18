@@ -22,7 +22,11 @@ export default {
     request['slug'] = params.slug
     request['route'] = route.path
     request['id'] = getContentId(store.state.siteMeta, route.path)
-    await store.dispatch('GET_CONTENT', request)
+    if (request.id === undefined) {
+      redirect(config.redirect404)
+    } else {
+      await store.dispatch('GET_CONTENT', request)
+    }
     if (store.state.contentObject.length === 0) {
       return redirect(config.redirect404)
     }

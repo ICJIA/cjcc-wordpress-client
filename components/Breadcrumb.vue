@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="crumb-container">
+    <div class="crumb-container" v-if="!home">
     <span class="crumb" >
        
        <nuxt-link to="/">Home</nuxt-link>&nbsp;/&nbsp;{{type}}&nbsp;/&nbsp;{{title}}
@@ -18,13 +18,32 @@ const startCase = require('lodash.startcase')
 
 export default {
   mounted() {
-    const contentMeta = this.siteMeta.filter(m => {
-      return m.route === $nuxt.$route.path
-    })
-    //console.log(contentMeta[0].title)
-    // Convert to title case via lodash
-    this.title = startCase(toLower(contentMeta[0].title))
-    this.type = startCase(toLower(contentMeta[0].type))
+    console.log($nuxt.$route.path)
+    if ($nuxt.$route.path === '/') {
+      //console.log('home')
+      this.home = true
+    } else {
+      //console.log('not home')
+      const contentMeta = this.siteMeta.filter(m => {
+        return m.route === $nuxt.$route.path
+      })
+      this.title = startCase(toLower(contentMeta[0].title))
+      this.type = startCase(toLower(contentMeta[0].type))
+      this.home = false
+      this.home = false
+    }
+    // if (this.$nuxt.route.path === '/') {
+    //   this.home = false
+    // } else {
+    //   const contentMeta = this.siteMeta.filter(m => {
+    //     return m.route === $nuxt.$route.path
+    //   })
+    //   //console.log(contentMeta[0].title)
+    //   // Convert to title case via lodash
+    //   this.title = startCase(toLower(contentMeta[0].title))
+    //   this.type = startCase(toLower(contentMeta[0].type))
+    //   this.home = false
+    // }
   },
   data() {
     return {

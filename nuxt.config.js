@@ -14,9 +14,10 @@ module.exports = {
     getArticleBySlug: process.env.GET_ARTICLE_BY_SLUG || 'wp/v2/articles?slug=',
     getPostBySlug: process.env.GET_POST_BY_SLUG || 'wp/v2/posts?slug=',
     getPageBySlug: process.env.GET_PAGE_BY_SLUG || 'wp/v2/pages?slug=',
+    getSiteMeta: process.env.GET_SITE_META || 'wp/v2/sitemeta/',
     getRoutes: process.env.GET_ROUTES || 'wp/v2/routes',
     contentCacheEnabled: process.env.CONTENT_CACHE_ENABLED || true,
-    contentCacheSize: process.env.CONTENT_CACHE_SIZE || 25
+    contentCacheSize: process.env.CONTENT_CACHE_SIZE || 10
   },
 
   /*

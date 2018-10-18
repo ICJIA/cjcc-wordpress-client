@@ -9,7 +9,8 @@ export const state = () => ({
   pages: [],
   articles: [],
   contentObject: [],
-  contentCache: []
+  contentCache: [],
+  forceRender: 1
 })
 
 export const mutations = {
@@ -42,33 +43,44 @@ export const mutations = {
   },
   setContent(state, data) {
     state.contentObject = data
-    // If the page is already cached, don't re-cache
-    // if (!find(state.contentCache, { id: data.id })) {
-    //state.contentCache.push(data)
-    // }
   },
   cacheContent(state, data) {
     state.contentCache.push(data)
+  },
+  removeFromCache(state) {
+    state.contentCache.shift()
+  },
+  forceRender(state) {
+    state.forceRender++
   }
 }
 
 export const actions = {
   async GET_CONTENT({ commit, state }, payload) {
-    console.log(payload)
-    if (!find(state.contentCache, { id: payload.id })) {
+    //console.log(payload)
+    if (config.contentCacheEnabled) {
+      if (!find(state.contentCache, { id: payload.id })) {
+        const { data } = await axios.get(payload.apiUrl + payload.slug)
+        commit('setContent', data[0])
+        commit('cacheContent', data[0])
+        if (state.contentCache.length > config.contentCacheSize) {
+          commit('removeFromCache')
+          console.log('removeFromCache')
+        }
+        console.log('not found -- call axios and cache')
+      } else {
+        console.log('found -- pull from cache')
+        const contentId = findIndex(state.contentCache, { id: payload.id })
+        commit('setContent', state.contentCache[contentId])
+      }
+    } else {
       const { data } = await axios.get(payload.apiUrl + payload.slug)
       commit('setContent', data[0])
-      commit('cacheContent', data[0])
-      console.log('not found -- call axios')
-    } else {
-      console.log('found -- pull from cache')
-      const contentId = findIndex(state.contentCache, { id: payload.id })
-      commit('setContent', state.contentCache[contentId])
     }
   },
 
   async nuxtServerInit({ commit }, { store, route, params }) {
-    const meta = await axios.get('wp/v2/sitemeta/')
+    const meta = await axios.get(config.getSiteMeta)
     const siteMeta = meta.data
 
     commit('setSiteMeta', siteMeta)

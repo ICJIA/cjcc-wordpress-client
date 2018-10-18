@@ -1,7 +1,9 @@
 <template>
     <div>
-      <breadcrumb/>
-      {{$store.state.contentObject}}
+     
+      <h1>{{$store.state.contentObject.title.rendered}}</h1>
+
+     <div v-html="$store.state.contentObject.content.rendered"> </div>
       
     </div>
 </template>
@@ -10,7 +12,6 @@
 import axios from '@/plugins/axios'
 import config from '@/config'
 import { getContentId } from '@/utils.js'
-import Breadcrumb from '@/components/Breadcrumb'
 
 export default {
   mounted() {},
@@ -26,9 +27,7 @@ export default {
       return redirect(config.redirect404)
     }
   },
-  components: {
-    Breadcrumb
-  },
+
   data() {
     return {}
   },

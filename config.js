@@ -8,8 +8,9 @@ const app = {
   getPostBySlug: 'wp/v2/posts?slug=',
   getPageBySlug: 'wp/v2/pages?slug=',
   getRoutes: 'wp/v2/routes/',
+  getSiteMeta: 'wp/v2/sitemeta/',
   contentCacheEnabled: true,
-  contentCacheSize: 25
+  contentCacheSize: 10
 }
 
 export default app

@@ -9,7 +9,6 @@ export const state = () => ({
   siteMeta: [],
   posts: [],
   pages: [],
-  articles: [],
   contentObject: [],
   contentCache: [],
   forceRender: 1
@@ -33,12 +32,6 @@ export const mutations = {
     state.pages = pages
   },
 
-  setArticles(state) {
-    const articles = state.siteMeta.filter(x => {
-      return x.type === 'article'
-    })
-    state.articles = articles
-  },
   setRoutes(state) {
     const routes = state.siteMeta.map(x => x.route)
     state.routes = routes
@@ -89,7 +82,7 @@ export const actions = {
     commit('setSiteMeta', siteMeta)
     commit('setPosts')
     commit('setPages')
-    commit('setArticles')
+
     commit('setRoutes')
   },
 
@@ -100,7 +93,7 @@ export const actions = {
     commit('setSiteMeta', siteMeta)
     commit('setPosts')
     commit('setPages')
-    commit('setArticles')
+
     commit('setRoutes')
   }
 }

@@ -22,13 +22,14 @@ export default {
     } catch (err) {
       // console.error('Incorrect URL path')
       // console.error(err)
+      this.error = true
       this.errMsg = err.response
     }
   },
   data() {
     return {
       previewContentObject: null,
-      error: true,
+      error: false,
       errMsg: ''
     }
   }

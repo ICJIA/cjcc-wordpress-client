@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="crumb-container" v-if="!home">
+    <div class="crumb-container" v-if="displayBreadcrumb">
     <span class="crumb" >
        
        <nuxt-link to="/">Home</nuxt-link>&nbsp;/&nbsp;{{type}}&nbsp;/&nbsp;<span class="bc-title">{{title}}</span>
@@ -30,15 +30,15 @@ export default {
       })
       this.title = startCase(toLower(contentMeta[0].title))
       this.type = startCase(toLower(contentMeta[0].type))
-      this.home = false
-      this.home = false
+      this.displayBreadcrumb = contentMeta[0].breadcrumb
     }
   },
   data() {
     return {
       title: '',
       type: '',
-      home: true
+      home: true,
+      displayBreadcrumb: false
     }
   },
   computed: mapState(['siteMeta'])

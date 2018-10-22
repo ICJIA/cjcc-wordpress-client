@@ -3,7 +3,7 @@
     
     <v-content>
       
-      <breadcrumb :key="$store.state.forceRender"></breadcrumb>
+      <!-- <breadcrumb :key="$store.state.forceRender"></breadcrumb> -->
      
 
       <v-container fluid>

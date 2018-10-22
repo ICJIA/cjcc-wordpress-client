@@ -4,22 +4,22 @@
       <h1>{{$store.state.contentObject.title.rendered}}</h1>
 
      <div v-html="$store.state.contentObject.content.rendered"> </div>
+
+      {{$store.state.contentObject}}
     </div>
 </template>
 
 <script>
 import axios from '@/plugins/axios'
 import config from '@/config'
-import { getContentId } from '@/utils.js'
+import { getContentId, getApiUrlBySlug } from '@/utils.js'
 
 export default {
   mounted() {},
 
   async fetch({ store, params, redirect, route }) {
     const request = {}
-    request['apiUrl'] = config.getPageBySlug
-    request['slug'] = params.slug
-    request['route'] = route.path
+    request['apiUrlBySlug'] = getApiUrlBySlug(store.state.siteMeta, route.path)
     request['id'] = getContentId(store.state.siteMeta, route.path)
     if (request.id === undefined) {
       redirect(config.redirect404)

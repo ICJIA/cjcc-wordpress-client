@@ -59,7 +59,7 @@ export const mutations = {
 
 export const actions = {
   async GET_CONTENT({ commit, state }, payload) {
-    console.log(payload)
+    //console.log(payload)
     if (config.contentCacheEnabled) {
       if (!find(state.contentCache, { id: payload.id })) {
         const { data } = await axios.get(payload.apiUrlBySlug + '&_embed')

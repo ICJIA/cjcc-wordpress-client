@@ -1,5 +1,5 @@
 const app = {
-  clientURL: 'http://localhost:5000',
+  clientURL: 'https://cjcc.netlify.com',
   apiUrl: 'https://wpdev.icjia-api.cloud/wp-json/',
   frontPagePosts: 3,
   launchWebpackMonitor: false,
@@ -9,7 +9,8 @@ const app = {
   contentCacheEnabled: true,
   contentCacheSize: 10,
   embed: '&_embed',
-  defaultPageTitle: 'CJCC'
+  defaultPageTitle: 'CJCC',
+  staticRoutes: ['/', '/preview']
 }
 
 export default app

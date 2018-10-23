@@ -2,7 +2,7 @@
   <v-app light>
     
     <v-content>
-      
+      <navbar/>
       <breadcrumb :key="$store.state.forceRender"></breadcrumb>
      
 
@@ -16,9 +16,11 @@
 
 <script>
 import Breadcrumb from '@/components/Breadcrumb'
+import Navbar from '@/components/Navbar'
 export default {
   components: {
-    Breadcrumb
+    Breadcrumb,
+    Navbar
   },
   watch: {
     $route(to, from) {

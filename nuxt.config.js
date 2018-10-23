@@ -3,6 +3,13 @@ import axios from './plugins/axios'
 import config from './config.js'
 import webpack from 'webpack'
 
+// merge Nuxt pages with Wordpress routes
+const getRoutes = async function() {
+  const { data } = await axios.get(config.getRoutes)
+  const routes = [...data, ...config.staticRoutes]
+  return routes
+}
+
 module.exports = {
   mode: 'universal',
   env: {
@@ -11,9 +18,6 @@ module.exports = {
     frontPagePosts: process.env.FRONT_PAGE_POSTS || 3,
     redirect404: process.env.REDIRECT_404 || '/404.html',
     launchWebpackMonitor: process.env.LAUNCH_WEBPACK_MONITOR || false,
-    getArticleBySlug: process.env.GET_ARTICLE_BY_SLUG || 'wp/v2/articles?slug=',
-    getPostBySlug: process.env.GET_POST_BY_SLUG || 'wp/v2/posts?slug=',
-    getPageBySlug: process.env.GET_PAGE_BY_SLUG || 'wp/v2/pages?slug=',
     getSiteMeta: process.env.GET_SITE_META || 'wp/v2/sitemeta/',
     getRoutes: process.env.GET_ROUTES || 'wp/v2/routes',
     contentCacheEnabled: process.env.CONTENT_CACHE_ENABLED || true,
@@ -96,10 +100,14 @@ module.exports = {
 
   generate: {
     // routes are pulled from WP API via custom endpoint
+    // Add Nuxt static routes to WP endpoint
+    // routes: async function() {
+    //   return await axios.get(config.getRoutes).then(res => {
+    //     return res.data
+    //   })
+    // }
     routes: async function() {
-      return await axios.get(config.getRoutes).then(res => {
-        return res.data
-      })
+      return await getRoutes()
     }
   },
   build: {

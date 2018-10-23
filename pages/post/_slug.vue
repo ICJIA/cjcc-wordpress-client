@@ -9,10 +9,11 @@
 
      <div v-html="$store.state.contentObject.content.rendered"> </div>
 
+  {{$store.state.contentObject}}
 
-     {{$store.state.contentObject}}
 
-   
+    
+
       
    </div>
 </template>
@@ -40,6 +41,7 @@ export default {
       return redirect(config.redirect404)
     }
   },
+  created() {},
 
   data() {
     return {}
@@ -50,6 +52,7 @@ export default {
       title: this.title
     }
   },
+
   computed: {
     title() {
       return this.$store.state.contentObject.title.rendered

@@ -4,6 +4,8 @@
     <span class="crumb" >
        
        <nuxt-link to="/">Home</nuxt-link>&nbsp;/&nbsp;{{type}}&nbsp;/&nbsp;<span class="bc-title">{{title}}</span>
+
+
        
        
     </span>
@@ -22,7 +24,7 @@ export default {
     console.log($nuxt.$route.path)
     if ($nuxt.$route.path === '/') {
       //console.log('home')
-      this.home = true
+      this.displayBreadcrumb = false
     } else {
       //console.log('not home')
       const contentMeta = this.siteMeta.filter(m => {

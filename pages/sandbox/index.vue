@@ -4,7 +4,7 @@
 <div id="chart-container">
    
             <fusioncharts
-            type="illinois"
+            type="california"
             width="350"
             height="350"
             :dataSource="dataSource"

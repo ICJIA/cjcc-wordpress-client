@@ -16,7 +16,6 @@
     "cross-env": "^5.2.0",
     "fusioncharts": "^3.13.2",
     "fusionmaps": "^3.13.1-sr.1",
-    "lodash": "^4.17.11",
     "lodash.find": "^4.6.0",
     "lodash.findindex": "^4.6.0",
     "lodash.has": "^4.5.2",

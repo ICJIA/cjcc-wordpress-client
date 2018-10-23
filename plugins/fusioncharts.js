@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueFusionCharts from 'vue-fusioncharts'
 import FusionCharts from 'fusioncharts'
 import FusionMaps from 'fusioncharts/fusioncharts.maps'
-import Illinois from 'fusionmaps/maps/fusioncharts.illinois'
+import California from 'fusionmaps/maps/fusioncharts.california'
 
 // Register VueFusionCharts component
-Vue.use(VueFusionCharts, FusionCharts, FusionMaps, Illinois)
+Vue.use(VueFusionCharts, FusionCharts, FusionMaps, California)

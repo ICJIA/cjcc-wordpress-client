@@ -110,6 +110,7 @@ module.exports = {
       return await getRoutes()
     }
   },
+  router: {},
   build: {
     /*
     ** You can extend webpack config here

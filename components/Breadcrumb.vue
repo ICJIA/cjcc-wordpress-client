@@ -1,17 +1,12 @@
 <template>
-<div>
-    <div class="crumb-container" v-if="displayBreadcrumb">
-    <span class="crumb" >
-       
-       <nuxt-link to="/">Home</nuxt-link>&nbsp;/&nbsp;{{type}}&nbsp;/&nbsp;<span class="bc-title">{{title}}</span>
-
-
-       
-       
-    </span>
+  <div class="breadcrumb text-xs-right">
+    <div class="breadcrumb-content">
+    <nuxt-link to="/">HOME</nuxt-link> / 
+    <span v-if="displayType">
+      <nuxt-link :to="typeUrl">{{type}}</nuxt-link> / </span>
+    {{title}}
     </div>
-    
-    </div>
+  </div>
 </template>
 
 <script>
@@ -21,47 +16,50 @@ const startCase = require('lodash.startcase')
 
 export default {
   mounted() {
-    console.log($nuxt.$route.path)
-    if ($nuxt.$route.path === '/') {
-      //console.log('home')
-      this.displayBreadcrumb = false
+    if (this.$props.type != 'page') {
+      this.displayType = true
     } else {
-      //console.log('not home')
-      const contentMeta = this.siteMeta.filter(m => {
-        return m.route === $nuxt.$route.path
-      })
-      this.title = startCase(toLower(contentMeta[0].title))
-      this.type = startCase(toLower(contentMeta[0].type))
-      this.displayBreadcrumb = contentMeta[0].breadcrumb
+      this.displayType = false
     }
   },
   data() {
     return {
-      title: '',
-      type: '',
-      home: true,
-      displayBreadcrumb: false
+      displayType: true
     }
   },
-  computed: mapState(['siteMeta'])
+  computed: mapState(['siteMeta']),
+  props: {
+    title: {
+      type: String,
+      default: 'ILLINOIS CJCC'
+    },
+    type: {
+      type: String,
+      default: 'Page'
+    },
+    typeUrl: {
+      type: String,
+      default: '/'
+    },
+    showBreadcrumb: {
+      type: Boolean,
+      default: true
+    },
+    methods: {}
+  }
 }
 </script>
 
 <style scoped>
-.crumb {
-  float: right;
-  margin-right: 10px;
-  margin-top: 14px;
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 12px;
-}
-
-.crumb-container {
+.breadcrumb {
+  background: #ccc;
   height: 50px;
-  background: #eee;
+  font-size: 12px;
+  font-weight: bold;
 }
-.bc-title {
-  color: #555;
+.breadcrumb-content {
+  padding-top: 12px;
+  padding-right: 15px;
+  text-transform: uppercase;
 }
 </style>

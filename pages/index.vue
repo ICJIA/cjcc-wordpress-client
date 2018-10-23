@@ -1,8 +1,8 @@
 <template>
   <v-layout
     >
-   
-    <v-flex xs12 sm6>
+   <v-container fluid>
+    <v-flex xs3 sm6>
        <div v-for="item in $store.state.siteMeta" :key="item.id" style="margin-bottom: 10px">
       <v-card>
        
@@ -21,7 +21,7 @@
       </v-card>
       </div>
     </v-flex>
- 
+   </v-container>
   </v-layout>
 </template>
 

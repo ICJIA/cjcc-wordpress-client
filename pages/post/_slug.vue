@@ -1,6 +1,12 @@
 <template>
    <div>
 
+     <breadcrumb 
+       :key="$store.state.forceRender" 
+       :title="$store.state.contentObject.title.rendered" 
+       type="Posts"
+       typeUrl = "/news"
+       :showBreadcrumb="$store.state.contentObject.breadcrumb"></breadcrumb>
      
      
      <h1>{{$store.state.contentObject.title.rendered}}</h1>
@@ -22,6 +28,7 @@
 import axios from '@/plugins/axios'
 import config from '@/config'
 import { getContentId, getApiUrlBySlug } from '@/utils.js'
+import Breadcrumb from '@/components/Breadcrumb'
 
 export default {
   mounted() {},
@@ -59,6 +66,9 @@ export default {
         ? this.$store.state.contentObject.title.rendered
         : config.defaultPageTitle
     }
+  },
+  components: {
+    Breadcrumb
   },
 
   watchQuery: true

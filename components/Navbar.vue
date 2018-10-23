@@ -13,7 +13,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down main-nav">
         <v-btn flat nuxt-link to="/sample-page">Sample Page</v-btn>
-        <v-btn flat nuxt-link to="/projects">News</v-btn>
+        <v-btn flat nuxt-link to="/news">News</v-btn>
         
         <v-btn flat nuxt-link to="/search">
           <i class="fas fa-search"></i>

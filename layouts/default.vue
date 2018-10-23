@@ -3,12 +3,12 @@
     
     <v-content>
       <navbar/>
-      <breadcrumb :key="$store.state.forceRender"></breadcrumb>
+      <!-- <breadcrumb :key="$store.state.forceRender"></breadcrumb>
      
 
-      <v-container fluid>
+      <v-container fluid> -->
         <nuxt />
-      </v-container>
+      <!-- </v-container> -->
     </v-content>
     
   </v-app>

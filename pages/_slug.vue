@@ -1,18 +1,29 @@
 <template>
-    <div>
+    <article>
+
+       <breadcrumb 
+       :key="$store.state.forceRender" 
+       :title="$store.state.contentObject.title.rendered" 
+       :type="$store.state.contentObject.type"
+       :showBreadcrumb="$store.state.contentObject.breadcrumb"></breadcrumb>
+     
+
+      <v-container fluid>
      
       <h1>{{$store.state.contentObject.title.rendered}}</h1>
 
      <div v-html="$store.state.contentObject.content.rendered"> </div>
 
       {{$store.state.contentObject}}
-    </div>
+      </v-container>
+    </article>
 </template>
 
 <script>
 import axios from '@/plugins/axios'
 import config from '@/config'
 import { getContentId, getApiUrlBySlug } from '@/utils.js'
+import Breadcrumb from '@/components/Breadcrumb'
 
 export default {
   mounted() {},
@@ -31,7 +42,9 @@ export default {
       return redirect(config.redirect404)
     }
   },
-
+  components: {
+    Breadcrumb
+  },
   data() {
     return {}
   },

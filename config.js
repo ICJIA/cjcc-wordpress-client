@@ -2,7 +2,7 @@ const app = {
   clientURL: 'https://cjcc.netlify.com',
   apiUrl: 'https://wpdev.icjia-api.cloud/wp-json/',
   frontPagePosts: 3,
-  launchWebpackMonitor: false,
+  launchWebpackMonitor: true,
   redirect404: '/404.html',
   getRoutes: 'wp/v2/routes/',
   getSiteMeta: 'wp/v2/sitemeta/',

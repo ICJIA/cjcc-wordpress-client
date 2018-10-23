@@ -11,7 +11,9 @@ export const state = () => ({
   pages: [],
   contentObject: [],
   contentCache: [],
-  forceRender: 1
+  forceRender: 1,
+  countyData: {},
+  mapMetaData: {}
 })
 
 export const mutations = {
@@ -47,6 +49,12 @@ export const mutations = {
   },
   forceRender(state) {
     state.forceRender++
+  },
+  setCounty(state, countyData) {
+    state.countyData = countyData
+  },
+  setMapMetaData: (state, mapMetaData) => {
+    state.mapMetaData = mapMetaData
   }
 }
 
@@ -95,5 +103,13 @@ export const actions = {
     commit('setPages')
 
     commit('setRoutes')
+  },
+  SET_COUNTY({ commit, state }, payload) {
+    commit('setCounty', payload)
+  },
+
+  async SET_MAP_METADATA({ commit }) {
+    const data = await require(`~/assets/data/map.json`)
+    commit('setMapMetaData', data)
   }
 }

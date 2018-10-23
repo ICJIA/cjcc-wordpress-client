@@ -2,31 +2,90 @@
     <div>
         
 
-    <v-toolbar color="grey-lighten-4" class="nav headroom headroom--pinned" fixed app>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer" class="hidden-md-and-up"></v-toolbar-side-icon>
-      <v-toolbar-title>
+   <v-navigation-drawer
+      v-model="drawer"
+      fixed
+      clipped
+      app
+    >
+      <v-list dense>
+        <v-list-tile v-for="item in items" :key="item.text" @click="">
+          <v-list-tile-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>
+              {{ item.text }}
+            </v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-subheader class="mt-3 grey--text text--darken-1">SUBSCRIPTIONS</v-subheader>
+        <v-list>
+          <v-list-tile v-for="item in items2" :key="item.text" avatar @click="">
+            <v-list-tile-avatar>
+              <img :src="`https://randomuser.me/api/portraits/men/${item.picture}.jpg`" alt="">
+            </v-list-tile-avatar>
+            <v-list-tile-title v-text="item.text"></v-list-tile-title>
+          </v-list-tile>
+        </v-list>
+        <v-list-tile class="mt-3" @click="">
+          <v-list-tile-action>
+            <v-icon color="grey darken-1">add_circle_outline</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-title class="grey--text text--darken-1">Browse Channels</v-list-tile-title>
+        </v-list-tile>
+        <v-list-tile @click="">
+          <v-list-tile-action>
+            <v-icon color="grey darken-1">settings</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-title class="grey--text text--darken-1">Manage Subscriptions</v-list-tile-title>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-toolbar fixed app>
+    <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+    <v-toolbar-title>
         <nuxt-link to="/" class="nav-brand">
-          <span class="nav-state">Illinois</span> |
-          <span class="nav-name">LORUM IPSUM</span>
+          <span class="nav-state">ILLINOIS</span> |
+          <span class="nav-name">CRIMINAL JUSTICE COORDINATING COUNCILS</span>
         </nuxt-link>
       </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down main-nav">
-        <v-btn flat nuxt-link to="/sample-page">Sample Page</v-btn>
-        <v-btn flat nuxt-link to="/news">News</v-btn>
-        
-        <v-btn flat nuxt-link to="/search">
-          <i class="fas fa-search"></i>
+    <v-spacer></v-spacer>
+    <v-toolbar-items class="hidden-sm-and-down">
+      <v-btn flat nuxt-link to="/search">
+          <i class="fas fa-search"></i>&nbsp;&nbsp;Search
         </v-btn>
-      </v-toolbar-items>
-    </v-toolbar>
+    </v-toolbar-items>
+  </v-toolbar>
 
     </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data: () => ({
+    drawer: false,
+    items: [
+      { icon: 'trending_up', text: 'Most Popular' },
+      { icon: 'subscriptions', text: 'Subscriptions' },
+      { icon: 'history', text: 'History' },
+      { icon: 'featured_play_list', text: 'Playlists' },
+      { icon: 'watch_later', text: 'Watch Later' }
+    ],
+    items2: [
+      { picture: 28, text: 'Joseph' },
+      { picture: 38, text: 'Apple' },
+      { picture: 48, text: 'Xbox Ahoy' },
+      { picture: 58, text: 'Nokia' },
+      { picture: 78, text: 'MKBHD' }
+    ]
+  })
+}
 </script>
 
 <style scoped>
+.nav-state {
+  font-weight: 900;
+}
 </style>

@@ -31,10 +31,10 @@ $ npm run generate
 
 ...
 
-## Client URL (In development)
+### Client URL (In development)
 
-[https://cjcc.netlify.com](https://nuxtjs.org)
+[https://cjcc.netlify.com](https://cjcc.netlify.com)
 
-## Wordpress API:
+### Wordpress API:
 
 [https://cjcc.icjia-api.cloud/wp-json](https://cjcc.icjia-api.cloud/wp-json)

@@ -58,6 +58,8 @@ export const mutations = {
   }
 }
 
+export const getters = {}
+
 export const actions = {
   async GET_CONTENT({ commit, state }, payload) {
     //console.log(payload)
@@ -90,8 +92,9 @@ export const actions = {
     commit('setSiteMeta', siteMeta)
     commit('setPosts')
     commit('setPages')
-
     commit('setRoutes')
+    const data = await require(`~/assets/data/map.json`)
+    commit('setMapMetaData', data)
   },
 
   async nuxtServerInit({ commit }, { store, route, params }) {
@@ -101,15 +104,12 @@ export const actions = {
     commit('setSiteMeta', siteMeta)
     commit('setPosts')
     commit('setPages')
-
     commit('setRoutes')
+
+    const data = await require(`~/assets/data/map.json`)
+    commit('setMapMetaData', data)
   },
   SET_COUNTY({ commit, state }, payload) {
     commit('setCounty', payload)
-  },
-
-  async SET_MAP_METADATA({ commit }) {
-    const data = await require(`~/assets/data/map.json`)
-    commit('setMapMetaData', data)
   }
 }

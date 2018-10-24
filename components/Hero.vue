@@ -16,7 +16,8 @@
 
 <style>
 .hero-section {
-  background: url('../assets/img/slider1.jpg') 50% no-repeat;
+  /* background: url('../assets/img/slider1.jpg') 50% no-repeat;*/
+  background: #bbb;
   background-size: cover;
   height: 550px;
   text-align: center;
@@ -40,7 +41,7 @@ img:before {
   font-weight: 900;
 }
 .brand-state.hero {
-  color: #aaa;
+  color: #888;
 }
 .highlight {
 }

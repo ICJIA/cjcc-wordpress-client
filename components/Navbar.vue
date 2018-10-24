@@ -7,6 +7,7 @@
       fixed
       clipped
       app
+      disable-resize-watcher
     >
       <v-list dense>
         <v-list-tile v-for="item in items" :key="item.text" @click="">
@@ -42,22 +43,21 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-
-    <v-toolbar fixed app>
-    <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-    <v-toolbar-title>
-        <nuxt-link to="/" class="nav-brand">
-          <span class="nav-state">ILLINOIS</span> |
-          <span class="nav-name">CRIMINAL JUSTICE COORDINATING COUNCILS</span>
-        </nuxt-link>
+    <v-toolbar app>
+      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-title class="headline text-uppercase">
+        <span class="font-weight-heavy">ILLINOIS</span> | 
+        <span class="font-weight-light" style="color: #1A237E">CRIMINAL JUSTICE COORDINATING COUNCILS</span>
       </v-toolbar-title>
-    <v-spacer></v-spacer>
-    <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat nuxt-link to="/search">
-          <i class="fas fa-search"></i>&nbsp;&nbsp;Search
-        </v-btn>
-    </v-toolbar-items>
-  </v-toolbar>
+      <v-spacer></v-spacer>
+      <v-btn
+        flat
+       to="/about"
+      >
+        <span class="mr-2">Search</span>
+        <v-icon>search</v-icon>
+      </v-btn>
+    </v-toolbar>
 
     </div>
 </template>

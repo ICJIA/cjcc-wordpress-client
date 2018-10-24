@@ -1,52 +1,32 @@
 <template>
 <div>
-  <!-- <v-card>
-      <v-responsive :aspect-ratio="16/9" :max-height="400" style="background: #ccc">
-        <v-card-text class="text-xs-center">
-          Splash image here
-        </v-card-text>
-      </v-responsive>
-    </v-card> -->
-    <hero/>
+<hero/>
    
-    <v-container fill-height fluid class="px-0" style="margin-top: -25px">
-    <v-layout row wrap>
-       <v-flex xs4>
-        <v-card dark color="blue-grey darken-4" height="100%" class=" pt-3 pb-3">
-         
-         <h2 class="text-xs-center">Test Title 1</h2>
-        
-          <v-card-text class="px-3">
-            <no-ssr>
-            <dummy text="50"></dummy>
-            </no-ssr>
-          </v-card-text>
-        </v-card>
-      </v-flex>
-       <v-flex xs4>
-        <v-card dark color="blue-grey darken-4" height="100%" class=" pt-3 pb-3">
-           <h2 class="text-xs-center">Test Title 2</h2>
-          <v-card-text class="px-3">
-               <no-ssr>
-            <dummy text="50"></dummy>
-            </no-ssr>
-          </v-card-text>
-        </v-card>
-      </v-flex>
-       <v-flex xs4>
-        <v-card dark color="blue-grey darken-4" height="100%" class=" pt-3 pb-3">
-           <h2 class="text-xs-center">Test Title 3</h2>
-          <v-card-text class="px-3">
-               <no-ssr>
-            <dummy text="50"></dummy>
-            </no-ssr>
-          </v-card-text>
-        </v-card>
-      </v-flex>
-       
-    </v-layout>
-  </v-container>
+ 
+<home-boxes/>
 
+
+
+ <v-container fluid grid-list-md class="pl-5 pr-5 mt-5 mb-5 mt-5" id="about-ifvcc">
+      <v-layout row wrap>
+        <v-flex xs12 sm12 md6 hidden-sm-and-down>
+
+          <div id="chart-container">
+           <illinois/>
+           
+        </div>
+        </v-flex>
+        <v-flex xs12 sm12 md6>
+        
+          <div >
+            <select-council/>
+          </div>
+
+         
+        </v-flex>
+
+      </v-layout>
+    </v-container>
 
 
 
@@ -64,18 +44,24 @@
             <div>{{ item.excerpt}}</div>
           </div>
         </v-card-title>
-
-       
       </v-card>
       </v-flex>
     </v-layout>
   </v-container>
+
+  
+
+  
 
   </div>
 </template>
 
 <script>
 import Hero from '@/components/Hero.vue'
+import Illinois from '@/components/Illinois.vue'
+import SelectCouncil from '@/components/SelectCouncil.vue'
+import HomeBoxes from '@/components/HomeBoxes.vue'
+
 export default {
   async fetch({ store, params, redirect, route }) {
     if (store.state.siteMeta.length === 0) {
@@ -90,7 +76,10 @@ export default {
     }
   },
   components: {
-    Hero
+    Hero,
+    Illinois,
+    SelectCouncil,
+    HomeBoxes
   },
 
   watchQuery: true

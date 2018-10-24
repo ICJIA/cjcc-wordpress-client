@@ -45,14 +45,16 @@
     </v-navigation-drawer>
     <v-toolbar app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <nuxt-link to="/" class="nav">
       <v-toolbar-title class="headline text-uppercase">
         <span class="font-weight-heavy">ILLINOIS</span> | 
         <span class="font-weight-light" style="color: #1A237E">CRIMINAL JUSTICE COORDINATING COUNCILS</span>
       </v-toolbar-title>
+      </nuxt-link>
       <v-spacer></v-spacer>
       <v-btn
         flat
-       to="/about"
+       to="/search"
       >
         <span class="mr-2">Search</span>
         <v-icon>search</v-icon>

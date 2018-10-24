@@ -35,7 +35,7 @@ export default {
     },
     type: {
       type: String,
-      default: 'Page'
+      default: 'page'
     },
     typeUrl: {
       type: String,
@@ -52,7 +52,7 @@ export default {
 
 <style scoped>
 .breadcrumb {
-  background: #ccc;
+  background: #1a237e;
   height: 50px;
   font-size: 12px;
   font-weight: bold;
@@ -61,5 +61,15 @@ export default {
   padding-top: 12px;
   padding-right: 15px;
   text-transform: uppercase;
+  color: #fff;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #fff;
 }
 </style>

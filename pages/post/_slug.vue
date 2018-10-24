@@ -4,7 +4,7 @@
      <breadcrumb 
        :key="$store.state.forceRender" 
        :title="$store.state.contentObject.title.rendered" 
-       type="Posts"
+       type="News"
        typeUrl = "/news"
        :showBreadcrumb="$store.state.contentObject.breadcrumb"></breadcrumb>
      

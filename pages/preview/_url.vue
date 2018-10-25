@@ -1,11 +1,12 @@
 <template>
     <div>
-     
-       {{previewContentObject}}
+      <v-container style="margin-top: 30px">
+       <div v-html="previewContentObject.content.rendered"></div>
        <div v-if="error"><center>
          Error:<br>{{errMsg}}
          </center>
          </div>
+      </v-container>
         
     </div>
 </template>

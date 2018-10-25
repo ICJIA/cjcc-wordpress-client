@@ -1,11 +1,19 @@
 <template>
     <div>
+      
       <v-container style="margin-top: 30px">
-       <div v-html="previewContentObject.content.rendered"></div>
+       <!-- <div v-html="previewContentObject.content.rendered"></div>-->
        <div v-if="error"><center>
-         Error:<br>{{errMsg}}
+         
+         <v-alert
+      :value="true"
+      type="error"
+    >
+      Error:<br>{{errMsg}}
+    </v-alert>
          </center>
-         </div>
+         </div> 
+         <div v-else v-html="content"></div>
       </v-container>
         
     </div>
@@ -14,24 +22,46 @@
 <script>
 import axios from '~/plugins/axios'
 export default {
-  async created() {
-    console.log('created')
-    try {
-      const { data } = await axios.get(this.$route.query.url)
-      this.previewContentObject = data
-      this.error = false
-    } catch (err) {
-      // console.error('Incorrect URL path')
-      // console.error(err)
+  async mounted() {
+    if (!this.$route.query.url) {
       this.error = true
-      this.errMsg = err.response
+      this.errMsg = 'Must specify URL'
+    } else {
+      try {
+        const { data } = await axios.get(this.$route.query.url)
+        this.previewContentObject = data
+        this.error = false
+        this.content = this.previewContentObject.content.rendered
+      } catch (err) {
+        // console.error('Incorrect URL path')
+        // console.error(err)
+        this.error = true
+        this.errMsg = err.response
+      }
+    }
+    // try {
+    //   const { data } = await axios.get(this.$route.query.url)
+    //   this.previewContentObject = data
+    //   this.error = false
+    // } catch (err) {
+    //   // console.error('Incorrect URL path')
+    //   // console.error(err)
+    //   this.error = true
+    //   this.errMsg = err.response
+    // }
+  },
+  head() {
+    return {
+      title: 'Wordpress Preview'
     }
   },
   data() {
     return {
-      previewContentObject: null,
+      previewContentObject: '',
       error: false,
-      errMsg: ''
+      errMsg: '',
+      content: '',
+      snackbar: true
     }
   }
 }

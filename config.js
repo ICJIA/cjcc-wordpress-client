@@ -10,7 +10,7 @@ const app = {
   contentCacheSize: 10,
   embed: '&_embed',
   defaultPageTitle: 'CJCC',
-  staticRoutes: ['/', '/preview', '/search', '/news']
+  staticRoutes: ['/', '/search', '/news', '/preview']
 }
 
 export default app

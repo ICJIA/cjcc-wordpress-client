@@ -13,7 +13,11 @@
     </v-alert>
          </center>
          </div> 
-         <div v-else v-html="content"></div>
+         
+         <div v-else>
+           <h1>{{title}}</h1>
+           <span v-html="content"></span>
+           </div>
       </v-container>
         
     </div>
@@ -32,6 +36,7 @@ export default {
         this.previewContentObject = data
         this.error = false
         this.content = this.previewContentObject.content.rendered
+        this.title = this.previewContentObject.title.rendered
       } catch (err) {
         // console.error('Incorrect URL path')
         // console.error(err)
@@ -61,6 +66,7 @@ export default {
       error: false,
       errMsg: '',
       content: '',
+      title: '',
       snackbar: true
     }
   }

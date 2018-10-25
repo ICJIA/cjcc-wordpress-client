@@ -13,7 +13,8 @@ export const state = () => ({
   contentCache: [],
   forceRender: 1,
   countyData: {},
-  mapMetaData: {}
+  mapMetaData: {},
+  blobCache: []
 })
 
 export const mutations = {
@@ -55,6 +56,9 @@ export const mutations = {
   },
   setMapMetaData: (state, mapMetaData) => {
     state.mapMetaData = mapMetaData
+  },
+  setBlobs: (state, blobData) => {
+    state.blobCache = blobData
   }
 }
 
@@ -63,6 +67,8 @@ export const getters = {}
 export const actions = {
   async GET_CONTENT({ commit, state }, payload) {
     //console.log(payload)
+
+    // Page content fetch
     if (config.contentCacheEnabled) {
       if (!find(state.contentCache, { id: payload.id })) {
         const { data } = await axios.get(payload.apiUrlBySlug + '&_embed')
@@ -73,9 +79,9 @@ export const actions = {
           commit('removeFromCache')
           console.log('removeFromCache')
         }
-        console.log('new content -- not cached')
+        //console.log('new content -- not cached')
       } else {
-        console.log('cached content')
+        //console.log('cached content')
         const contentId = findIndex(state.contentCache, { id: payload.id })
         commit('setContent', state.contentCache[contentId])
       }
@@ -88,8 +94,14 @@ export const actions = {
   async INITIALIZE_APP({ commit, state }) {
     const meta = await axios.get(config.getSiteMeta)
     const siteMeta = meta.data
-    //console.log(siteMeta)
+
+    // For now, grab all blobs with content
+    const b = await axios.get(
+      'https://cjcc.icjia-api.cloud/wp-json/wp/v2/blobmeta'
+    )
+    const blobs = b.data
     commit('setSiteMeta', siteMeta)
+    commit('setBlobs', blobs)
     commit('setPosts')
     commit('setPages')
     commit('setRoutes')
@@ -100,8 +112,13 @@ export const actions = {
   async nuxtServerInit({ commit }, { store, route, params }) {
     const meta = await axios.get(config.getSiteMeta)
     const siteMeta = meta.data
-    //console.log(siteMeta)
+    const b = await axios.get(
+      'https://cjcc.icjia-api.cloud/wp-json/wp/v2/blobmeta'
+    )
+    const blobs = b.data
+    //console.log('Blobs: ', blobs)
     commit('setSiteMeta', siteMeta)
+    commit('setBlobs', blobs)
     commit('setPosts')
     commit('setPages')
     commit('setRoutes')

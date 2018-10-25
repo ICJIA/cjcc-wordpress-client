@@ -9,8 +9,6 @@
 
 
 
-
-
 <v-container grid-list-md fluid>
     <v-layout row wrap>
       <v-flex xs4 v-for="item in $store.state.siteMeta" :key="item.id">

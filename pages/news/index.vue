@@ -3,10 +3,10 @@
 
      <breadcrumb 
        :key="$store.state.forceRender" 
-       title="News Archive" 
-       type="News"
+       title="CJCC News Archive" 
+       type="page"
        typeUrl = "/news"
-       showBreadcrumb="true"></breadcrumb>
+       showBreadcrumb></breadcrumb>
      
      
    <h1>News archive here</h1>

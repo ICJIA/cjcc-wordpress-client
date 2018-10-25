@@ -82,7 +82,8 @@ module.exports = {
   plugins: [
     '@/plugins/vuetify',
     { src: '@/plugins/placeholder.js', ssr: false },
-    { src: '~/plugins/fusioncharts.js', ssr: false }
+    { src: '~/plugins/fusioncharts.js', ssr: false },
+    { src: '~/plugins/blob.js', ssr: false }
   ],
 
   /*

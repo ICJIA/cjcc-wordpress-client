@@ -4,26 +4,19 @@
        <v-flex xs4>
         <v-card dark :color="color" height="100%" class=" pt-4 pb-4 pl-3 box">
          
-         <h2 class="text-xs-center box-head">Find a Council</h2>
-        
-          <v-card-text class="px-3 font-weight-light box-text">
-           Locate other criminal justice coordinating councils or similar groups across Illinois.
-          </v-card-text>
+         <p v-blob:homebox-1></p>
         </v-card>
       </v-flex>
        <v-flex xs4>
         <v-card dark :color="color" height="100%" class=" pt-4 pb-4 pl-3 box">
-           <h2 class="text-xs-center box-head">What We Offer</h2>
-          <v-card-text class="px-3 font-weight-light box-text ">
-              Interested in crime trends and issues in your jurisdiction? Need assistance forming a criminal justice coordinating council? ICJIA can help.
-          </v-card-text>
+          
+          <p v-blob:homebox-2></p>
         </v-card>
       </v-flex>
        <v-flex xs4>
         <v-card dark :color="color" height="100%" class=" pt-4 pb-4 pl-3 box">
-           <h2 class="text-xs-center box-head">News & Events</h2>
-          <v-card-text class="px-3 font-weight-light box-text ">
-               Find out the latest news and information relevant to Criminal Justice Coordinating Councils  
+     
+               <p v-blob:homebox-3></p>
           </v-card-text>
         </v-card>
       </v-flex>
@@ -33,16 +26,20 @@
 </template>
 
 <script>
+import InjectBlob from '@/components/InjectBlob'
 export default {
   data() {
     return {
       color: 'indigo darken-3'
     }
+  },
+  components: {
+    InjectBlob
   }
 }
 </script>
 
-<style scoped>
+<style >
 .box:hover {
   box-shadow: 0px 0px 150px #000000;
   z-index: 2;
@@ -57,10 +54,10 @@ export default {
   cursor: pointer;
 }
 .box-head {
-  font-size: 28px;
+  font-size: 38px;
 }
 .box-text {
   font-size: 18px;
-  margin-top: -10px;
+  margin-top: 10px;
 }
 </style>

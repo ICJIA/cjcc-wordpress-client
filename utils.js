@@ -1,4 +1,4 @@
-const getContentId = function(siteMeta, path) {
+function getContentId(siteMeta, path) {
   let arr = siteMeta.filter(obj => {
     return obj.route === path
   })
@@ -10,7 +10,7 @@ const getContentId = function(siteMeta, path) {
   }
 }
 
-const getApiUrlBySlug = function(siteMeta, path) {
+function getApiUrlBySlug(siteMeta, path) {
   let arr = siteMeta.filter(obj => {
     return obj.route === path
   })
@@ -21,4 +21,12 @@ const getApiUrlBySlug = function(siteMeta, path) {
   }
 }
 
-export { getContentId, getApiUrlBySlug }
+const buildRequest = function(siteMeta, path) {
+  const request = {}
+  request['apiUrlBySlug'] = getApiUrlBySlug(siteMeta, path)
+  request['id'] = getContentId(siteMeta, path)
+  request['route'] = path
+  return request
+}
+
+export { buildRequest }

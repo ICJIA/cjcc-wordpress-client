@@ -22,16 +22,15 @@
 <script>
 import axios from '@/plugins/axios'
 import config from '@/config'
-import { getContentId, getApiUrlBySlug } from '@/utils.js'
+import { buildRequest } from '@/utils.js'
 import Breadcrumb from '@/components/Breadcrumb'
 
 export default {
   mounted() {},
 
   async fetch({ store, params, redirect, route }) {
-    const request = {}
-    request['apiUrlBySlug'] = getApiUrlBySlug(store.state.siteMeta, route.path)
-    request['id'] = getContentId(store.state.siteMeta, route.path)
+    const request = buildRequest(store.state.siteMeta, route.path)
+
     if (request.id === undefined) {
       redirect(config.redirect404)
     } else {

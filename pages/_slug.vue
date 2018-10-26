@@ -1,11 +1,11 @@
 <template>
     <article>
 
-       <breadcrumb 
+       <!-- <breadcrumb 
        :key="$store.state.forceRender" 
        :title="$store.state.contentObject.title.rendered" 
        :type="$store.state.contentObject.type"
-       :showBreadcrumb="$store.state.contentObject.breadcrumb"></breadcrumb>
+       :showBreadcrumb="$store.state.contentObject.breadcrumb"></breadcrumb> -->
      
 
       <v-container fluid>

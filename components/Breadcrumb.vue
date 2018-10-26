@@ -1,9 +1,10 @@
 <template>
-  <div class="breadcrumb text-xs-right">
+  <div class="breadcrumb text-xs-right" v-if="displayBreadcrumb">
     <div class="breadcrumb-content">
     <nuxt-link to="/">HOME</nuxt-link> / 
     <span v-if="displayType">
       <nuxt-link :to="typeUrl">{{type}}</nuxt-link> / </span>
+    
     {{title}}
     </div>
   </div>
@@ -13,6 +14,7 @@
 import { mapState } from 'vuex'
 const toLower = require('lodash.tolower')
 const startCase = require('lodash.startcase')
+import findIndex from 'lodash.findindex'
 
 export default {
   mounted() {
@@ -27,7 +29,16 @@ export default {
       displayType: true
     }
   },
-  computed: mapState(['siteMeta']),
+  computed: {
+    displayBreadcrumb() {
+      const index = findIndex(this.$store.state.siteMeta, {
+        id: this.$props.contentID
+      })
+      const displayBreadcrumb = this.$store.state.siteMeta[index].breadcrumb
+
+      return displayBreadcrumb
+    }
+  },
   props: {
     title: {
       type: String,
@@ -41,9 +52,9 @@ export default {
       type: String,
       default: '/'
     },
-    showBreadcrumb: {
-      type: Boolean,
-      default: true
+    contentID: {
+      type: Number,
+      default: 999
     },
     methods: {}
   }

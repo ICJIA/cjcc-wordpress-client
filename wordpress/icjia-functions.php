@@ -1,6 +1,4 @@
 <?php
-
-
 /** **************************************************************************************************************************************
  * ICJIA Custom endpoints and content types
  * 
@@ -11,15 +9,9 @@
  * require_once( get_template_directory() . '/icjia-functions.php' );
  * 
  */
-
-
-
-
 /**
  * Add 'sitemeta' endpoint
  */
-
-
 add_action( 'rest_api_init', 'my_register_sitemeta');
 function my_register_sitemeta() {
             
@@ -30,12 +22,10 @@ function my_register_sitemeta() {
         )
         );
 }
-
 function site_meta() {
-
-    $posts_list = get_posts(array('numberposts'=>'-1','post_type'=>'any','sort_order' => 'desc'));
+    $posts_list = get_posts(array('numberposts'=>'-1','post_type'=> array('post', 'page'),'sort_order' => 'desc'));
     $post_data = array();
-    $site_base = 'http://wpdev.icjia-api.cloud';
+    $site_base = 'http://cjcc.icjia-api.cloud';
     $client_base = "https://cjcc.netlify.com";
     $api_namespace = 'wp/v2';
     $api_base = get_rest_url().$api_namespace.'/';
@@ -57,51 +47,47 @@ function site_meta() {
             $breadcrumb = false;
         }
         
+		/** Exclude blobs from sitemeta **/
+		
         
-        $myPage = array ();
-        $myPage['id'] = $posts->ID;
-        $myPage['author'] = $posts->post_author;
-        $myPage['date'] = $posts->post_date ; 
-        $myPage['title'] = $posts->post_title ;
-        $myPage['excerpt'] = html_entity_decode($excerpt);
-        $myPage['status'] = $posts->post_status;
-        $myPage['slug'] = $posts->post_name;
-        $myPage['breadcrumb'] = $breadcrumb;
-        $myPage['modified'] = $posts->post_modified;
-        $myPage['route'] = substr_replace(str_replace(get_home_url(),'',get_permalink($posts->ID)) ,"",-1);
-        $myPage['type'] = $posts->post_type;
-        $myPage['tags'] = get_the_tags($posts->ID);
-        $myPage['categories'] = get_the_category( $posts->ID );
-        $myPage['permalink'] = str_replace(get_home_url(),$client_base,get_permalink($posts->ID));
-        $myPage['clientUrl'] = $client_base;
-        $myPage['apiBase'] = $api_base;
-        $myPage['apiUrlBySlug'] = $api_namespace.'/'.$posts->post_type.'s/?slug='.$posts->post_name;
-        $myPage['apiLink'] = $api_link;
-        $myPage['apiLinkEmbedded'] = $api_link.'?_embed';
-        $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $posts->ID ), 'thumbnail' );
-        $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $posts->ID ), 'thumbnail' );
-        $thumbnail_url = $thumbnail['0'];
-        $myPage['featuredImageThumb'] = $thumbnail_url;
+        	$myPage = array ();
+        	$myPage['id'] = $posts->ID;
+        	$myPage['author'] = $posts->post_author;
+        	$myPage['date'] = $posts->post_date ; 
+        	$myPage['title'] = $posts->post_title ;
+        	$myPage['excerpt'] = html_entity_decode($excerpt);
+        	$myPage['status'] = $posts->post_status;
+        	$myPage['slug'] = $posts->post_name;
+        	$myPage['breadcrumb'] = $breadcrumb;
+        	$myPage['modified'] = $posts->post_modified;
+        	$myPage['route'] = substr_replace(str_replace(get_home_url(),'',get_permalink($posts->ID)) ,"",-1);
+        	$myPage['type'] = $posts->post_type;
+        	$myPage['tags'] = get_the_tags($posts->ID);
+        	$myPage['categories'] = get_the_category( $posts->ID );
+        	$myPage['permalink'] = str_replace(get_home_url(),$client_base,get_permalink($posts->ID));
+        	$myPage['clientUrl'] = $client_base;
+        	$myPage['apiBase'] = $api_base;
+        	$myPage['apiUrlBySlug'] = $api_namespace.'/'.$posts->post_type.'s/?slug='.$posts->post_name;
+        	$myPage['apiLink'] = $api_link;
+        	$myPage['apiLinkEmbedded'] = $api_link.'?_embed';
+        	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $posts->ID ), 'thumbnail' );
+        	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $posts->ID ), 'thumbnail' );
+        	$thumbnail_url = $thumbnail['0'];
+        	$myPage['featuredImageThumb'] = $thumbnail_url;
+			$myPage['acf'] = get_fields('12');
+			
         
-        
-        
-        
-        
-        array_push($page_array, $myPage);
+        	array_push($page_array, $myPage);
+		
         
     }
     
-
     wp_reset_postdata();
     return rest_ensure_response( $page_array);
-
 }
-
-
 /**
  * Add 'routes' endpoint. Will use this for prerendering, eventually.
  */
-
 add_action( 'rest_api_init', 'my_register_siteroutes');
 function my_register_siteroutes() {
             
@@ -111,10 +97,9 @@ function my_register_siteroutes() {
         )
         );
 }
-
 function routes() {
             
-    $posts_list = get_posts(array('numberposts'=>'-1','post_type'=>'any','sort_order' => 'desc'));
+    $posts_list = get_posts(array('numberposts'=>'-1','post_type'=> array('post', 'page'),'sort_order' => 'desc'));
     $post_data = array();
     $site_base = 'http://wpdev.icjia.cloud';
     
@@ -127,32 +112,31 @@ function routes() {
         // remove trailing slash
         array_push($routes, substr_replace($route ,"",-1));
     }
-
     wp_reset_postdata();
     return rest_ensure_response( $routes );
-
 }
-
 /**
  * Register a custom post type, with REST API support
  *
  * Based on example at: https://codex.wordpress.org/Function_Reference/register_post_type
  */
-// add_action( 'init', 'my_article_cpt' );
-// function my_article_cpt() {
-//     $args = array(
-//       'public'       => true,
-//       'show_in_rest' => true,
-//       'label'        => 'Articles',
-//       'rest_base' => 'articles',
-//       'rewrite' => array( 'with_front' => false ),
-//     );
-//     register_post_type( 'article', $args );
-// }
+
+
+add_action( 'init', 'my_blob_cpt' );
+function my_blob_cpt() {
+    $args = array(
+      'public'       => true,
+      'show_in_rest' => true,
+      'label'        => 'Blobs',
+      'rest_base' => 'blobs',
+      'rewrite' => array( 'with_front' => false ),
+		
+    );
+    register_post_type( 'blob', $args );
+}
 
 
 add_action( 'rest_api_init', function () {
-
     register_rest_route( 'wp/v2', 'get-by-tag/(?P<slug>[a-z0-9]+(?:-[a-z0-9]+)*)', array(
           'methods' => 'GET',
           'callback' => 'myscope_get_posts_by_tag',
@@ -163,10 +147,10 @@ add_action( 'rest_api_init', function () {
               
           )
       ) );
-
   } );
 
 
+  
 //     // Add Featured Image
     register_rest_field( 'post',
         'featured_image_src',
@@ -176,7 +160,6 @@ add_action( 'rest_api_init', function () {
             'schema'            => null
         )
    );
-
 function my_get_image_src( $object, $field_name, $request ) {
    if($object[ 'featured_media' ] == 0) {
        return $object[ 'featured_media' ];
@@ -193,8 +176,6 @@ function my_get_image_src( $object, $field_name, $request ) {
     
    return $featured_media;
 }
-
-
 // Add Published Date
     register_rest_field( 'post',
        'published_date',
@@ -204,12 +185,9 @@ function my_get_image_src( $object, $field_name, $request ) {
            'schema'            => null
        )
     );
-
 function my_published_date( $object, $field_name, $request ) {
     return get_the_time('F j, Y');
 }
-
-
     register_rest_field( 'post',
        'category_names',
        array(
@@ -218,17 +196,12 @@ function my_published_date( $object, $field_name, $request ) {
            'schema'            => null
        )
     );
-
 function my_category_names( $object, $field_name, $request ) {
     
-
     $categories = get_the_category( $object['id'] );
     
-
     return $categories;
 }
-
-
     register_rest_field( 'post',
        'tag_names',
        array(
@@ -237,24 +210,65 @@ function my_category_names( $object, $field_name, $request ) {
            'schema'            => null
        )
     );
-
 function my_tag_names( $object, $field_name, $request ) {
     
     $tags = get_the_tags( $object['id'] );
     
     return $tags;
 }
-
 add_filter( 'preview_post_link', 'the_preview_fix' );
-
 function the_preview_fix() {
     $post = get_post();
     $permalink = get_the_permalink($post->ID);
     $preview_url = "https://cjcc.netlify.com/preview?url=wp/v2/".$post->post_type."s/".$post->ID;
-
     return $preview_url;
 }
 
 
-?>
+/**
+ * Add 'blobmeta' endpoint
+ */
+add_action( 'rest_api_init', 'my_register_blobmeta');
+function my_register_blobmeta() {
+            
+        register_rest_route( 'wp/v2', 'blobmeta', array(
+                'methods' => 'GET',
+                'callback' => 'blob_meta',
+               
+        )
+        );
+}
+function blob_meta() {
+    $blob_list = get_posts(array('numberposts'=>'-1','post_type'=>'blob','sort_order' => 'desc'));
+    $blob_array = array();
+    
+    foreach( $blob_list as $blob) {
+ 
+        	$myBlob = array ();
+        	$myBlob['id'] = $blob->ID;
+        	
+        	$myBlob['date'] = $blob->post_date ; 
+        	$myBlob['title'] = $blob->post_title ;
+        	
+        	$myBlob['status'] = $blob->post_status;
+        	$myBlob['slug'] = $blob->post_name;
+        	
+        	$myBlob['modified'] = $blob->post_modified;
+  
+			$myBlob['acf'] = get_fields($blob->ID);
+			$myBlob['content'] = $blob->post_content;
+			
+        
+        	array_push($blob_array, $myBlob);
+		
+        
+    }
+    
+    wp_reset_postdata();
+    return rest_ensure_response( $blob_array);
+}
 
+ 
+
+
+?>

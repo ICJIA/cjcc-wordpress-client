@@ -6,16 +6,36 @@
        :title="$store.state.contentObject.title.rendered" 
        type="News"
        typeUrl = "/news"
-       :showBreadcrumb="$store.state.contentObject.breadcrumb"></breadcrumb>
+       :contentID="contentID"></breadcrumb>
      
      
-     <h1>{{$store.state.contentObject.title.rendered}}</h1>
+     <!-- <h1>{{$store.state.contentObject.title.rendered}}</h1>
 
     
 
      <div v-html="$store.state.contentObject.content.rendered"> </div>
 
-  {{$store.state.contentObject}}
+  {{$store.state.contentObject}} -->
+
+   <v-container fill-height class="px-3">
+    <v-layout row wrap>
+
+      <v-flex xs10 offset-xs1>
+
+      <h1>{{$store.state.contentObject.title.rendered}}</h1>
+      {{$store.state.contentObject.breadcrumb}}
+      </v-flex>
+      
+      <v-flex xs10 offset-xs1>
+       
+        
+        <div v-html="$store.state.contentObject.content.rendered"> </div>
+
+       
+ 
+      </v-flex>
+    </v-layout>
+    </v-container>
 
 
     
@@ -29,6 +49,7 @@ import axios from '@/plugins/axios'
 import config from '@/config'
 import { buildRequest } from '@/utils.js'
 import Breadcrumb from '@/components/Breadcrumb'
+import findIndex from 'lodash.findindex'
 
 export default {
   mounted() {},
@@ -45,11 +66,17 @@ export default {
     if (store.state.contentObject.length === 0) {
       return redirect(config.redirect404)
     }
+
+    this.request = request
   },
-  created() {},
+  created() {
+    this.contentID = this.$store.state.contentObject.id
+  },
 
   data() {
-    return {}
+    return {
+      contentID: 0
+    }
   },
 
   head() {
@@ -57,6 +84,7 @@ export default {
       title: this.title
     }
   },
+  methods: {},
 
   computed: {
     title() {

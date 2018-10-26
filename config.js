@@ -12,7 +12,8 @@ const app = {
   embed: '&_embed',
   defaultPageTitle: 'CJCC',
   staticRoutes: ['/', '/search', '/news', '/preview'],
-  mapDataRoute: '~/assets/data/map.json'
+  mapDataRoute: '~/assets/data/map.json',
+  maxPaginationItems: 5
 }
 
 export default app

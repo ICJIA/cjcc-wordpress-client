@@ -52,6 +52,9 @@ export const getters = {
       .filter(post => post.type === 'post')
       .slice(0, config.frontPagePosts)
     return posts
+  },
+  getAllNews: state => {
+    return state.siteMeta.filter(post => post.type === 'post')
   }
 }
 

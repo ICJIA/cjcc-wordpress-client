@@ -52,7 +52,8 @@ export default {
 
 <style scoped>
 .breadcrumb {
-  background: #1a237e;
+  /* background: #1a237e; */
+  background: #ccc;
   height: 50px;
   font-size: 12px;
   font-weight: bold;
@@ -61,12 +62,13 @@ export default {
   padding-top: 12px;
   padding-right: 15px;
   text-transform: uppercase;
-  color: #fff;
+  color: #333;
 }
 
 a {
-  color: #ccc;
+  /* color: #ccc; */
   text-decoration: none;
+  color: #888;
 }
 
 a:hover {

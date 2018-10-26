@@ -7,8 +7,6 @@ import { getContentId, getApiUrlBySlug } from '@/utils.js'
 export const state = () => ({
   routes: [],
   siteMeta: [],
-  posts: [],
-  pages: [],
   contentObject: [],
   contentCache: [],
   forceRender: 1,
@@ -21,23 +19,9 @@ export const mutations = {
   setSiteMeta(state, siteMeta) {
     state.siteMeta = siteMeta
   },
-  setPosts(state) {
-    const posts = state.siteMeta.filter(x => {
-      return x.type === 'post'
-    })
-    state.posts = posts
-  },
-
-  setPages(state) {
-    const pages = state.siteMeta.filter(x => {
-      return x.type === 'page'
-    })
-    state.pages = pages
-  },
 
   setRoutes(state) {
-    const routes = state.siteMeta.map(x => x.route)
-    state.routes = routes
+    state.routes = state.siteMeta.map(x => x.route)
   },
   setContent(state, data) {
     state.contentObject = data
@@ -62,7 +46,14 @@ export const mutations = {
   }
 }
 
-export const getters = {}
+export const getters = {
+  getFrontPageNews: state => {
+    const posts = state.siteMeta
+      .filter(post => post.type === 'post')
+      .slice(0, config.frontPagePosts)
+    return posts
+  }
+}
 
 export const actions = {
   async GET_CONTENT({ commit, state }, payload) {
@@ -96,31 +87,23 @@ export const actions = {
     const siteMeta = meta.data
 
     // For now, grab all blobs with content
-    const b = await axios.get(
-      'https://cjcc.icjia-api.cloud/wp-json/wp/v2/blobmeta'
-    )
+    const b = await axios.get(config.getBlobMeta)
     const blobs = b.data
     commit('setSiteMeta', siteMeta)
     commit('setBlobs', blobs)
-    commit('setPosts')
-    commit('setPages')
     commit('setRoutes')
     const data = await require(`~/assets/data/map.json`)
     commit('setMapMetaData', data)
   },
 
-  async nuxtServerInit({ commit }, { store, route, params }) {
+  async nuxtServerInit({ commit, dispatch }, { store, route, params }) {
     const meta = await axios.get(config.getSiteMeta)
     const siteMeta = meta.data
-    const b = await axios.get(
-      'https://cjcc.icjia-api.cloud/wp-json/wp/v2/blobmeta'
-    )
+    const b = await axios.get(config.getBlobMeta)
     const blobs = b.data
     //console.log('Blobs: ', blobs)
     commit('setSiteMeta', siteMeta)
     commit('setBlobs', blobs)
-    commit('setPosts')
-    commit('setPages')
     commit('setRoutes')
 
     const data = await require(`~/assets/data/map.json`)

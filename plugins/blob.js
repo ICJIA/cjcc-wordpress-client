@@ -12,9 +12,10 @@ Vue.directive('blob', {
     //   binding.expression,
     //   binding.modifiers
     // )
+
+    // usage:   <p v-blob:homebox-3></p>
     const blobs = vnode.context.$store.state.blobCache
     const blobTitle = binding.arg
-
     const blob = blobs.filter(x => {
       return x.title === blobTitle
     })

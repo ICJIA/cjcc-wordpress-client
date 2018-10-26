@@ -1,17 +1,32 @@
 <template>
 
-    <div class="hero-section">
-        <div class="hero-section-text" aria-label="Illinois HEALS: A multi-year initiative to address child and youth victimization">
+    <!-- <div class="hero-section">
+        <div class="hero-section-text" aria-label="Illinois Criminal Justice Coordinating Councils">
 
             <span class=" brand-state hero">Illinois</span>
-            <span class="brand-name hero ">&nbsp;|&nbsp;Criminal Justice Coordinating Councils</span>
+            <span class="brand-name hero ">&nbsp;Criminal Justice Coordinating Councils</span>
             <h3 class="mt-3 hero-sub">Sponsored by the Illinois Criminal Justice Information Authority</h3>
            
         </div>
-    </div>
+    </div> -->
+    <div>
 
-
-
+<v-img :aspect-ratio="16/9" :max-height="500" src="/placeholder.png" class="hero-section">
+ <v-container fill-height>
+        <!--- vertical and horizontal alignment -->
+        <v-layout align-center justify-center>
+            <v-flex xs12>
+            
+                <div class="text-xs-center hero-section-text">
+                     <span class=" brand-state hero">Illinois</span>
+            <span class="brand-name hero ">&nbsp;Criminal Justice Coordinating Councils</span>
+            <h3 class="mt-3 hero-sub">Sponsored by the Illinois Criminal Justice Information Authority</h3>
+                </div>
+            </v-flex>
+        </v-layout>
+    </v-container>
+      </v-img>
+</div>
 </template>
 
 <style>

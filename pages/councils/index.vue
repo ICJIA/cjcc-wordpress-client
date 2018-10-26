@@ -1,11 +1,11 @@
 <template>
     <div>
-          <breadcrumb 
+         <breadcrumb 
        :key="$store.state.forceRender" 
-       title="Select Council" 
-       showBreadcrumb></breadcrumb>
+       title="Criminal Justice Coordinating Councils"
+       ></breadcrumb>
 
-
+<no-ssr>
          <v-container fluid grid-list-md class="pl-5 pr-5 mt-5 mb-5 mt-5" id="about-ifvcc">
       <v-layout row wrap>
         <v-flex xs12 sm12 md6 hidden-sm-and-down>
@@ -13,6 +13,7 @@
           <div id="chart-container-parent" style="margin-top: -25px;">
              
            <illinois/>
+           
            
         </div>
         </v-flex>
@@ -27,6 +28,7 @@
 
       </v-layout>
     </v-container>
+    </no-ssr>
     </div>
 </template>
 

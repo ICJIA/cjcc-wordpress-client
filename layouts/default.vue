@@ -1,10 +1,12 @@
 <template>
   <v-app light>
     
-    <v-content>
+    <v-content id="content">
       <navbar/>
      
         <nuxt />
+
+        <my-footer></my-footer>
      
     </v-content>
     
@@ -14,10 +16,12 @@
 <script>
 import Breadcrumb from '@/components/Breadcrumb'
 import Navbar from '@/components/Navbar'
+import MyFooter from '@/components/Footer'
 export default {
   components: {
     Breadcrumb,
-    Navbar
+    Navbar,
+    MyFooter
   },
   watch: {
     $route(to, from) {
@@ -31,3 +35,6 @@ export default {
   }
 }
 </script>
+
+<style>
+</style>

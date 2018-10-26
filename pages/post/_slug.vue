@@ -8,14 +8,7 @@
        typeUrl = "/news"
        :contentID="contentID"></breadcrumb>
      
-     
-     <!-- <h1>{{$store.state.contentObject.title.rendered}}</h1>
 
-    
-
-     <div v-html="$store.state.contentObject.content.rendered"> </div>
-
-  {{$store.state.contentObject}} -->
 
    <v-container fill-height class="px-3">
     <v-layout row wrap>

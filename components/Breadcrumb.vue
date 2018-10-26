@@ -23,6 +23,13 @@ export default {
     } else {
       this.displayType = false
     }
+    // console.log(
+    //   'Index: ',
+    //   findIndex(this.$store.state.siteMeta, {
+    //     id: this.$props.contentID
+    //   }),
+    //   this.$store.state.siteMeta[2].breadcrumb
+    // )
   },
   data() {
     return {
@@ -34,9 +41,17 @@ export default {
       const index = findIndex(this.$store.state.siteMeta, {
         id: this.$props.contentID
       })
-      const displayBreadcrumb = this.$store.state.siteMeta[index].breadcrumb
 
-      return displayBreadcrumb
+      if (this.$props.hide) {
+        return false
+      }
+
+      if (index === -1) {
+        return true
+      } else {
+        return this.$store.state.siteMeta[index].breadcrumb
+      }
+      return this.$store.state.siteMeta[index].breadcrumb
     }
   },
   props: {
@@ -54,7 +69,11 @@ export default {
     },
     contentID: {
       type: Number,
-      default: 999
+      default: 0
+    },
+    hide: {
+      type: Boolean,
+      default: false
     },
     methods: {}
   }

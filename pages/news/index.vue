@@ -1,12 +1,9 @@
 <template>
      <div>
 
-     <!-- <breadcrumb 
+     <breadcrumb 
        :key="$store.state.forceRender" 
-       title="CJCC News Archive" 
-       type="page"
-       typeUrl = "/news"
-      :contentID=999></breadcrumb> -->
+       title="News Archive"></breadcrumb>
      
     
 
@@ -32,7 +29,7 @@
          
         </v-card>
 
-
+<v-spacer></v-spacer>
         <div class="text-xs-center">
     <v-pagination
       v-model="page"

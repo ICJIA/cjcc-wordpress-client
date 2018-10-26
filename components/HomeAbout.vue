@@ -79,4 +79,8 @@ h1 {
 .divider {
   border-right: 1px solid #aaa;
 }
+.box-text {
+  padding-top: 25px;
+  padding-bottom: 35px;
+}
 </style>

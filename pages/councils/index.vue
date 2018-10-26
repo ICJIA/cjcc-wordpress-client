@@ -10,7 +10,8 @@
       <v-layout row wrap>
         <v-flex xs12 sm12 md6 hidden-sm-and-down>
 
-          <div id="chart-container">
+          <div id="chart-container-parent" style="margin-top: -25px;">
+             
            <illinois/>
            
         </div>

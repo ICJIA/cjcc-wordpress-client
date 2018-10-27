@@ -15,6 +15,7 @@
 
       {{$store.state.contentObject}}
       </v-container>
+      <spacer></spacer>
     </article>
 </template>
 
@@ -23,6 +24,7 @@ import axios from '@/plugins/axios'
 import config from '@/config'
 import { buildRequest } from '@/utils.js'
 import Breadcrumb from '@/components/Breadcrumb'
+import Spacer from '@/components/Spacer'
 
 export default {
   mounted() {},
@@ -41,7 +43,8 @@ export default {
     }
   },
   components: {
-    Breadcrumb
+    Breadcrumb,
+    Spacer
   },
   data() {
     return {}

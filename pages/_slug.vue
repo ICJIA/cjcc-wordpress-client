@@ -52,6 +52,9 @@ export default {
       title: this.title
     }
   },
+  created() {
+    this.contentID = this.$store.state.contentObject.id
+  },
   computed: {
     title() {
       return this.$store.state.contentObject.title.rendered

@@ -62,7 +62,7 @@ export default {
       { icon: 'trending_up', text: 'Councils', link: '/councils' },
       { icon: 'subscriptions', text: 'News', link: '/news' },
       { icon: 'history', text: 'Resources', link: '/resources' },
-      { icon: 'featured_play_list', text: 'Planning', link: '/' },
+      { icon: 'featured_play_list', text: 'Planning', link: '/planning' },
       { icon: 'watch_later', text: 'Research', link: '/research' },
       { icon: 'featured_play_list', text: 'CCAC', link: '/ccac' },
       { icon: 'watch_later', text: 'Contact', link: '/contact' },

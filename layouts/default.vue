@@ -4,8 +4,9 @@
     <v-content id="content">
       <navbar/>
      
-        <nuxt />
-
+        <div>
+          <nuxt />
+        </div>
         <my-footer></my-footer>
      
     </v-content>
@@ -37,4 +38,5 @@ export default {
 </script>
 
 <style>
+
 </style>

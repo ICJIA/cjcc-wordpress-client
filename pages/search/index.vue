@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
         <breadcrumb 
        :key="$store.state.forceRender" 
        title="Search" 

@@ -33,18 +33,7 @@
         <v-card light :color="color" height="100%" class=" pt-4 pb-4 pl-3 box elevation-0">
            <h1 class="text-xs-center box-head">About the CJCC</h1>
           <v-card-text class="px-3 font-weight-light box-text ">
-            <p> Criminal Justice Coordinating Councils (CJCCs) are strategic planning bodies made up local criminal justice policymakers, practitioners, and community members that serve as a forum for collaborating on policy, programs, and operations. </p>
-            
-            <p>As part of the National Criminal Justice Reform Project (NCJRP), the Illinois Criminal Justice Information Authority (ICJIA) and Loyal University’s Center for Criminal Justice Research, Policy and Practice, are partnering to support the formation of Criminal Justice Coordinating Councils. We provide: </p>
-<ul>
-    <li>Research support</li>
-<li>Technical assistance </li>
-<li>Funding opportunities for planning and program implementation  </li>
-</ul>
-
-<p>
-For more information on this initiative, see our 2018 State Plan to Support Criminal Justice Coordinating Councils.
-</p>
+            <div v-blob:home-about></div>
 
           </v-card-text>
         </v-card>

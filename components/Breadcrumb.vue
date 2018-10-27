@@ -89,7 +89,7 @@ export default {
   font-weight: bold;
 }
 .breadcrumb-content {
-  padding-top: 12px;
+  padding-top: 15px;
   padding-right: 15px;
   text-transform: uppercase;
   color: #333;

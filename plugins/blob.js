@@ -2,6 +2,7 @@ import Vue from 'vue'
 
 Vue.directive('blob', {
   bind(el, binding, vnode) {
+    el.innerHTML = "Loading content..."
     // console.log(vnode.context.$route)
     //console.log(vnode.context.$store.state.blob)
 

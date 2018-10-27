@@ -12,18 +12,18 @@ const getRoutes = async function() {
 
 module.exports = {
   mode: 'universal',
-  env: {
-    clientURL: process.env.CLIENT_URL || 'http://localhost:5000',
-    apiUrl: process.env.API_URL || 'http://wpdev:8888/wp-json/',
-    frontPagePosts: process.env.FRONT_PAGE_POSTS || 3,
-    redirect404: process.env.REDIRECT_404 || '/404.html',
-    launchWebpackMonitor: process.env.LAUNCH_WEBPACK_MONITOR || false,
-    getSiteMeta: process.env.GET_SITE_META || 'wp/v2/sitemeta/',
-    getRoutes: process.env.GET_ROUTES || 'wp/v2/routes',
-    contentCacheEnabled: process.env.CONTENT_CACHE_ENABLED || true,
-    contentCacheSize: process.env.CONTENT_CACHE_SIZE || 10,
-    defaultPageTitle: process.env.DEFAULT_PAGE_TITLE || 'CJCC'
-  },
+  // env: {
+  //   clientURL: process.env.CLIENT_URL || 'http://localhost:5000',
+  //   apiUrl: process.env.API_URL || 'http://wpdev:8888/wp-json/',
+  //   frontPagePosts: process.env.FRONT_PAGE_POSTS || 3,
+  //   redirect404: process.env.REDIRECT_404 || '/404.html',
+  //   launchWebpackMonitor: process.env.LAUNCH_WEBPACK_MONITOR || false,
+  //   getSiteMeta: process.env.GET_SITE_META || 'wp/v2/sitemeta/',
+  //   getRoutes: process.env.GET_ROUTES || 'wp/v2/routes',
+  //   contentCacheEnabled: process.env.CONTENT_CACHE_ENABLED || true,
+  //   contentCacheSize: process.env.CONTENT_CACHE_SIZE || 10,
+  //   defaultPageTitle: process.env.DEFAULT_PAGE_TITLE || 'CJCC'
+  // },
 
   /*
   ** Headers of the page
@@ -85,42 +85,34 @@ module.exports = {
     { src: '~/plugins/fusioncharts.js', ssr: false },
     { src: '~/plugins/blob.js', ssr: false }
   ],
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://cjcc.netlify.com',
+    cacheTime: 1000 * 60 * 15,
+    gzip: true,
+    generate: true,
+    routes: async function() {
+      return await getRoutes()
+    }
+  },
 
-  /*
-  ** Nuxt.js modules
-  */
   modules: [
-    ,
-    // Doc: https://bootstrap-vue.js.org/docs/
+    
+    
     [
-      '@nuxtjs/webpackmonitor',
-      {
-        capture: true, // -> default 'true'
-        target: '~.monitor/stats.json', // default -> '../monitor/stats.json'
-        launch: config.launchWebpackMonitor,
-        port: 4444, // default -> 8081
-        excludeSourceMaps: true // default 'true'
-      }
+      '@nuxtjs/sitemap'
     ]
   ],
 
   generate: {
-    // routes are pulled from WP API via custom endpoint
-    // Add Nuxt static routes to WP endpoint
-    // routes: async function() {
-    //   return await axios.get(config.getRoutes).then(res => {
-    //     return res.data
-    //   })
-    // }
+ 
     routes: async function() {
       return await getRoutes()
     }
   },
   router: {},
   build: {
-    /*
-    ** You can extend webpack config here
-    */
+   
     extend(config, ctx) {}
   }
 }

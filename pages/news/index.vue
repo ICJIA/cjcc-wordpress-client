@@ -38,6 +38,7 @@
       circle
       :total-visible="7"
     ></v-pagination>
+    
   </div>
       </v-flex>
     </v-layout>
@@ -56,6 +57,7 @@
 <script>
 import config from '@/config.js'
 import Breadcrumb from '@/components/Breadcrumb'
+import Spacer from '@/components/Spacer'
 export default {
   created() {
     this.numberOfPosts = this.posts.length
@@ -70,7 +72,8 @@ export default {
     }
   },
   components: {
-    Breadcrumb
+    Breadcrumb,
+    Spacer
   },
   computed: {
     posts: {

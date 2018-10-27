@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div style="height: 100%; min-height: 100vh"></div>
+        <div style="min-height: 100vh; height: 100%;"></div>
     </div>
 </template>
 

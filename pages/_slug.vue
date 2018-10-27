@@ -15,7 +15,7 @@
 
       {{$store.state.contentObject}}
       </v-container>
-      <spacer></spacer>
+     
     </article>
 </template>
 

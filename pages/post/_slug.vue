@@ -43,6 +43,7 @@ import config from '@/config'
 import { buildRequest } from '@/utils.js'
 import Breadcrumb from '@/components/Breadcrumb'
 import findIndex from 'lodash.findindex'
+import Spacer from '@/components/Spacer'
 
 export default {
   mounted() {},
@@ -87,7 +88,8 @@ export default {
     }
   },
   components: {
-    Breadcrumb
+    Breadcrumb,
+    Spacer
   },
 
   watchQuery: true

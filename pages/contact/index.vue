@@ -6,7 +6,7 @@
        type="page"
        typeUrl = "/news"
        showBreadcrumb></breadcrumb>
-        <h1>Search here</h1>
+        <h1>Contact here</h1>
         
           <spacer></spacer>
     </div>

@@ -11,7 +11,7 @@ const app = {
   contentCacheSize: 10,
   embed: '&_embed',
   defaultPageTitle: 'CJCC',
-  staticRoutes: ['/', '/search', '/news', '/preview'],
+  staticRoutes: ['/', '/search', '/news', '/preview','/contact','/councils','/sandbox'],
   mapDataRoute: '~/assets/data/map.json',
   maxPaginationItems: 5
 }

@@ -84,7 +84,8 @@ module.exports = {
   plugins: [
     '@/plugins/vuetify',
     { src: '~/plugins/fusioncharts.js', ssr: false },
-    { src: '~/plugins/blob.js', ssr: false }
+    { src: '~/plugins/blob.js', ssr: false },
+    { src: '~/plugins/rollbar.js', ssr: false }
   ],
   sitemap: {
     path: '/sitemap.xml',

@@ -5,6 +5,10 @@
        :key="$store.state.forceRender" 
        :title="$store.state.contentObject.title.rendered" 
        :contentID="contentID"></breadcrumb>
+
+       <div v-if="splash">
+       <splash :splash="$store.state.contentObject._embedded['wp:featuredmedia'][0].media_details.sizes.large.source_url"></splash>
+     </div>
      
 
       <v-container fill-height class="px-3">
@@ -35,7 +39,7 @@ import axios from '@/plugins/axios'
 import config from '@/config'
 import { buildRequest } from '@/utils.js'
 import Breadcrumb from '@/components/Breadcrumb'
-
+import Splash from '@/components/Splash'
 
 export default {
   mounted() {},
@@ -55,7 +59,7 @@ export default {
   },
   components: {
     Breadcrumb,
-    
+    Splash
   },
   data() {
     return {}
@@ -74,6 +78,13 @@ export default {
       return this.$store.state.contentObject.title.rendered
         ? this.$store.state.contentObject.title.rendered
         : config.defaultPageTitle
+    },
+    splash() {
+      if (this.$store.state.contentObject.featured_image_src === 0) {
+        return false
+      } else {
+        return true
+      }
     }
   },
 

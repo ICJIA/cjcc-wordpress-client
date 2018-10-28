@@ -7,13 +7,18 @@
        type="News"
        typeUrl = "/archive"
        :contentID="contentID"></breadcrumb>
-     
+
+      
+     <div v-if="splash">
+       <splash :splash="$store.state.contentObject.featured_image_src.large[0]"></splash>
+     </div>
 
 
    <v-container fill-height class="px-3">
     <v-layout row wrap>
 
       <v-flex xs10 offset-xs1>
+       
 
       <h1>{{$store.state.contentObject.title.rendered}}</h1>
       {{$store.state.contentObject.breadcrumb}}
@@ -23,6 +28,8 @@
        
         
         <div v-html="$store.state.contentObject.content.rendered"> </div>
+
+      
 
        
  
@@ -44,6 +51,7 @@ import { buildRequest } from '@/utils.js'
 import Breadcrumb from '@/components/Breadcrumb'
 import findIndex from 'lodash.findindex'
 import Spacer from '@/components/Spacer'
+import Splash from '@/components/Splash'
 
 export default {
   mounted() {},
@@ -69,7 +77,8 @@ export default {
 
   data() {
     return {
-      contentID: 0
+      contentID: 0,
+      displaySplash: false
     }
   },
 
@@ -85,11 +94,20 @@ export default {
       return this.$store.state.contentObject.title.rendered
         ? this.$store.state.contentObject.title.rendered
         : config.defaultPageTitle
+    },
+    splash() {
+      if (this.$store.state.contentObject.featured_image_src === 0) {
+        return false
+      } else {
+        return true
+      }
     }
   },
+
   components: {
     Breadcrumb,
-    Spacer
+    Spacer,
+    Splash
   },
 
   watchQuery: true

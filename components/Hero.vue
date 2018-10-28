@@ -11,7 +11,7 @@
     </div> -->
     <div>
 
-<v-img :aspect-ratio="16/9" :max-height="500" src="/placeholder.png" class="hero-section">
+<v-img :aspect-ratio="16/9" :max-height="500" :src="require('@/assets/img/placeholder.png')" class="hero-section">
  <v-container fill-height>
         <!--- vertical and horizontal alignment -->
         <v-layout align-center justify-center>

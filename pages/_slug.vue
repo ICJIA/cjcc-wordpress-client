@@ -80,7 +80,7 @@ export default {
         : config.defaultPageTitle
     },
     splash() {
-      if (this.$store.state.contentObject.featured_image_src === 0) {
+      if (this.$store.state.contentObject.featured_media === 0) {
         return false
       } else {
         return true

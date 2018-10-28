@@ -107,6 +107,9 @@ module.exports = {
   },
   router: {},
   build: {
+    configureWebpack: {
+      devtool: 'source-map'
+    },
     extend(config, ctx) {}
   }
 }

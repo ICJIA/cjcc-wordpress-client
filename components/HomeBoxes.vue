@@ -2,14 +2,17 @@
     <v-container fill-height fluid class="px-0" style="margin-top: -23px;">
     <v-layout row wrap>
        <v-flex xs12 sm12 md4>
+          <router-link to="/councils">
         <v-card dark :color="color" height="100%" class=" pt-4 pb-4 pl-3 box">
          
          <h2 class="text-xs-center box-head">Find a Council</h2>
-        
+         
           <v-card-text class="px-3 font-weight-light box-text">
            Locate other criminal justice coordinating councils or similar groups across Illinois.
           </v-card-text>
+         
         </v-card>
+         </router-link>
       </v-flex>
        <v-flex xs12 sm12 md4>
         <v-card dark :color="color" height="100%" class=" pt-4 pb-4 pl-3 box">
@@ -20,12 +23,15 @@
         </v-card>
       </v-flex>
        <v-flex xs12 sm12 md4>
+          <router-link to="/archive">
         <v-card dark :color="color" height="100%" class=" pt-4 pb-4 pl-3 box">
            <h2 class="text-xs-center box-head">News & Events</h2>
           <v-card-text class="px-3 font-weight-light box-text ">
                Find out the latest news and information relevant to Criminal Justice Coordinating Councils  
           </v-card-text>
+        
         </v-card>
+         </router-link> 
       </v-flex>
        
     </v-layout>
@@ -43,6 +49,10 @@ export default {
 </script>
 
 <style scoped>
+a {
+  text-decoration: none !important;
+}
+
 .box:hover {
   background: #333 !important;
 

@@ -3,11 +3,11 @@
 
        <breadcrumb 
        :key="$store.state.forceRender" 
-       :title="$store.state.contentObject.title.rendered" 
+       :title="title" 
        :contentID="contentID"></breadcrumb>
 
        <div v-if="splash">
-       <splash :splash="$store.state.contentObject._embedded['wp:featuredmedia'][0].media_details.sizes.large.source_url"></splash>
+       <splash :splash="getSplashImage()"></splash>
      </div>
      
 
@@ -16,14 +16,14 @@
 
       <v-flex xs10 offset-xs1>
 
-      <h1>{{$store.state.contentObject.title.rendered}}</h1>
+      <h1>{{title}}</h1>
       
       </v-flex>
       
       <v-flex xs10 offset-xs1>
        
         
-        <div v-html="$store.state.contentObject.content.rendered"> </div>
+        <div v-html="content"> </div>
 
        
  
@@ -64,7 +64,12 @@ export default {
   data() {
     return {}
   },
-  methods: {},
+  methods: {
+    getSplashImage() {
+      return this.$store.state.contentObject._embedded['wp:featuredmedia'][0]
+        .media_details.sizes.large.source_url
+    }
+  },
   head() {
     return {
       title: this.title
@@ -78,6 +83,9 @@ export default {
       return this.$store.state.contentObject.title.rendered
         ? this.$store.state.contentObject.title.rendered
         : config.defaultPageTitle
+    },
+    content() {
+      return this.$store.state.contentObject.content.rendered
     },
     splash() {
       if (this.$store.state.contentObject.featured_media === 0) {

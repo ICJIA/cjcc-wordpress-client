@@ -3,14 +3,14 @@
 
      <breadcrumb 
        :key="$store.state.forceRender" 
-       :title="$store.state.contentObject.title.rendered" 
+       :title="title" 
        type="News"
        typeUrl = "/archive"
        :contentID="contentID"></breadcrumb>
 
       
      <div v-if="splash">
-       <splash :splash="$store.state.contentObject.featured_image_src.large[0]"></splash>
+       <splash :splash="getSplashImage()"></splash>
      </div>
 
 
@@ -20,14 +20,14 @@
       <v-flex xs10 offset-xs1>
        
 
-      <h1>{{$store.state.contentObject.title.rendered}}</h1>
-      {{$store.state.contentObject.breadcrumb}}
+      <h1>{{title}}</h1>
+      
       </v-flex>
       
       <v-flex xs10 offset-xs1>
        
         
-        <div v-html="$store.state.contentObject.content.rendered"> </div>
+        <div v-html="content"> </div>
 
       
 
@@ -87,7 +87,11 @@ export default {
       title: this.title
     }
   },
-  methods: {},
+  methods: {
+    getSplashImage() {
+      return this.$store.state.contentObject.featured_image_src.large[0]
+    }
+  },
 
   computed: {
     title() {
@@ -101,6 +105,9 @@ export default {
       } else {
         return true
       }
+    },
+    content() {
+      return this.$store.state.contentObject.content.rendered
     }
   },
 

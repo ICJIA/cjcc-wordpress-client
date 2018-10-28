@@ -90,15 +90,12 @@ export default {
     displayPosts() {
       return this.posts.slice(this.start, this.end)
     },
-    buttonsToDisplay() {
-      return
-    },
+
     pagerLength() {
       return Math.ceil(this.$store.getters.getAllNews.length / this.maxPosts)
-    },
-     
+    }
   },
-    head() {
+  head() {
     return {
       title: this.title
     }

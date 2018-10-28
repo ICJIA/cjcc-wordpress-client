@@ -6,9 +6,9 @@
        :title="title" 
        :contentID="contentID"></breadcrumb>
 
-       <div v-if="splash">
-       <splash :splash="getSplashImage()"></splash>
-     </div>
+      <div v-if="splash">
+       <splash :contentID="contentID"></splash>
+       </div>
      
 
       <v-container fill-height class="px-3">
@@ -64,12 +64,7 @@ export default {
   data() {
     return {}
   },
-  methods: {
-    getSplashImage() {
-      return this.$store.state.contentObject._embedded['wp:featuredmedia'][0]
-        .media_details.sizes.large.source_url
-    }
-  },
+  methods: {},
   head() {
     return {
       title: this.title

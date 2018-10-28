@@ -71,9 +71,11 @@ function site_meta() {
         	$myPage['apiLink'] = $api_link;
         	$myPage['apiLinkEmbedded'] = $api_link.'?_embed';
         	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $posts->ID ), 'thumbnail' );
-        	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $posts->ID ), 'thumbnail' );
-        	$thumbnail_url = $thumbnail['0'];
-        	$myPage['featuredImageThumb'] = $thumbnail_url;
+        	$full = wp_get_attachment_image_src( get_post_thumbnail_id( $posts->ID ), 'full' );
+		    $large = wp_get_attachment_image_src( get_post_thumbnail_id( $posts->ID ), 'large' );
+        	$myPage['featuredImageThumb'] = $thumbnail['0'];
+			$myPage['featuredImageFull'] = $full['0'];
+			$myPage['featuredImageLarge'] = $large['0'];
 			$myPage['acf'] = get_fields('12');
 			
         
@@ -122,18 +124,18 @@ function routes() {
  */
 
 
-add_action( 'init', 'my_blob_cpt' );
-function my_blob_cpt() {
-    $args = array(
-      'public'       => true,
-      'show_in_rest' => true,
-      'label'        => 'Blobs',
-      'rest_base' => 'blobs',
-      'rewrite' => array( 'with_front' => false ),
+// add_action( 'init', 'my_blob_cpt' );
+// function my_blob_cpt() {
+//     $args = array(
+//       'public'       => true,
+//       'show_in_rest' => true,
+//       'label'        => 'Blobs',
+//       'rest_base' => 'blobs',
+//       'rewrite' => array( 'with_front' => false ),
 		
-    );
-    register_post_type( 'blob', $args );
-}
+//     );
+//     register_post_type( 'blob', $args );
+// }
 
 
 add_action( 'rest_api_init', function () {
@@ -148,9 +150,6 @@ add_action( 'rest_api_init', function () {
           )
       ) );
   } );
-
-
-  
 //     // Add Featured Image
     register_rest_field( 'post',
         'featured_image_src',
@@ -268,7 +267,63 @@ function blob_meta() {
     return rest_ensure_response( $blob_array);
 }
 
- 
+// Remove quick edit from admin edit screen
+add_filter( 'post_row_actions', 'my_disable_quick_edit', 10, 2 );
+add_filter( 'page_row_actions', 'my_disable_quick_edit', 10, 2 );
+
+function my_disable_quick_edit( $actions = array(), $post = null ) {
+
+    // Remove the Quick Edit link
+    if ( isset( $actions['inline hide-if-no-js'] ) ) {
+        unset( $actions['inline hide-if-no-js'] );
+    }
+
+    // Return the set of links without Quick Edit
+    return $actions;
+
+}
+
+
+// inspired by: https://gist.github.com/rveitch/9018669face1686e74aaa68026856f36
+// add iitle to CPTs which doesn't provide a title (useful for the relationship field (https://www.advancedcustomfields.com/resources/relationship/))
+
+// function sync_acf_post_title($post_id, $post, $update) {
+
+// 	$post_type = get_post_type($post_id);
+
+//   // check for the current CPT
+// 	if($post_type === "blob") {
+    
+//     // get the field you want to save in the title
+// 		$title = get_field('title', $post_id);
+
+// 	} else if($post_type === "cpt_name_2") {
+
+// 		$title = get_field('acf_field_name', $post_id);
+
+// 	} else {
+
+//     //if it's not a CPT, the title should be saved as usual
+// 		$title = $post->post_title;
+
+//  }
+
+//   $content = array(
+//     'ID' => $post_id,
+//     'post_title' => $title
+// 	);
+
+//   // to prevent a loop
+// 	remove_action('save_post', 'sync_acf_post_title');
+// 	wp_update_post($content);
+
+// }
+
+// // is triggered when a user presses the update or publish button
+// add_action('save_post', 'sync_acf_post_title', 10, 3);
+// 
+// 
+// 
 
 
 ?>

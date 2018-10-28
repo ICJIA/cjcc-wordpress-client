@@ -3,9 +3,11 @@ import axios from './plugins/axios'
 import config from './config.js'
 import webpack from 'webpack'
 
-// merge Nuxt pages with Wordpress routes
+// generate routes for sitemap and static generation
 const getRoutes = async function() {
+  // get API routes
   const { data } = await axios.get(config.getRoutes)
+  // merge with static Nuxt routes
   const routes = [...data, ...config.staticRoutes]
   return routes
 }
@@ -81,7 +83,6 @@ module.exports = {
   */
   plugins: [
     '@/plugins/vuetify',
-    { src: '@/plugins/placeholder.js', ssr: false },
     { src: '~/plugins/fusioncharts.js', ssr: false },
     { src: '~/plugins/blob.js', ssr: false }
   ],
@@ -89,30 +90,22 @@ module.exports = {
     path: '/sitemap.xml',
     hostname: 'https://cjcc.netlify.com',
     cacheTime: 1000 * 60 * 15,
-    gzip: true,
+    gzip: false,
     generate: true,
     routes: async function() {
       return await getRoutes()
     }
   },
 
-  modules: [
-    
-    
-    [
-      '@nuxtjs/sitemap'
-    ]
-  ],
+  modules: [['@nuxtjs/sitemap']],
 
   generate: {
- 
     routes: async function() {
       return await getRoutes()
     }
   },
   router: {},
   build: {
-   
     extend(config, ctx) {}
   }
 }

@@ -1,11 +1,17 @@
 <template>
     <div>
-        sandbox
+        {{test}}
     </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      test: 'test'
+    }
+  }
+}
 </script>
 
 <style scoped>

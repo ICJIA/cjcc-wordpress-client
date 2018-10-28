@@ -10,8 +10,9 @@
 
       
      <div v-if="splash">
-       <splash :splash="getSplashImage()"></splash>
-     </div>
+       <splash :contentID="contentID"></splash>
+       </div>
+    
 
 
    <v-container fill-height class="px-3">
@@ -88,9 +89,9 @@ export default {
     }
   },
   methods: {
-    getSplashImage() {
-      return this.$store.state.contentObject.featured_image_src.large[0]
-    }
+    // getSplashImage() {
+    //   return this.$store.state.contentObject.featured_image_src.full[0]
+    // }
   },
 
   computed: {

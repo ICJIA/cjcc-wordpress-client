@@ -95,6 +95,12 @@ export default {
     },
     pagerLength() {
       return Math.ceil(this.$store.getters.getAllNews.length / this.maxPosts)
+    },
+     
+  },
+    head() {
+    return {
+      title: this.title
     }
   },
 

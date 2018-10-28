@@ -2,9 +2,8 @@
     <div >
         <breadcrumb 
        :key="$store.state.forceRender" 
-       title="Search" 
-       type="page"
-       typeUrl = "/news"
+       title="Contact" 
+      
        showBreadcrumb></breadcrumb>
         <h1>Contact here</h1>
         
@@ -19,8 +18,19 @@ export default {
   components: {
     Breadcrumb,
     Spacer
-  }
+  },
+  head() {
+    return {
+      title: this.title
+    }
+  },
+  computed: {
+    title() {
+      return "Contact CJCC"
+    }
+  },
 }
+
 </script>
 
 <style scoped>

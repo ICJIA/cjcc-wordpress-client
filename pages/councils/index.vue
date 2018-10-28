@@ -48,7 +48,17 @@ export default {
     Illinois,
     SelectCouncil,
     Breadcrumb
-  }
+  },
+    head() {
+    return {
+      title: this.title
+    }
+  },
+  computed: {
+    title() {
+      return "Councils"
+    }
+  },
 }
 </script>
 

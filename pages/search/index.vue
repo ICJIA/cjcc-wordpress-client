@@ -1,10 +1,9 @@
 <template>
     <div >
-        <breadcrumb 
+       <breadcrumb 
        :key="$store.state.forceRender" 
-       title="Search" 
-       type="page"
-       typeUrl = "/news"
+       title="CJCC Search" 
+      
        showBreadcrumb></breadcrumb>
         <h1>Search here</h1>
         
@@ -19,7 +18,15 @@ export default {
   components: {
     Breadcrumb,
     Spacer
-  }
+  },
+  head() {
+    return {
+      title: 'Search'
+    }
+  },
+  methods: {},
+
+  
 }
 </script>
 

@@ -7,14 +7,25 @@
        :contentID="contentID"></breadcrumb>
      
 
-      <v-container fluid>
-     
+      <v-container fill-height class="px-3">
+    <v-layout row wrap>
+
+      <v-flex xs10 offset-xs1>
+
       <h1>{{$store.state.contentObject.title.rendered}}</h1>
+      
+      </v-flex>
+      
+      <v-flex xs10 offset-xs1>
+       
+        
+        <div v-html="$store.state.contentObject.content.rendered"> </div>
 
-     <div v-html="$store.state.contentObject.content.rendered"> </div>
-
-      {{$store.state.contentObject}}
-      </v-container>
+       
+ 
+      </v-flex>
+    </v-layout>
+    </v-container>
      
     </article>
 </template>
@@ -24,7 +35,7 @@ import axios from '@/plugins/axios'
 import config from '@/config'
 import { buildRequest } from '@/utils.js'
 import Breadcrumb from '@/components/Breadcrumb'
-import Spacer from '@/components/Spacer'
+
 
 export default {
   mounted() {},
@@ -44,7 +55,7 @@ export default {
   },
   components: {
     Breadcrumb,
-    Spacer
+    
   },
   data() {
     return {}

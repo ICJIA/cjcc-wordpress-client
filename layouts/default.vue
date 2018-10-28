@@ -5,7 +5,7 @@
       <navbar/>
      
         <div>
-          <nuxt />
+          <nuxt id="page-content" />
         </div>
         <my-footer></my-footer>
      

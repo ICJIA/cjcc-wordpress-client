@@ -1,17 +1,9 @@
 <template>
 
-    <!-- <div class="hero-section">
-        <div class="hero-section-text" aria-label="Illinois Criminal Justice Coordinating Councils">
-
-            <span class=" brand-state hero">Illinois</span>
-            <span class="brand-name hero ">&nbsp;Criminal Justice Coordinating Councils</span>
-            <h3 class="mt-3 hero-sub">Sponsored by the Illinois Criminal Justice Information Authority</h3>
-           
-        </div>
-    </div> -->
+  
     <div>
 
-<v-img :aspect-ratio="16/9" :max-height="500" :src="require('@/assets/img/placeholder.png')" class="hero-section">
+<v-img :aspect-ratio="16/9" :max-height="500" :src="require('@/assets/img/placeholder.png')" class="hero-section" alt="Illinois Criminal Justice Coordinating Councils">
  <v-container fill-height>
         <!--- vertical and horizontal alignment -->
         <v-layout align-center justify-center>
@@ -31,7 +23,6 @@
 
 <style>
 .hero-section {
-  /* background: url('../assets/img/slider1.jpg') 50% no-repeat;*/
   background: #bbb;
   background-size: cover;
   height: 550px;

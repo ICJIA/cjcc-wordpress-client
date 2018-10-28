@@ -88,11 +88,7 @@ export default {
       title: this.title
     }
   },
-  methods: {
-    // getSplashImage() {
-    //   return this.$store.state.contentObject.featured_image_src.full[0]
-    // }
-  },
+  methods: {},
 
   computed: {
     title() {

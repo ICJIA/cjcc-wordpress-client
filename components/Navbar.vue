@@ -60,7 +60,7 @@ export default {
     drawer: false,
     items: [
       { icon: 'trending_up', text: 'Councils', link: '/councils' },
-      { icon: 'subscriptions', text: 'News', link: '/news' },
+      { icon: 'subscriptions', text: 'News', link: '/archive' },
       { icon: 'history', text: 'Resources', link: '/resources' },
       { icon: 'featured_play_list', text: 'Planning', link: '/planning' },
       { icon: 'watch_later', text: 'Research', link: '/research' },

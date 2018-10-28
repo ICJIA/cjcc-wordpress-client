@@ -4,20 +4,6 @@
                 <v-card raised>
 
 
-            <!-- <v-card-title class="primary-title-bg">
-                <div class="title-flex">
-                    <div>
-                        <h6>{{factSheetCounty}}</h6>
-                        <h3>{{factSheetTitle}}</h3>
-
-                    </div>
-
-                </div>
-
-            </v-card-title> -->
-
-
-
             <div class="card-text">
 
                 <v-select style="font-weight: 900;" v-model="selectedCountyMetaData" :items="items" item-text="title"

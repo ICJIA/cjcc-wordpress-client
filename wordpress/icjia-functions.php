@@ -47,7 +47,6 @@ function site_meta() {
             $breadcrumb = false;
         }
         
-		/** Exclude blobs from sitemeta **/
 		
         
         	$myPage = array ();
@@ -76,7 +75,10 @@ function site_meta() {
         	$myPage['featuredImageThumb'] = $thumbnail['0'];
 			$myPage['featuredImageFull'] = $full['0'];
 			$myPage['featuredImageLarge'] = $large['0'];
-			$myPage['acf'] = get_fields('12');
+			$myPage['featuredImageCaption'] = wp_get_attachment_caption(get_post_thumbnail_id($posts->ID));
+			$alt = get_post_meta(get_post_thumbnail_id($posts->ID), '_wp_attachment_image_alt', true);
+			$myPage['featuredImageAlt'] = $alt;
+			$myPage['acf'] = get_fields($posts->ID;);
 			
         
         	array_push($page_array, $myPage);

@@ -14,18 +14,6 @@ const getRoutes = async function() {
 
 module.exports = {
   mode: 'universal',
-  // env: {
-  //   clientURL: process.env.CLIENT_URL || 'http://localhost:5000',
-  //   apiUrl: process.env.API_URL || 'http://wpdev:8888/wp-json/',
-  //   frontPagePosts: process.env.FRONT_PAGE_POSTS || 3,
-  //   redirect404: process.env.REDIRECT_404 || '/404.html',
-  //   launchWebpackMonitor: process.env.LAUNCH_WEBPACK_MONITOR || false,
-  //   getSiteMeta: process.env.GET_SITE_META || 'wp/v2/sitemeta/',
-  //   getRoutes: process.env.GET_ROUTES || 'wp/v2/routes',
-  //   contentCacheEnabled: process.env.CONTENT_CACHE_ENABLED || true,
-  //   contentCacheSize: process.env.CONTENT_CACHE_SIZE || 10,
-  //   defaultPageTitle: process.env.DEFAULT_PAGE_TITLE || 'CJCC'
-  // },
 
   /*
   ** Headers of the page
@@ -83,6 +71,7 @@ module.exports = {
   */
   plugins: [
     '@/plugins/vuetify',
+    { src: '~plugins/vueinstantsearch', ssr: false },
     { src: '~/plugins/fusioncharts.js', ssr: false },
     { src: '~/plugins/blob.js', ssr: false }
     // { src: '~/plugins/rollbar.js', ssr: false }

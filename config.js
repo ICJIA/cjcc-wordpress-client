@@ -11,9 +11,19 @@ const app = {
   contentCacheSize: 10,
   embed: '&_embed',
   defaultPageTitle: 'CJCC',
-  staticRoutes: ['/', '/search', '/news', '/preview','/contact','/councils','/sandbox'],
+  staticRoutes: [
+    '/',
+    '/search',
+    '/news',
+    '/preview',
+    '/contact',
+    '/councils',
+    '/sandbox'
+  ],
   mapDataRoute: '~/assets/data/map.json',
-  maxPaginationItems: 5
+  maxPaginationItems: 5,
+  ALGOLIA_APP_ID: 'NNK00XWL8O',
+  ALGOLIA_SEARCH_ONLY_KEY: '658048c35e8dab184a47663f2dfd8461'
 }
 
 export default app

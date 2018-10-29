@@ -35,6 +35,7 @@
     "nuxt": "^2.2.0",
     "vue-dummy": "^1.1.3",
     "vue-fusioncharts": "^2.0.1",
+    "vue-instantsearch": "^1.7.0",
     "vue-rollbar": "^0.2.3",
     "vuetify": "^1.3.2"
   },

@@ -2,11 +2,12 @@
 <div>
 <hero/>
    
- 
+ <div id="page-content">
 <home-boxes/>
 
 
 <home-about/>
+</div>
 
 <!-- {{check}} -->
 

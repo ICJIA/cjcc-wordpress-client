@@ -5,7 +5,14 @@
        title="Contact" 
       
        showBreadcrumb></breadcrumb>
+        <v-container fill-height class="px-3"   >
+    <v-layout row wrap>
+      
+      <v-flex xs10 offset-xs1>
         <h1>Contact here</h1>
+      </v-flex>
+    </v-layout>
+        </v-container>
         
          
     </div>
@@ -26,11 +33,10 @@ export default {
   },
   computed: {
     title() {
-      return "Contact CJCC"
+      return 'Contact CJCC'
     }
-  },
+  }
 }
-
 </script>
 
 <style scoped>

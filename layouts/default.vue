@@ -5,7 +5,7 @@
       <navbar/>
      
         <div>
-          <nuxt id="page-content" />
+          <nuxt/>
         </div>
         <my-footer></my-footer>
      
@@ -38,5 +38,4 @@ export default {
 </script>
 
 <style>
-
 </style>

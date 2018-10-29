@@ -1,13 +1,20 @@
 <template>
     <div >
-       <breadcrumb 
+        <breadcrumb 
        :key="$store.state.forceRender" 
        title="CJCC Search" 
       
        showBreadcrumb></breadcrumb>
-        <h1>Search here</h1>
+        <v-container fill-height class="px-3"   >
+    <v-layout row wrap>
+      
+      <v-flex xs10 offset-xs1>
+        <h1>Algolia Search here</h1>
+      </v-flex>
+    </v-layout>
+        </v-container>
         
-          <spacer></spacer>
+         
     </div>
 </template>
 
@@ -24,9 +31,7 @@ export default {
       title: 'Search'
     }
   },
-  methods: {},
-
-  
+  methods: {}
 }
 </script>
 

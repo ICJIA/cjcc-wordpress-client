@@ -24,7 +24,7 @@
            
         </div>
         </v-flex>
-        <v-flex xs12 sm12 md6 order-sm1 order-xs1 order-md2 class="pt-5">
+        <v-flex xs12 sm12 md6 order-sm1 order-xs1 order-md2 class="pt-5" id="page-content">
         
           <div >
             <select-council/>
@@ -49,16 +49,16 @@ export default {
     SelectCouncil,
     Breadcrumb
   },
-    head() {
+  head() {
     return {
       title: this.title
     }
   },
   computed: {
     title() {
-      return "Councils"
+      return 'Councils'
     }
-  },
+  }
 }
 </script>
 

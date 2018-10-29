@@ -1,12 +1,12 @@
 
 
 <template>
-    <div>
-       <!-- <breadcrumb 
+    <div class="page-height">
+       <breadcrumb 
        :key="$store.state.forceRender" 
        title="CJCC Search" 
       
-       showBreadcrumb></breadcrumb> -->
+       showBreadcrumb></breadcrumb>
        
 
         <no-ssr>
@@ -18,7 +18,7 @@
 
                             <h3 class="mb-3">CJCC Search</h3>
 
-                            <ais-search-box :autofocus="true" placeholder="Enter search term" @click="test"></ais-search-box>
+                            <ais-search-box :autofocus="true" placeholder="Enter search term"></ais-search-box>
 
                         </v-flex>
                     </v-layout>
@@ -40,7 +40,7 @@
                                         </div>
 
                                         <div class="results-blurb">
-                                            <div v-html="result._highlightResult.body.value"></div>
+                                            <div v-html="result._snippetResult.body.value"></div>
                                         </div>
                                         
 
@@ -63,6 +63,7 @@
 <script>
 import Breadcrumb from '@/components/Breadcrumb'
 import MyResults from '~/components/MyResults'
+import config from '@/config'
 export default {
   head() {
     return {
@@ -77,22 +78,19 @@ export default {
     }
   },
   components: {
-    MyResults
+    MyResults,
+    Breadcrumb
   },
   data() {
     return {}
   },
-  methods: {
-    test: function() {
-      console.log('show')
-    }
-  },
+  methods: {},
   computed: {
     appId: function() {
-      return 'NNK00XWL8O'
+      return config.ALGOLIA_APP_ID
     },
     apiKey: function() {
-      return '658048c35e8dab184a47663f2dfd8461'
+      return config.ALGOLIA_SEARCH_ONLY_KEY
     }
   }
 }

@@ -20,3 +20,7 @@ h5 {
   font-weight: 900;
   color: #222;
 }
+
+.page-height {
+  min-height: 100vh;
+}

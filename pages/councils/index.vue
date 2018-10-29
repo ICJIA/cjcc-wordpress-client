@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="page-height">
          <breadcrumb 
        :key="$store.state.forceRender" 
        title="Criminal Justice Coordinating Councils"

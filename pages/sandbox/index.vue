@@ -1,5 +1,5 @@
 <template>
-    <div id="page-content">
+    <div id="page-content" class="page-height">
         {{test}}
     </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="page-height">
       
       <v-container style="margin-top: 30px">
        <!-- <div v-html="previewContentObject.content.rendered"></div>-->

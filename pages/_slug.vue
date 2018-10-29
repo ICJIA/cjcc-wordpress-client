@@ -1,5 +1,5 @@
 <template>
-    <article>
+    <div class="page-height">
 
        <breadcrumb 
        :key="$store.state.forceRender" 
@@ -31,7 +31,7 @@
     </v-layout>
     </v-container>
      
-    </article>
+    </div>
 </template>
 
 <script>

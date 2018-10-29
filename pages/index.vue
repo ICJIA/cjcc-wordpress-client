@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="page-height">
 <hero/>
    
  <div id="page-content">

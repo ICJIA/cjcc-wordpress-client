@@ -97,7 +97,14 @@ export default {
   },
   head() {
     return {
-      title: this.title
+      title: 'News Archive',
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: 'CJCC News Archive'
+        }
+      ]
     }
   },
 

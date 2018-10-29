@@ -14,7 +14,7 @@
             <ais-index :app-id="appId" :api-key="apiKey" index-name="cjcc">
                 <v-container grid-list-xl text-xs-center>
                     <v-layout row wrap>
-                        <v-flex xs10 offset-xs1>
+                        <v-flex xs8 offset-xs2>
 
                             <h3 class="mb-3">CJCC Search</h3>
 
@@ -25,7 +25,7 @@
                 </v-container>
                 <v-container grid-list-xl>
                     <v-layout row wrap>
-                        <v-flex xs10 offset-xs1>
+                        <v-flex xs8 offset-xs2>
                             <my-results>
                                 <template slot-scope="{ result }">
 
@@ -67,7 +67,7 @@ import config from '@/config'
 export default {
   head() {
     return {
-      title: 'CJCC Search',
+      title: 'Search',
       meta: [
         {
           hid: `description`,
@@ -91,6 +91,9 @@ export default {
     },
     apiKey: function() {
       return config.ALGOLIA_SEARCH_ONLY_KEY
+    },
+    searchIndexName: function() {
+      return config.ALGOLIA_SEARCH_INDEX_NAME
     }
   }
 }

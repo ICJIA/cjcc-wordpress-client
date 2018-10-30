@@ -7,7 +7,7 @@
         <div>
           <nuxt/>
         </div>
-       
+       <my-footer/>
      
     </v-content>
     
@@ -17,7 +17,7 @@
 <script>
 import Breadcrumb from '@/components/Breadcrumb'
 import Navbar from '@/components/Navbar'
-import MyFooter from '@/components/Footer'
+import MyFooter from '@/components/MyFooter'
 export default {
   components: {
     Breadcrumb,

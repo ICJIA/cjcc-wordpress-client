@@ -72,10 +72,10 @@ module.exports = {
   */
   plugins: [
     '@/plugins/vuetify',
+    '~/plugins/filters.js',
     { src: '~plugins/vueinstantsearch', ssr: false },
     { src: '~/plugins/fusioncharts.js', ssr: false },
     { src: '~/plugins/blob.js', ssr: false }
-    // { src: '~/plugins/rollbar.js', ssr: false }
   ],
   sitemap: {
     path: '/sitemap.xml',

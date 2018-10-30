@@ -9,9 +9,9 @@
        :contentID="contentID"></breadcrumb>
 
       
-     <div v-if="splash">
+     
        <splash :contentID="contentID"></splash>
-       </div>
+       
     
 
 
@@ -96,13 +96,7 @@ export default {
         ? this.$store.state.contentObject.title.rendered
         : config.defaultPageTitle
     },
-    splash() {
-      if (this.$store.state.contentObject.featured_image_src === 0) {
-        return false
-      } else {
-        return true
-      }
-    },
+
     content() {
       return this.$store.state.contentObject.content.rendered
     }

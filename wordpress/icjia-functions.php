@@ -221,7 +221,7 @@ add_filter( 'preview_post_link', 'the_preview_fix' );
 function the_preview_fix() {
     $post = get_post();
     $permalink = get_the_permalink($post->ID);
-    $preview_url = "https://cjcc.netlify.com/preview?url=wp/v2/".$post->post_type."s/".$post->ID;
+    $preview_url = "https://cjcc.netlify.com/preview/?token=1111&url=wp/v2/".$post->post_type."s/".$post->ID;
     return $preview_url;
 }
 

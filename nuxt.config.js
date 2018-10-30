@@ -8,7 +8,7 @@ const getRoutes = async function() {
   // get API routes
   const { data } = await axios.get(config.getRoutes)
   // merge with static Nuxt routes
-  const routes = [...data, ...config.staticRoutes]
+  const routes = [...data, ...config.dynamicRoutesToInclude]
   return routes
 }
 

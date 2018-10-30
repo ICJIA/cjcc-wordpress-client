@@ -8,7 +8,7 @@
 
 
        <no-ssr>
-        <v-container fill-height class="px-3"   id="page-content"  >
+        <v-container fill-height class="px-3" id="page-content"  >
            
     <v-layout row wrap>
       
@@ -151,7 +151,7 @@ export default {
 
       if (this.isSuccess) {
         this.showLoader = true
-        // strip html, sanitize comment
+        // sanitize comment, then strip html
         const cleanComment = DOMPurify.sanitize(this.comment).replace(
           /(<([^>]+)>)/gi,
           ''

@@ -37,6 +37,7 @@
     "vue-fusioncharts": "^2.0.1",
     "vue-instantsearch": "^1.7.0",
     "vue-rollbar": "^0.2.3",
+    "vuelidate": "^0.7.4",
     "vuetify": "^1.3.2"
   },
   "devDependencies": {

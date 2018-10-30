@@ -27,10 +27,15 @@ $ npm start
 $ npm run generate
 ```
 
-#### Client-side email:
+#### Email:
 
 - [EmailJS](http://www.emailjs.com/)
 - [Mailgun](https://www.mailgun.com)
+
+#### Search:
+
+- [Algolia](https://www.algolia.com/products)
+- [Algolia Site Indexer](https://github.com/ICJIA/algolia-site-indexer)
 
 ## Wordpress Installation
 

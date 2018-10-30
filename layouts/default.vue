@@ -7,7 +7,7 @@
         <div>
           <nuxt/>
         </div>
-        <my-footer></my-footer>
+       
      
     </v-content>
     

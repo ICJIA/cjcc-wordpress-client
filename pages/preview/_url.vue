@@ -15,7 +15,9 @@
          </div> 
          
          <div v-else>
+           
            <h1>{{title}}</h1>
+           
            <span v-html="content"></span>
            </div>
       </v-container>

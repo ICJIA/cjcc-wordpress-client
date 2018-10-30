@@ -24,7 +24,8 @@ const app = {
   maxPaginationItems: 5,
   ALGOLIA_APP_ID: 'NNK00XWL8O',
   ALGOLIA_SEARCH_ONLY_KEY: '658048c35e8dab184a47663f2dfd8461',
-  ALGOLIA_SEARCH_INDEX_NAME: 'cjcc'
+  ALGOLIA_SEARCH_INDEX_NAME: 'cjcc',
+  emailjsUserID: 'user_zgVUWqp0CAzip0NiHfNFb'
 }
 
 export default app

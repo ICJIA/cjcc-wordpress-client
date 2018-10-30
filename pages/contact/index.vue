@@ -1,18 +1,22 @@
 <template>
     <div class="page-height">
-        <!-- <breadcrumb 
+        <breadcrumb 
        :key="$store.state.forceRender" 
        title="Contact" 
       
-       showBreadcrumb></breadcrumb> -->
+       showBreadcrumb></breadcrumb>
 
 
        <no-ssr>
-        <v-container fill-height class="px-3"   >
+        <v-container fill-height class="px-3"   id="page-content"  >
            
     <v-layout row wrap>
       
       <v-flex xs10 offset-xs1>
+
+         <h1 class="text-xs-center box-head">Contact CJCC</h1>
+
+        <div v-blob:contact-intro class="mt-3 mb-5"></div>
        
         <form>
     <v-text-field
@@ -32,6 +36,7 @@
       required
       @input="$v.email.$touch()"
       @blur="$v.email.$touch()"
+       @click="clearAxiosError"
     ></v-text-field>
    <v-textarea
         v-model="comment"
@@ -42,6 +47,7 @@
         label="Comment"
         rows="10"
        class="mt-3"
+        @click="clearAxiosError"
       ></v-textarea>
    
     <div v-if="showSubmit" class="text-xs-center">
@@ -75,6 +81,9 @@ import Breadcrumb from '@/components/Breadcrumb'
 import Spacer from '@/components/Spacer'
 import { validationMixin } from 'vuelidate'
 import { required, maxLength, email } from 'vuelidate/lib/validators'
+import DOMPurify from 'dompurify'
+import config from '@/config'
+const emailjs = require('emailjs-com')
 
 export default {
   mixins: [validationMixin],
@@ -139,18 +148,16 @@ export default {
     },
     submit() {
       this.$v.$touch()
-      // console.log(JSON.stringify(this.$v))
-      // console.log(this.isSuccess)
 
       if (this.isSuccess) {
         this.showLoader = true
-        // window.emailjs.send('default_service', 'template_ba2OUtYG_clone', {
-        //   email: this.email,
-        //   name: this.name,
-        //   comment: this.comment
-        // })
-        // console.log('Email sent: ', this.email, this.name, this.comment)
-        // this.showSubmit = false
+        // strip html, sanitize comment
+        const cleanComment = DOMPurify.sanitize(this.comment).replace(
+          /(<([^>]+)>)/gi,
+          ''
+        )
+
+        this.comment = cleanComment
 
         const templateParams = {
           name: this.name,
@@ -160,29 +167,36 @@ export default {
 
         const vm = this
 
-        emailjs.send('mailgun', 'template_ba2OUtYG_clone', templateParams).then(
-          function(response) {
-            console.log('SUCCESS!', response.status, response.text)
-            vm.showSubmit = false
-            vm.showAxiosError = false
-            vm.showError = ''
-            this.showLoader = false
-          },
-          function(error) {
-            console.log('FAILED...', error)
-            vm.showAxiosError = true
-            vm.axiosError = error
-            vm.$forceUpdate()
-          }
-        )
+        emailjs
+          .send(
+            'mailgun',
+            'template_ba2OUtYG_clone',
+            templateParams,
+            config.emailjsUserID
+          )
+          .then(
+            function(response) {
+              console.log('SUCCESS!', response.status, response.text)
+              vm.showSubmit = false
+              vm.showAxiosError = false
+              vm.showError = ''
+              vm.showLoader = false
+            },
+            function(error) {
+              console.log('FAILED...', error)
+              vm.showAxiosError = true
+              vm.axiosError = error
+              vm.showLoader = false
+              vm.$forceUpdate()
+            }
+          )
       }
     },
     clear() {
       this.$v.$reset()
       this.name = ''
       this.email = ''
-      this.select = null
-      this.checkbox = false
+      this.comment = ''
       this.showAxiosError = false
       this.axiosError = ''
       this.showLoader = false

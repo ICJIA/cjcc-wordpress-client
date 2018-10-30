@@ -27,6 +27,11 @@ $ npm start
 $ npm run generate
 ```
 
+#### Client-side email:
+
+- [EmailJS](http://www.emailjs.com/)
+- [Mailgun](https://www.mailgun.com)
+
 ## Wordpress Installation
 
 ### Plugins

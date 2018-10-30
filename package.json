@@ -16,6 +16,8 @@
     "@nuxtjs/webpackmonitor": "^0.1.0",
     "axios": "^0.18.0",
     "cross-env": "^5.2.0",
+    "dompurify": "^1.0.8",
+    "emailjs-com": "^2.2.4",
     "fusioncharts": "^3.13.2",
     "fusionmaps": "^3.13.1-sr.1",
     "lodash.filter": "^4.6.0",

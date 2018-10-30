@@ -14,6 +14,7 @@ const getRoutes = async function() {
 
 module.exports = {
   mode: 'universal',
+  env: {},
 
   /*
   ** Headers of the page
@@ -52,12 +53,6 @@ module.exports = {
       {
         src:
           'https://cdnjs.cloudflare.com/ajax/libs/event-source-polyfill/0.0.9/eventsource.min.js'
-      },
-      {
-        src: 'https://cdn.emailjs.com/sdk/2.2.4/email.min.js'
-      },
-      {
-        src: '/emailjs.init.js'
       }
     ]
   },

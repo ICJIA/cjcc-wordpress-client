@@ -16,7 +16,7 @@
                     <v-layout row wrap>
                         <v-flex xs8 offset-xs2>
 
-                            <h3 class="mb-3">CJCC Search</h3>
+                           <h1 class="text-xs-center box-head mb-5">CJCC Search</h1>
 
                             <ais-search-box :autofocus="true" placeholder="Enter search term"></ais-search-box>
 

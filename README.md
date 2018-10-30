@@ -1,6 +1,6 @@
 # cjcc-nuxt-client
 
-> A Wordpress client written in [Nuxt.js](https://nuxtjs.org)
+> A Wordpress API client written in [Nuxt.js](https://nuxtjs.org)
 
 ## About the Illinois CJCC
 
@@ -29,9 +29,43 @@ $ npm run generate
 
 ## Wordpress Installation
 
+### Plugins
+
+> ACF TO REST API
+
+Exposes Advanced Custom Fields Endpoints in the WordPress REST API
+
+> Advanced Custom Fields
+
+Update posts and pages with custom fields.
+
+> Custom Post Type UI
+
+Admin panel for creating custom post types and custom taxonomies in WordPress
+
+> Disable Comments
+
+Permanently disable comments from all posts.
+
+> FakerPress
+
+Generate mock data for testing.
+
+> Rename Default Post
+
+Rename default "post" to "news".
+
+> Smush
+
+Reduce image file sizes, improve performance.
+
+> Tuxedo Big File Uploads
+
+Adjust upload file size from defalult 2mb.
+
 ...
 
-### Client URL (In development)
+### Client URL (during development)
 
 [https://cjcc.netlify.com](https://cjcc.netlify.com)
 

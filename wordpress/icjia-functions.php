@@ -78,7 +78,7 @@ function site_meta() {
 			$myPage['featuredImageCaption'] = wp_get_attachment_caption(get_post_thumbnail_id($posts->ID));
 			$alt = get_post_meta(get_post_thumbnail_id($posts->ID), '_wp_attachment_image_alt', true);
 			$myPage['featuredImageAlt'] = $alt;
-			$myPage['acf'] = get_fields($posts->ID;);
+			$myPage['acf'] = get_fields($posts->ID);
 			
         
         	array_push($page_array, $myPage);

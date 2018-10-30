@@ -61,7 +61,7 @@ Reduce image file sizes, improve performance.
 
 > Tuxedo Big File Uploads
 
-Adjust upload file size from defalult 2mb.
+Adjust upload file size from default 2mb.
 
 ...
 

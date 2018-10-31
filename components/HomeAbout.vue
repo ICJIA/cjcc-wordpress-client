@@ -13,12 +13,14 @@
         <v-card light :color="color" height="100%" class=" pt-4 pb-4 pl-3 box elevation-0">
            <h1 class="text-xs-center box-head">News & Events</h1>
           <v-card-text class="px-3 font-weight-light box-text ">
-            <div v-for="post in posts" :key="post.id" class="mb-4">
+            <div v-for="post in posts" :key="post.id" class="mb-5">
                 
             <router-link :to="post.route">
               <h3 class="title mb-2">{{ post.title}}</h3>
             </router-link>
-           
+            <div class="text-xs-right">
+            <h5>{{post.date | formatDate}}</h5>
+            </div>
             <div class="exc excerpt">{{ post.excerpt }}&nbsp;  <router-link :to="post.route">read more</router-link>&raquo;</div>
           </div>
            

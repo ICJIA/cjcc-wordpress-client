@@ -13,15 +13,15 @@
         <v-card light :color="color" height="100%" class=" pt-4 pb-4 pl-3 box elevation-0">
            <h1 class="text-xs-center box-head">News & Events</h1>
           <v-card-text class="px-3 font-weight-light box-text ">
-            <div v-for="post in posts" :key="post.id">
-                <div>
+            <div v-for="post in posts" :key="post.id" class="mb-4">
+                
             <router-link :to="post.route">
               <h3 class="headline mb-0">{{ post.title}}</h3>
             </router-link>
-            <div>{{ post.type}}</div>
+           
             <div>{{ post.excerpt}}</div>
           </div>
-            </div>
+           
 
           </v-card-text>
          
@@ -62,6 +62,9 @@ export default {
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+}
 h1 {
   text-transform: uppercase;
 }

@@ -6,19 +6,12 @@
        :title="title" 
        :contentID="contentID"></breadcrumb>
 
-      <div v-if="splash">
-       <splash :contentID="contentID"></splash>
-       </div>
-     
+    <splash></splash>
 
-      <v-container fill-height class="px-3" id="page-content" >
+      <v-container fill-height class="" id="page-content" >
     <v-layout row wrap>
 
-      <v-flex xs10 offset-xs1>
-
-      <h1>{{title}}</h1>
       
-      </v-flex>
       
       <v-flex xs10 offset-xs1>
        

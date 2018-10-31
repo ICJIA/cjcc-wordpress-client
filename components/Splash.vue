@@ -13,21 +13,24 @@
                     <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
                   </v-layout>
       </v-img>
+       <div v-if="displayCaption">
       <v-container fluid fill-height class="pl-2 mt-0" style="margin-top: -20px !important;">
            <v-layout row wrap>
              <v-flex xs12>
-               <div v-if="displayCaption">
+              
                   <div class="imgCaption">Insert caption here</div>
-               </div>
+               
              </v-flex>
            </v-layout>
       </v-container>
-      <v-container fluid fill-height class="px-3 mt-2 text-xs-center">
+      </div>
+      <v-container fluid fill-height class="px-3 mt-2">
            <v-layout row wrap>
-             <v-flex xs10 offset-xs1>
+             
+             <v-flex xs10 offset-xs1 :class="titleDateAlignment" v-if="displayDate">
                <div class="date">{{published | formatDate}}</div>
              </v-flex>
-             <v-flex xs10 offset-xs1>
+             <v-flex xs10 offset-xs1 :class="titleDateAlignment">
                <h1 class="mb-5">{{title}}</h1>
              </v-flex>
            </v-layout>
@@ -36,12 +39,12 @@
       </div>
 
       <div v-if="splash==='centered'">
-         <v-container fluid fill-height class="px-3 mt-5 text-xs-center">
+         <v-container fluid fill-height class="px-3 mt-5">
            <v-layout row wrap>
-             <v-flex xs10 offset-xs1>
+             <v-flex xs10 offset-xs1 :class="titleDateAlignment" v-if="displayDate">
                <div class="date">{{published | formatDate}}</div>
              </v-flex>
-             <v-flex xs10 offset-xs1>
+             <v-flex xs10 offset-xs1 :class="titleDateAlignment">
                <h1 class="mb-5">{{title}}</h1>
              </v-flex>
              <!-- <v-flex xs10 offset-xs1>
@@ -80,13 +83,13 @@
 
 
       <div v-if="splash==='text'">
-         <v-container fluid fill-height class="px-3 mt-5 text-xs-center">
+         <v-container fill-height class="px-3 mt-5 text-xs-center">
            <v-layout row wrap>
-             <v-flex xs10 offset-xs1>
+             <v-flex xs10 offset-xs1 :class="titleDateAlignment" v-if="displayDate">
                <div class="date">{{published | formatDate}}</div>
              </v-flex>
-             <v-flex xs10 offset-xs1>
-               <h1 class="mb-3">{{title}}</h1>
+             <v-flex xs10 offset-xs1 :class="titleDateAlignment">
+               <h1 class="mb-1">{{title}}</h1>
              </v-flex>
              
       
@@ -187,6 +190,12 @@ export default {
       const { modified } = this.contentObject
       return modified
     },
+    displayDate() {
+      const {
+        acf: { display_date = 'false' }
+      } = this.contentObject
+      return display_date
+    },
 
     caption() {
       return 'This is the image caption'
@@ -197,6 +206,12 @@ export default {
         acf: { display_caption = false }
       } = this.contentObject
       return display_caption
+    },
+    titleDateAlignment() {
+      const {
+        acf: { title_date_alignment = 'text-xs-left' }
+      } = this.contentObject
+      return title_date_alignment
     },
 
     categories() {

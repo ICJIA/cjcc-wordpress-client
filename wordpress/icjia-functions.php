@@ -119,6 +119,25 @@ function routes() {
     wp_reset_postdata();
     return rest_ensure_response( $routes );
 }
+/**
+ * Register a custom post type, with REST API support
+ *
+ * Based on example at: https://codex.wordpress.org/Function_Reference/register_post_type
+ */
+
+
+// add_action( 'init', 'my_blob_cpt' );
+// function my_blob_cpt() {
+//     $args = array(
+//       'public'       => true,
+//       'show_in_rest' => true,
+//       'label'        => 'Blobs',
+//       'rest_base' => 'blobs',
+//       'rewrite' => array( 'with_front' => false ),
+		
+//     );
+//     register_post_type( 'blob', $args );
+// }
 
 
 add_action( 'rest_api_init', function () {
@@ -318,6 +337,48 @@ function my_disable_quick_edit( $actions = array(), $post = null ) {
 
 }
 
+
+// inspired by: https://gist.github.com/rveitch/9018669face1686e74aaa68026856f36
+// add iitle to CPTs which doesn't provide a title (useful for the relationship field (https://www.advancedcustomfields.com/resources/relationship/))
+
+// function sync_acf_post_title($post_id, $post, $update) {
+
+// 	$post_type = get_post_type($post_id);
+
+//   // check for the current CPT
+// 	if($post_type === "blob") {
+    
+//     // get the field you want to save in the title
+// 		$title = get_field('title', $post_id);
+
+// 	} else if($post_type === "cpt_name_2") {
+
+// 		$title = get_field('acf_field_name', $post_id);
+
+// 	} else {
+
+//     //if it's not a CPT, the title should be saved as usual
+// 		$title = $post->post_title;
+
+//  }
+
+//   $content = array(
+//     'ID' => $post_id,
+//     'post_title' => $title
+// 	);
+
+//   // to prevent a loop
+// 	remove_action('save_post', 'sync_acf_post_title');
+// 	wp_update_post($content);
+
+// }
+
+// // is triggered when a user presses the update or publish button
+// add_action('save_post', 'sync_acf_post_title', 10, 3);
+// 
+// 
+// 
+// 
 
 add_action( 'admin_bar_menu', 'customize_my_wp_admin_bar', 80 );
 function customize_my_wp_admin_bar( $wp_admin_bar ) {

@@ -1,7 +1,7 @@
 <template>
     <div>
-      <div v-if="fullSrc">
-       <v-img :aspect-ratio="16/9" :max-height="400" :src="fullSrc" :lazy-src="lazySrc" >
+     <div v-if="splash==='full'">
+       <v-img :aspect-ratio="16/9" :max-height="450" :src="fullSrc" :lazy-src="lazySrc" >
         
             <v-layout
                     slot="placeholder"
@@ -12,32 +12,113 @@
                   >
                     <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
                   </v-layout>
-      </v-img> 
+      </v-img>
+      <v-container fluid fill-height class="pl-2 mt-0" style="margin-top: -20px !important;">
+           <v-layout row wrap>
+             <v-flex xs12>
+               <div v-if="displayCaption">
+                  <div class="imgCaption">Insert caption here</div>
+               </div>
+             </v-flex>
+           </v-layout>
+      </v-container>
+      <v-container fluid fill-height class="px-3 mt-2 text-xs-center">
+           <v-layout row wrap>
+             <v-flex xs10 offset-xs1>
+               <div class="date">{{published | formatDate}}</div>
+             </v-flex>
+             <v-flex xs10 offset-xs1>
+               <h1 class="mb-5">{{title}}</h1>
+             </v-flex>
+           </v-layout>
+      </v-container>
+     
       </div>
+
+      <div v-if="splash==='centered'">
+         <v-container fluid fill-height class="px-3 mt-5 text-xs-center">
+           <v-layout row wrap>
+             <v-flex xs10 offset-xs1>
+               <div class="date">{{published | formatDate}}</div>
+             </v-flex>
+             <v-flex xs10 offset-xs1>
+               <h1 class="mb-5">{{title}}</h1>
+             </v-flex>
+             <!-- <v-flex xs10 offset-xs1>
+              <div class="time mb-5">{{readingTime}}</div>
+             </v-flex> -->
+ <v-flex xs10 offset-xs1>
+       <v-img :aspect-ratio="16/9" :max-height="450" :src="fullSrc" :lazy-src="lazySrc" >
+
+            <v-layout
+                    slot="placeholder"
+                    fill-height
+                    align-center
+                    justify-center
+                    ma-0
+                  >
+                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                  </v-layout>
+                  
+      </v-img>
+      </v-flex>
+      <v-flex xs10 offset-xs1 class="text-xs-left">
+         <div v-if="displayCaption">
+                  <div class="imgCaption">Insert caption here</div>
+               </div>
+        
+      </v-flex>
+
+     
+      
+    </v-layout>
+
+     
+    
+         </v-container>
+      </div>
+
+
+      <div v-if="splash==='text'">
+         <v-container fluid fill-height class="px-3 mt-5 text-xs-center">
+           <v-layout row wrap>
+             <v-flex xs10 offset-xs1>
+               <div class="date">{{published | formatDate}}</div>
+             </v-flex>
+             <v-flex xs10 offset-xs1>
+               <h1 class="mb-3">{{title}}</h1>
+             </v-flex>
+             
+      
+    </v-layout>
+    
+         </v-container>
+      </div>
+     
       
 
 
      
-       Title: {{title }}
+       <!-- Title: {{title }}
        <br/>
        
-       Published: {{datePublished | formatDate}}
+       Published: {{published | formatDate}}
         <br/>
        Categories: {{categories}}
         <br/>
-       Display Caption: {{displayCaption}}
-        <br/>
+       
+       
        Words:  {{contentWords}}
         <br/>
        Reading Time: {{readingTime}}
        <br>
        Featured image full: {{fullSrc}}
        <br>
-       Featured image thumb: {{lazySrc}}
-       <br>
-       Title position: {{titlePosition}}
-        <br>
-       Featured image width: {{featuredImageWidth}}
+       Featured image lazy: {{lazySrc}}
+       <br> -->
+
+      
+        
 
 
     </div>
@@ -57,40 +138,38 @@ export default {
       contentObject: this.$store.state.contentObject
     }
   },
-  props: {
-    contentID: {
-      type: Number,
-      default: 0
-    }
-  },
+  props: {},
   computed: {
     title() {
-      return this.contentObject.title.rendered
+      const {
+        title: { rendered = '' }
+      } = this.contentObject
+      return rendered
     },
 
     contentWords() {
-      return this.contentObject.content.rendered.split(/\s/g).length
+      const {
+        content: { rendered = '' }
+      } = this.contentObject
+      return rendered.split(/\s/g).length
     },
     fullSrc() {
-      if (this.contentObject.hasOwnProperty('featured_image_src')) {
-        return this.contentObject.featured_image_src.full[0]
-      } else {
-        return false
-      }
+      const {
+        featured_image_src: { full = [] }
+      } = this.contentObject
+      return full[0]
     },
     lazySrc() {
-      if (this.contentObject.hasOwnProperty('featured_image_src')) {
-        return this.contentObject.featured_image_src.thumb[0]
-      } else {
-        return false
-      }
+      const {
+        featured_image_src: { thumb = [] }
+      } = this.contentObject
+      return thumb[0]
     },
-    featuredImageWidth() {
-      if (!this.fullSrc) {
-        return false
-      } else {
-        return this.contentObject.acf.featured_image_width
-      }
+    splash() {
+      const {
+        acf: { splash_type = 'text' }
+      } = this.contentObject
+      return splash_type
     },
     readingTime() {
       const wordsPerMinute = 200
@@ -100,11 +179,24 @@ export default {
       return `${readTime} minute read`
     },
 
-    datePublished() {
-      return this.contentObject.date
+    published() {
+      const { date } = this.contentObject
+      return date
     },
-    dateModified() {
-      return this.contentObject.modified
+    modified() {
+      const { modified } = this.contentObject
+      return modified
+    },
+
+    caption() {
+      return 'This is the image caption'
+    },
+
+    displayCaption() {
+      const {
+        acf: { display_caption = false }
+      } = this.contentObject
+      return display_caption
     },
 
     categories() {
@@ -119,24 +211,19 @@ export default {
       } else {
         return false
       }
-    },
-    displayCaption() {
-      if (this.contentObject.acf.hasOwnProperty('display_caption')) {
-        return this.contentObject.acf.display_caption
-      } else {
-        return false
-      }
-    },
-    titlePosition() {
-      if (this.contentObject.acf.hasOwnProperty('title_position')) {
-        return this.fullSrc ? this.contentObject.acf.title_position : 'default'
-      } else {
-        return 'default'
-      }
     }
   }
 }
 </script>
 
 <style scoped>
+.date {
+  color: #999;
+  font-size: 16px;
+  font-weight: bold;
+}
+.imgCaption {
+  font-size: 14px;
+  color: #777;
+}
 </style>

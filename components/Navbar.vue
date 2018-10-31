@@ -26,6 +26,19 @@
         <v-subheader class="mt-3 grey--text text--darken-1">OTHER ICJIA SITES</v-subheader>
        
       </v-list>
+
+      <!-- <v-list>
+          <v-list-group
+          
+           
+          >
+            <v-list-tile slot="activator">
+              <v-list-tile-content>
+                <v-list-tile-title>Councils</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+          </v-list-group>
+      </v-list> -->
     </v-navigation-drawer>
     <v-toolbar app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
@@ -56,19 +69,22 @@ export default {
       this.$router.push({ path: route })
     }
   },
-  data: () => ({
-    drawer: false,
-    items: [
-      { icon: 'trending_up', text: 'Councils', link: '/councils' },
-      { icon: 'subscriptions', text: 'News', link: '/archive' },
-      { icon: 'history', text: 'Resources', link: '/resources' },
-      { icon: 'featured_play_list', text: 'Planning', link: '/planning' },
-      { icon: 'watch_later', text: 'Research', link: '/research' },
-      { icon: 'featured_play_list', text: 'CCAC', link: '/ccac' },
-      { icon: 'watch_later', text: 'Contact', link: '/contact' },
-      { icon: 'watch_later', text: 'Search', link: '/search' }
-    ]
-  })
+  data() {
+    return {
+      drawer: false,
+      councils: this.$store.state.councilCache,
+      items: [
+        { icon: 'trending_up', text: 'Councils', link: '/councils' },
+        { icon: 'subscriptions', text: 'News', link: '/archive' },
+        { icon: 'history', text: 'Resources', link: '/resources' },
+        { icon: 'featured_play_list', text: 'Planning', link: '/planning' },
+        { icon: 'watch_later', text: 'Research', link: '/research' },
+        { icon: 'featured_play_list', text: 'CCAC', link: '/ccac' },
+        { icon: 'watch_later', text: 'Contact', link: '/contact' },
+        { icon: 'watch_later', text: 'Search', link: '/search' }
+      ]
+    }
+  }
 }
 </script>
 

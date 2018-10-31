@@ -1,5 +1,5 @@
 const app = {
-  clientURL: 'https://cjcc.netlify.com',
+  clientURL: 'https://cjcc.icjia.cloud',
   apiUrl: 'https://cjcc.icjia-api.cloud/wp-json/',
   frontPagePosts: 3,
   launchWebpackMonitor: false,

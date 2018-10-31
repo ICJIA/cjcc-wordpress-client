@@ -1,7 +1,7 @@
 <template>
     <div>
      <div v-if="splash==='full'">
-       <v-img :aspect-ratio="16/9" :max-height="450" :src="fullSrc" :lazy-src="lazySrc" >
+       <v-img :aspect-ratio="16/9" :max-height="450" :src="fullSrc" :lazy-src="lazySrc" :alt="altText">
         
             <v-layout
                     slot="placeholder"
@@ -18,13 +18,13 @@
            <v-layout row wrap>
              <v-flex xs12>
               
-                  <div class="imgCaption">Insert caption here</div>
+                  <div class="imgCaption">{{caption}}</div>
                
              </v-flex>
            </v-layout>
       </v-container>
       </div>
-      <v-container fluid fill-height class="px-3 mt-2">
+      <v-container fill-height class="px-3 mt-2">
            <v-layout row wrap>
              
              <v-flex xs10 offset-xs1 :class="titleDateAlignment" v-if="displayDate">
@@ -47,9 +47,7 @@
              <v-flex xs10 offset-xs1 :class="titleDateAlignment">
                <h1 class="mb-5">{{title}}</h1>
              </v-flex>
-             <!-- <v-flex xs10 offset-xs1>
-              <div class="time mb-5">{{readingTime}}</div>
-             </v-flex> -->
+            
  <v-flex xs10 offset-xs1>
        <v-img :aspect-ratio="16/9" :max-height="450" :src="fullSrc" :lazy-src="lazySrc" >
 
@@ -67,7 +65,7 @@
       </v-flex>
       <v-flex xs10 offset-xs1 class="text-xs-left">
          <div v-if="displayCaption">
-                  <div class="imgCaption">Insert caption here</div>
+                  <div class="imgCaption">{{caption}}</div>
                </div>
         
       </v-flex>
@@ -100,41 +98,10 @@
      
       
 
-
-     
-       <!-- Title: {{title }}
-       <br/>
-       
-       Published: {{published | formatDate}}
-        <br/>
-       Categories: {{categories}}
-        <br/>
-       
-       
-       Words:  {{contentWords}}
-        <br/>
-       Reading Time: {{readingTime}}
-       <br>
-       Featured image full: {{fullSrc}}
-       <br>
-       Featured image lazy: {{lazySrc}}
-       <br> -->
-
-      
-        
-
-
     </div>
 </template>
 
 <script>
-function readingTime(text) {
-  const wordsPerMinute = 200
-  const noOfWords = text.split(/\s/g).length
-  const minutes = noOfWords / wordsPerMinute
-  const readTime = Math.ceil(minutes)
-  return `${readTime} minute read`
-}
 export default {
   data() {
     return {
@@ -198,7 +165,17 @@ export default {
     },
 
     caption() {
-      return 'This is the image caption'
+      const {
+        better_featured_image: { caption = '' }
+      } = this.contentObject
+      return caption
+    },
+
+    altText() {
+      const {
+        better_featured_image: { alt_text = '' }
+      } = this.contentObject
+      return alt_text
     },
 
     displayCaption() {

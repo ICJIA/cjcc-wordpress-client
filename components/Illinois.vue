@@ -28,6 +28,7 @@ export default {
   mounted() {
     //console.log(this.dataSource)
     this.renderChart(this)
+    console.log(this.$vuetify.breakpoint)
   },
   methods: {
     ...mapActions([
@@ -90,5 +91,8 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
+h2 {
+  padding-top: 10px;
+}
 </style>

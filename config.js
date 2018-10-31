@@ -7,6 +7,7 @@ const app = {
   getRoutes: 'wp/v2/routes/',
   getSiteMeta: 'wp/v2/sitemeta/',
   getBlobMeta: 'wp/v2/blobmeta/',
+  getCouncilMeta: 'wp/v2/councilmeta/',
   contentCacheEnabled: true,
   contentCacheSize: 10,
   embed: '&_embed',

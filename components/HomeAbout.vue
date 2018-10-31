@@ -16,10 +16,10 @@
             <div v-for="post in posts" :key="post.id" class="mb-4">
                 
             <router-link :to="post.route">
-              <h3 class="headline mb-0">{{ post.title}}</h3>
+              <h3 class="title mb-2">{{ post.title}}</h3>
             </router-link>
            
-            <div>{{ post.excerpt}}</div>
+            <div class="exc excerpt">{{ post.excerpt }}&nbsp;  <router-link :to="post.route">read more</router-link>&raquo;</div>
           </div>
            
 
@@ -64,6 +64,8 @@ export default {
 <style scoped>
 a {
   text-decoration: none;
+  font-weight: bold;
+  color: #555;
 }
 h1 {
   text-transform: uppercase;

@@ -26,7 +26,7 @@ function site_meta() {
     $posts_list = get_posts(array('numberposts'=>'-1','post_type'=> array('post', 'page'),'sort_order' => 'desc'));
     $post_data = array();
     $site_base = 'http://cjcc.icjia-api.cloud';
-    $client_base = "https://cjcc.netlify.com";
+    $client_base = "https://cjcc.icjia.cloud";
     $api_namespace = 'wp/v2';
     $api_base = get_rest_url().$api_namespace.'/';
     $page_array = array();
@@ -71,7 +71,7 @@ function site_meta() {
         	$myPage['apiLinkEmbedded'] = $api_link.'?_embed';
         	$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $posts->ID ), 'thumbnail' );
         	$full = wp_get_attachment_image_src( get_post_thumbnail_id( $posts->ID ), 'full' );
-		    $large = wp_get_attachment_image_src( get_post_thumbnail_id( $posts->ID ), 'large' );
+		$large = wp_get_attachment_image_src( get_post_thumbnail_id( $posts->ID ), 'large' );
         	$myPage['featuredImageThumb'] = $thumbnail['0'];
 			$myPage['featuredImageFull'] = $full['0'];
 			$myPage['featuredImageLarge'] = $large['0'];
@@ -103,7 +103,7 @@ function my_register_siteroutes() {
 }
 function routes() {
             
-    $posts_list = get_posts(array('numberposts'=>'-1','post_type'=> array('post', 'page'),'sort_order' => 'desc'));
+    $posts_list = get_posts(array('numberposts'=>'-1','post_type'=> array('post', 'page','council'),'sort_order' => 'desc'));
     $post_data = array();
     $site_base = 'http://wpdev.icjia.cloud';
     
@@ -119,25 +119,6 @@ function routes() {
     wp_reset_postdata();
     return rest_ensure_response( $routes );
 }
-/**
- * Register a custom post type, with REST API support
- *
- * Based on example at: https://codex.wordpress.org/Function_Reference/register_post_type
- */
-
-
-// add_action( 'init', 'my_blob_cpt' );
-// function my_blob_cpt() {
-//     $args = array(
-//       'public'       => true,
-//       'show_in_rest' => true,
-//       'label'        => 'Blobs',
-//       'rest_base' => 'blobs',
-//       'rewrite' => array( 'with_front' => false ),
-		
-//     );
-//     register_post_type( 'blob', $args );
-// }
 
 
 add_action( 'rest_api_init', function () {
@@ -152,6 +133,9 @@ add_action( 'rest_api_init', function () {
           )
       ) );
   } );
+
+
+
 //     // Add Featured Image
     register_rest_field( 'post',
         'featured_image_src',
@@ -161,6 +145,9 @@ add_action( 'rest_api_init', function () {
             'schema'            => null
         )
    );
+
+
+
 function my_get_image_src( $object, $field_name, $request ) {
    if($object[ 'featured_media' ] == 0) {
        return $object[ 'featured_media' ];
@@ -269,6 +256,52 @@ function blob_meta() {
     return rest_ensure_response( $blob_array);
 }
 
+
+/**
+ * Add 'blobmeta' endpoint
+ */
+add_action( 'rest_api_init', 'my_register_councilmeta');
+function my_register_councilmeta() {
+            
+        register_rest_route( 'wp/v2', 'councilmeta', array(
+                'methods' => 'GET',
+                'callback' => 'council_meta',
+               
+        )
+        );
+}
+
+
+function council_meta() {
+    $council_list = get_posts(array('numberposts'=>'-1','post_type'=>'council','sort_order' => 'desc'));
+    $council_array = array();
+    
+    foreach( $council_list as $council) {
+ 
+        	$myCouncil = array ();
+        	$myCouncil['id'] = $council->ID;
+        	
+        	$myCouncil['date'] = $council->post_date ; 
+        	$myCouncil['title'] = $council->post_title ;
+        	
+        	$myCouncil['status'] = $council->post_status;
+        	$myCouncil['slug'] = $council->post_name;
+        	
+        	$myCouncil['modified'] = $council->post_modified;
+  
+			$myCouncil['acf'] = get_fields($council->ID);
+			$myCouncil['content'] = $council->post_content;
+			
+        
+        	array_push($council_array, $myCouncil);
+		
+        
+    }
+    
+    wp_reset_postdata();
+    return rest_ensure_response( $council_array);
+}
+
 // Remove quick edit from admin edit screen
 add_filter( 'post_row_actions', 'my_disable_quick_edit', 10, 2 );
 add_filter( 'page_row_actions', 'my_disable_quick_edit', 10, 2 );
@@ -286,46 +319,30 @@ function my_disable_quick_edit( $actions = array(), $post = null ) {
 }
 
 
-// inspired by: https://gist.github.com/rveitch/9018669face1686e74aaa68026856f36
-// add iitle to CPTs which doesn't provide a title (useful for the relationship field (https://www.advancedcustomfields.com/resources/relationship/))
+add_action( 'admin_bar_menu', 'customize_my_wp_admin_bar', 80 );
+function customize_my_wp_admin_bar( $wp_admin_bar ) {
 
-// function sync_acf_post_title($post_id, $post, $update) {
+    //Get a reference to the view-site node to modify.
+    $node = $wp_admin_bar->get_node('view-site');
 
-// 	$post_type = get_post_type($post_id);
+    //Change target
+    $node->meta['target'] = '_blank';
 
-//   // check for the current CPT
-// 	if($post_type === "blob") {
-    
-//     // get the field you want to save in the title
-// 		$title = get_field('title', $post_id);
+    //Update Node.
+    $wp_admin_bar->add_node($node);
+	
+	//Get a reference to the view-site node to modify.
+    $node = $wp_admin_bar->get_node('site-name');
 
-// 	} else if($post_type === "cpt_name_2") {
+    //Change target
+    $node->meta['target'] = '_blank';
 
-// 		$title = get_field('acf_field_name', $post_id);
+    //Update Node.
+    $wp_admin_bar->add_node($node);
 
-// 	} else {
+}
 
-//     //if it's not a CPT, the title should be saved as usual
-// 		$title = $post->post_title;
 
-//  }
-
-//   $content = array(
-//     'ID' => $post_id,
-//     'post_title' => $title
-// 	);
-
-//   // to prevent a loop
-// 	remove_action('save_post', 'sync_acf_post_title');
-// 	wp_update_post($content);
-
-// }
-
-// // is triggered when a user presses the update or publish button
-// add_action('save_post', 'sync_acf_post_title', 10, 3);
-// 
-// 
-// 
 
 
 ?>

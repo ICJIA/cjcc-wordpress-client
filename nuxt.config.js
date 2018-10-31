@@ -47,9 +47,9 @@ module.exports = {
       }
     ],
     script: [
-      {
-        src: 'https://use.fontawesome.com/releases/v5.4.2/css/all.css'
-      },
+      // {
+      //   src: 'https://use.fontawesome.com/releases/v5.4.0/css/all.css'
+      // },
       {
         src:
           'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js'

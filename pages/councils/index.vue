@@ -15,9 +15,9 @@
          <v-flex xs10 offset-xs1 class="pb-5 mt-5">
            <div v-blob:councils-intro></div>
           </v-flex>
-        <v-flex xs12 sm12 md6 order-sm2 order-xs2 order-md1 class="pt-3">
+        <v-flex xs12 sm12 md6 hidden-sm-and-down order-sm2 order-xs2 order-md1 class="pt-3">
 
-          <div id="chart-container-parent">
+          <div id="chart-container-parent" v-if="displayMap">
              
            <illinois/>
            
@@ -57,6 +57,13 @@ export default {
   computed: {
     title() {
       return 'Councils'
+    },
+    displayMap() {
+      if (this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs) {
+        return false
+      } else {
+        return true
+      }
     }
   }
 }

@@ -9,13 +9,13 @@
                 <v-select style="font-weight: 900;" v-model="selectedCountyMetaData" :items="items" item-text="title"
                     item-value="id" single-line class="" 
                     label="Select County" 
-                    hint="Pick a county to display Fact Sheet"
+                    :hint="displayHint"
                     persistent-hint>
                 </v-select>
 
 
-                <div style="margin-top: 35px;">
-                    <p v-dummy="150"></p>
+                <div style="margin-top: 35px;" v-html="content">
+                   
                 </div>
 
                
@@ -53,6 +53,13 @@ export default {
         this.$store.dispatch('SET_COUNTY', data)
         //this.getFactSheet()
       }
+    },
+    displayHint() {
+      if (this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs) {
+        return 'Select a county to display CJCC Fact Sheet'
+      } else {
+        return 'Click a shaded county to display CJCC Fact Sheet'
+      }
     }
   },
   data() {
@@ -62,7 +69,9 @@ export default {
       factSheetBody: '',
       factSheetTitle: 'Fact Sheet Title',
       factSheetCounty: 'Fact Sheet County',
-      selectedCircuit: null
+      selectedCircuit: null,
+      councilInfo: {},
+      content: ''
     }
   },
   watch: {
@@ -71,6 +80,7 @@ export default {
       //this.getCircuitNews();
     }
   },
+
   methods: {
     initializeCountySelect() {
       // Grab all unique titles
@@ -87,7 +97,12 @@ export default {
       return
     },
     getFactSheet() {
-      console.log('get fact sheet: ', this.selectedCountyMetaData.id)
+      const councilInfo = this.$store.state.councilCache.filter(c => {
+        // console.log(c.slug, this.selectedCountyMetaData.slug)
+        return c.slug === this.selectedCountyMetaData.slug
+      })
+      const { content } = councilInfo[0]
+      this.content = content
     },
     getCountyMetaData: function(key, value) {
       var myObj

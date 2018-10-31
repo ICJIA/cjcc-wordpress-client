@@ -12,7 +12,8 @@ export const state = () => ({
   forceRender: 1,
   countyData: {},
   mapMetaData: {},
-  blobCache: []
+  blobCache: [],
+  councilCache: []
 })
 
 export const mutations = {
@@ -43,6 +44,9 @@ export const mutations = {
   },
   setBlobs: (state, blobData) => {
     state.blobCache = blobData
+  },
+  setCouncils: (state, councilData) => {
+    state.councilCache = councilData
   }
 }
 
@@ -92,6 +96,10 @@ export const actions = {
     // For now, grab all blobs with content
     const b = await axios.get(config.getBlobMeta)
     const blobs = b.data
+    // get councils
+    let c = await axios.get(config.getCouncilMeta)
+    const councils = c.data
+    commit('setCouncils', councils)
     commit('setSiteMeta', siteMeta)
     commit('setBlobs', blobs)
     commit('setRoutes')
@@ -100,13 +108,19 @@ export const actions = {
   },
 
   async nuxtServerInit({ commit, dispatch }, { store, route, params }) {
+    //get sitemeta
     const meta = await axios.get(config.getSiteMeta)
     const siteMeta = meta.data
+    // get blobs
     const b = await axios.get(config.getBlobMeta)
     const blobs = b.data
-    //console.log('Blobs: ', blobs)
+    //get councils
+    let c = await axios.get(config.getCouncilMeta)
+    const councils = c.data
+    //console.log(councils)
     commit('setSiteMeta', siteMeta)
     commit('setBlobs', blobs)
+    commit('setCouncils', councils)
     commit('setRoutes')
 
     const data = await require(`~/assets/data/map.json`)

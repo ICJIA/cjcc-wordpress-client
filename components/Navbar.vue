@@ -10,12 +10,17 @@
       disable-resize-watcher
       
     >
-     <v-list>
+   
+     <v-list dense>
+       <!-- <v-list subheader>
+          <v-subheader style="font-weight: bold; text-transform: uppercase; font-size: 20px;" class="mt-2">Illinois | <span class="font-weight-light" style="color: #1A237E">&nbsp;CJCC</span></v-subheader>
+       </v-list> -->
+      
           <v-list-group
-          >
+          v-model="expand" class="mt-2 pt-2">
             <v-list-tile slot="activator">
               <v-list-tile-content>
-                <v-list-tile-title>Illinois CJCC</v-list-tile-title>
+                <v-list-tile-title>Councils</v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
               <v-list-tile v-for="council in councils" :key="council.text" @click="drawer = false">
@@ -71,12 +76,14 @@ export default {
   methods: {
     pushRoute(route) {
       this.drawer = false
+      // this.expand = false
       this.$router.push({ path: route })
     }
   },
   data() {
     return {
       drawer: false,
+      expand: false,
       councils: this.$store.state.councilCache,
       items: [
         { text: 'News', link: '/archive' },

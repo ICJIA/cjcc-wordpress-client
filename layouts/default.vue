@@ -24,6 +24,7 @@ export default {
     Navbar,
     MyFooter
   },
+  scrollToTop: true,
   watch: {
     $route(to, from) {
       this.$store.commit('forceRender')

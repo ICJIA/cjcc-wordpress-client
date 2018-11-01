@@ -10,7 +10,23 @@
       disable-resize-watcher
       
     >
-      <v-list>
+     <v-list>
+          <v-list-group
+          >
+            <v-list-tile slot="activator">
+              <v-list-tile-content>
+                <v-list-tile-title>Illinois CJCC</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+              <v-list-tile v-for="council in councils" :key="council.text" @click="drawer = false">
+              <v-list-tile-content @click.stop="pushRoute(council.link)">
+                <v-list-tile-title>  {{ council.text }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+            
+            
+          </v-list-group>
+     
         <v-list-tile v-for="item in items" :key="item.text" @click="drawer = false">
          
          
@@ -23,22 +39,11 @@
           </v-list-tile-content>
         
         </v-list-tile>
-        <v-subheader class="mt-3 grey--text text--darken-1">OTHER ICJIA SITES</v-subheader>
+      
        
       </v-list>
 
-      <!-- <v-list>
-          <v-list-group
-          
-           
-          >
-            <v-list-tile slot="activator">
-              <v-list-tile-content>
-                <v-list-tile-title>Councils</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-          </v-list-group>
-      </v-list> -->
+     
     </v-navigation-drawer>
     <v-toolbar app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
@@ -74,14 +79,21 @@ export default {
       drawer: false,
       councils: this.$store.state.councilCache,
       items: [
-        { icon: 'trending_up', text: 'Councils', link: '/councils' },
-        { icon: 'subscriptions', text: 'News', link: '/archive' },
-        { icon: 'history', text: 'Resources', link: '/resources' },
-        { icon: 'featured_play_list', text: 'Planning', link: '/planning' },
-        { icon: 'watch_later', text: 'Research', link: '/research' },
-        { icon: 'featured_play_list', text: 'CCAC', link: '/ccac' },
-        { icon: 'watch_later', text: 'Contact', link: '/contact' },
-        { icon: 'watch_later', text: 'Search', link: '/search' }
+        { text: 'News', link: '/archive' },
+        { text: 'Resources', link: '/resources' },
+        { text: 'Planning', link: '/planning' },
+        { text: 'Research', link: '/research' },
+        { text: 'CCAC', link: '/ccac' },
+        { text: 'Contact', link: '/contact' },
+        { text: 'Search', link: '/search' }
+      ],
+      councils: [
+        { text: 'Cook County', link: '/council/cook-county' },
+        { text: 'Lake County', link: '/council/lake-county' },
+        { text: 'McLean County', link: '/council/mclean-county' },
+        { text: 'McHenry County', link: '/council/mchenry-county' },
+        { text: 'St. Clair County', link: '/council/st-clair-county' },
+        { text: 'Winnebago County', link: '/council/winnebago-county' }
       ]
     }
   }

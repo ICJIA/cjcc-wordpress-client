@@ -9,7 +9,8 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "dev-debug": "node --inspect node_modules/.bin/nuxt"
+    "dev-debug": "node --inspect node_modules/.bin/nuxt",
+    "postgenerate": "node ./algolia.js"
   },
   "dependencies": {
     "@nuxtjs/sitemap": "^0.1.1",
@@ -40,7 +41,17 @@
     "vue-instantsearch": "^1.7.0",
     "vue-rollbar": "^0.2.3",
     "vuelidate": "^0.7.4",
-    "vuetify": "^1.3.2"
+    "vuetify": "^1.3.2",
+    "algoliasearch": "^3.27.0",
+    "cheerio": "^1.0.0-rc.2",
+    "dotenv": "^5.0.1",
+    "html-metadata": "^1.7.0",
+    "jsonfile": "^4.0.0",
+    "node-fetch": "^2.1.2",
+    "preq": "^0.5.6",
+    "sync-request": "^6.0.0",
+    "website-to-json": "^1.0.22",
+    "xml2json": "^0.11.2"
   },
   "devDependencies": {
     "eslint-config-prettier": "^3.1.0",

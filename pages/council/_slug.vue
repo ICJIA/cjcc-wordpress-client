@@ -34,7 +34,7 @@ import axios from '~/plugins/axios'
 export default {
   head() {
     return {
-      title: 'Title'
+      title: this.title + ' Fact Sheet'
     }
   },
   async asyncData({ params }) {

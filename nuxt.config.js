@@ -83,7 +83,7 @@ module.exports = {
   ],
   sitemap: {
     path: '/sitemap.xml',
-    hostname: 'https://cjcc.netlify.com',
+    hostname: config.clientURL,
     cacheTime: 1000 * 60 * 15,
     gzip: false,
     generate: true,

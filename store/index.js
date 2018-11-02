@@ -107,7 +107,10 @@ export const actions = {
     commit('setMapMetaData', data)
   },
 
-  async nuxtServerInit({ commit, dispatch }, { store, route, params }) {
+  async nuxtServerInit(
+    { commit, dispatch },
+    { store, route, isServer, params }
+  ) {
     //get sitemeta
     const meta = await axios.get(config.getSiteMeta)
     const siteMeta = meta.data
@@ -125,6 +128,9 @@ export const actions = {
 
     const data = await require(`~/assets/data/map.json`)
     commit('setMapMetaData', data)
+
+    console.log('isServer? ', process.server)
+    console.log(params.slug)
   },
   SET_COUNTY({ commit, state }, payload) {
     commit('setCounty', payload)

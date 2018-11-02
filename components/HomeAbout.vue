@@ -1,6 +1,6 @@
 <template>
     <v-container fill-height fluid style="margin-top: -25px;">
-    <v-layout row wrap>
+    <v-layout row wrap v-resize="onResize">
        <!-- <v-flex xs12 sm12 md6 hidden-sm-and-down>
         <v-img :aspect-ratio="1/1" :height="580" src="/placeholder.png">
        
@@ -9,7 +9,7 @@
 
      
 
-      <v-flex xs12 sm12 md6 class="pr-5 pl-5" :class="{ divider: displayDivider }">
+      <v-flex xs12 sm12 md6 class="pr-5 pl-5" :class="{divider: displayDivider}">
         
            <h1 class="text-xs-center box-head mt-5 mb-5">News & Events</h1>
           
@@ -36,7 +36,7 @@
       </v-flex>
 
 
-       <v-flex xs12 sm12 md6 class="pr-5 pl-5" :class="{ topDivider: !displayDivider }">
+       <v-flex xs12 sm12 md6 class="pr-5 pl-5" :class="{topDivider: displayTopDivider}">
        
            <h1 class="text-xs-center box-head mt-5 mb-5">About the CJCC</h1>
          
@@ -52,9 +52,14 @@
 
 <script>
 export default {
+  mounted() {
+    this.onResize()
+  },
   data() {
     return {
-      color: 'grey lighten-5'
+      color: 'grey lighten-5',
+      displayDivider: true,
+      displayTopDivider: false
     }
   },
   computed: {
@@ -62,15 +67,20 @@ export default {
       get() {
         return this.$store.getters.getFrontPageNews
       }
-    },
-    displayDivider() {
+    }
+  },
+  methods: {
+    onResize() {
       if (this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs) {
-        return false
+        this.displayDivider = false
+        this.displayTopDivider = true
       } else {
-        return true
+        this.displayDivider = true
+        this.displayTopDivider = false
       }
     }
-  }
+  },
+  watch: {}
 }
 </script>
 

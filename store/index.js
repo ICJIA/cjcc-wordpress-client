@@ -2,7 +2,7 @@ import axios from '~/plugins/axios'
 import config from '@/config.js'
 import find from 'lodash.find'
 import findIndex from 'lodash.findindex'
-import { getContentId, getApiUrlBySlug } from '@/utils.js'
+import { buildRequest } from '@/utils.js'
 
 export const state = () => ({
   routes: [],
@@ -109,7 +109,7 @@ export const actions = {
 
   async nuxtServerInit(
     { commit, dispatch },
-    { store, route, isServer, params }
+    { store, route, isServer, params, redirect }
   ) {
     //get sitemeta
     const meta = await axios.get(config.getSiteMeta)
@@ -129,8 +129,21 @@ export const actions = {
     const data = await require(`~/assets/data/map.json`)
     commit('setMapMetaData', data)
 
-    console.log('isServer? ', process.server)
-    console.log(params.slug)
+    // console.log('isServer? ', process.server)
+    // console.log('Slug: ', params.slug)
+
+    console.log('Route: ', route.path.split('/'))
+
+    if (process.server && params.slug) {
+      const request = buildRequest(store.state.siteMeta, route.path)
+      if (request.id === undefined) {
+        redirect(config.redirect404)
+      } else {
+        const { data } = await axios.get(request.apiUrlBySlug)
+        commit('setContent', data[0])
+        console.log('Fetching data on server.')
+      }
+    }
   },
   SET_COUNTY({ commit, state }, payload) {
     commit('setCounty', payload)

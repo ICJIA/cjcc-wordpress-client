@@ -56,7 +56,13 @@ import Spacer from '@/components/Spacer'
 import Splash from '@/components/Splash'
 
 export default {
-  mounted() {},
+  mounted() {
+    // if (this.$store.state.contentObject) {
+    //   console.log('Server side prefetched')
+    // } else {
+    //   consone.log('Not yet fetched')
+    // }
+  },
 
   async fetch({ store, params, redirect, route }) {
     const request = buildRequest(store.state.siteMeta, route.path)

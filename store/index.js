@@ -13,7 +13,8 @@ export const state = () => ({
   countyData: {},
   mapMetaData: {},
   blobCache: [],
-  councilCache: []
+  councilCache: [],
+  setTestContent: {}
 })
 
 export const mutations = {
@@ -27,6 +28,7 @@ export const mutations = {
   setContent(state, data) {
     state.contentObject = data
   },
+
   cacheContent(state, data) {
     state.contentCache.push(data)
   },
@@ -132,16 +134,15 @@ export const actions = {
     // console.log('isServer? ', process.server)
     // console.log('Slug: ', params.slug)
 
-    console.log('Route: ', route.path.split('/'))
+    //console.log('Route: ', route.path.split('/'))
 
     if (process.server && params.slug) {
       const request = buildRequest(store.state.siteMeta, route.path)
       if (request.id === undefined) {
         redirect(config.redirect404)
       } else {
-        const { data } = await axios.get(request.apiUrlBySlug)
+        const { data } = await axios.get(request.apiUrlBySlug + '&_embed')
         commit('setContent', data[0])
-        console.log('Fetching data on server.')
       }
     }
   },

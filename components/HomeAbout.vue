@@ -1,5 +1,5 @@
 <template>
-    <v-container fill-height fluid class="px-3" style="margin-top: -30px;">
+    <v-container fill-height fluid style="margin-top: -25px;">
     <v-layout row wrap>
        <!-- <v-flex xs12 sm12 md6 hidden-sm-and-down>
         <v-img :aspect-ratio="1/1" :height="580" src="/placeholder.png">
@@ -9,36 +9,40 @@
 
      
 
-      <v-flex xs12 sm12 md6 class="divider">
-        <v-card light :color="color" height="100%" class=" pt-4 pb-4 pl-3 box elevation-0">
-           <h1 class="text-xs-center box-head">News & Events</h1>
-          <v-card-text class="px-3 font-weight-light box-text ">
-            <div v-for="post in posts" :key="post.id" class="mb-5">
-                
+      <v-flex xs12 sm12 md6 class="pr-5 pl-5" :class="{ divider: displayDivider }">
+        
+           <h1 class="text-xs-center box-head mt-5 mb-5">News & Events</h1>
+          
+            
+          <v-layout row wrap v-for="post in posts" :key="post.id" class="mb-5">
+          <v-flex xs12 sm12 md6>
             <router-link :to="post.route">
               <h3 class="title mb-2">{{ post.title}}</h3>
             </router-link>
-            <div class="text-xs-right">
-            <h5>{{post.date | formatDate}}</h5>
-            </div>
+          </v-flex>
+          <v-flex xs12 sm12 md6 class="text-md-right">
+             <h5>{{post.date | formatDate}}</h5>
+          </v-flex>
+          <v-flex xs12>
             <div class="exc excerpt">{{ post.excerpt }}&nbsp;  <router-link :to="post.route">read more</router-link>&raquo;</div>
-          </div>
+          </v-flex>
+          </v-layout>
+          
            
 
-          </v-card-text>
+        
          
-        </v-card>
+       
       </v-flex>
 
 
-       <v-flex xs12 sm12 md6>
-        <v-card light :color="color" height="100%" class=" pt-4 pb-4 pl-3 box elevation-0">
-           <h1 class="text-xs-center box-head">About the CJCC</h1>
-          <v-card-text class="px-3 font-weight-light box-text ">
+       <v-flex xs12 sm12 md6 class="pr-5 pl-5" :class="{ topDivider: !displayDivider }">
+       
+           <h1 class="text-xs-center box-head mt-5 mb-5">About the CJCC</h1>
+         
             <div v-blob:home-about></div>
 
-          </v-card-text>
-        </v-card>
+         
       </v-flex>
       
        
@@ -57,6 +61,13 @@ export default {
     posts: {
       get() {
         return this.$store.getters.getFrontPageNews
+      }
+    },
+    displayDivider() {
+      if (this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs) {
+        return false
+      } else {
+        return true
       }
     }
   }
@@ -78,5 +89,9 @@ h1 {
 .box-text {
   padding-top: 25px;
   padding-bottom: 35px;
+}
+
+.topDivider {
+  border-top: 1px solid #ccc;
 }
 </style>

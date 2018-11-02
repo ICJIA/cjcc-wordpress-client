@@ -24,3 +24,13 @@ h5 {
 .page-height {
   min-height: 100vh;
 }
+
+.theme--light.v-pagination .v-pagination__item {
+  outline: none !important;
+}
+
+a {
+  text-decoration: none !important;
+  font-weight: bold !important;
+  color: #555 !important;
+}

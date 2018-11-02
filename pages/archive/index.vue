@@ -10,27 +10,37 @@
     <v-container fill-height class="px-3"  id="page-content" >
     <v-layout row wrap>
       
-      <v-flex xs10 offset-xs1>
-       
-        <v-card light :color="color" height="100%" class=" pt-4 pb-4 pl-3 box elevation-0">
-           <h1 class="text-xs-center box-head">News & Events Archive</h1>
-          <v-card-text class="px-3 font-weight-light box-text mt-5">
-            <div v-for="post in displayPosts" :key="post.id">
-                <div>
+     
+
+       <v-flex xs12 class="pr-5 pl-5" >
+        
+           <h1 class="text-xs-center box-head mt-5 mb-5">News & Events</h1>
+          
+            
+          <v-layout row wrap v-for="post in posts" :key="post.id" class="mb-5">
+          <v-flex xs12 sm12 md6>
             <router-link :to="post.route">
-              <h3 class="headline mb-0">{{ post.title}}</h3>
+              <h3 class="title mb-2">{{ post.title}}</h3>
             </router-link>
-            <div>{{ post.type}}</div>
-            <div>{{ post.excerpt}}</div>
-          </div>
-            </div>
+          </v-flex>
+          <v-flex xs12 sm12 md6 class="text-md-right">
+             <h5>{{post.date | formatDate}}</h5>
+          </v-flex>
+          <v-flex xs12>
+            <div class="exc excerpt">{{ post.excerpt }}&nbsp;  <router-link :to="post.route">read more</router-link>&raquo;</div>
+          </v-flex>
+          
 
-          </v-card-text>
+          </v-layout>
+          
+           
+
+        
          
-        </v-card>
-
-<v-spacer></v-spacer>
-        <div class="text-xs-center">
+       
+      </v-flex>
+  <v-flex xs12>
+    <div class="text-xs-center">
     <v-pagination
       v-model="page"
       :length="pagerLength"
@@ -40,7 +50,8 @@
     ></v-pagination>
     
   </div>
-      </v-flex>
+  </v-flex>
+
     </v-layout>
     </v-container>
 
@@ -57,7 +68,7 @@
 <script>
 import config from '@/config.js'
 import Breadcrumb from '@/components/Breadcrumb'
-import Spacer from '@/components/Spacer'
+
 export default {
   created() {
     this.numberOfPosts = this.posts.length
@@ -72,8 +83,7 @@ export default {
     }
   },
   components: {
-    Breadcrumb,
-    Spacer
+    Breadcrumb
   },
   computed: {
     posts: {
@@ -125,8 +135,5 @@ export default {
 }
 </script>
 
-<style>
-.theme--light.v-pagination .v-pagination__item {
-  outline: none !important;
-}
+<style scoped>
 </style>

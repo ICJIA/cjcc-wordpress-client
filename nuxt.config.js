@@ -44,12 +44,13 @@ module.exports = {
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Raleway:400,700,900'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://pro.fontawesome.com/releases/v5.4.2/css/all.css'
       }
     ],
     script: [
-      // {
-      //   src: 'https://use.fontawesome.com/releases/v5.4.0/css/all.css'
-      // },
       {
         src:
           'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js'

@@ -18,7 +18,7 @@
 
                            <h1 class="text-xs-center box-head mb-5">CJCC Search</h1>
 
-                            <ais-search-box :autofocus="true" placeholder="Enter search term"></ais-search-box>
+                            <ais-search-box :autofocus="true" placeholder="Enter search term" autofocus show-loading-indicator></ais-search-box>
 
                         </v-flex>
                     </v-layout>
@@ -82,7 +82,9 @@ export default {
     Breadcrumb
   },
   data() {
-    return {}
+    return {
+      query: 'Test'
+    }
   },
   methods: {},
   computed: {

@@ -23,7 +23,7 @@
                 <v-list-tile-title>Councils</v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
-              <v-list-tile v-for="council in councils" :key="council.text" @click="drawer = false">
+              <v-list-tile v-for="council in councils" :key="council.text" @click="drawer = false" style="background: #fbfbfb">
               <v-list-tile-content @click.stop="pushRoute(council.link)">
                 <v-list-tile-title>  {{ council.text }}</v-list-tile-title>
               </v-list-tile-content>
@@ -55,7 +55,7 @@
       <nuxt-link to="/" class="nav">
       <v-toolbar-title class=" text-uppercase">
         <span class="font-weight-black">ILLINOIS</span> | 
-        <span class="font-weight-light" style="color: #1A237E">CRIMINAL JUSTICE COORDINATING COUNCILS</span>
+        <span class="font-weight-light" style="color: #1A237E">{{navTitle}}</span>
       </v-toolbar-title>
       </nuxt-link>
       <v-spacer></v-spacer>
@@ -80,13 +80,22 @@ export default {
       this.$router.push({ path: route })
     }
   },
+  computed: {
+    navTitle() {
+      if (this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs) {
+        return 'CJCC'
+      } else {
+        return 'Criminal Justice Coordinating Councils'
+      }
+    }
+  },
   data() {
     return {
       drawer: false,
       expand: false,
       councils: this.$store.state.councilCache,
       items: [
-        { text: 'News', link: '/archive' },
+        { text: 'News & Events', link: '/archive' },
         { text: 'Resources', link: '/resources' },
         { text: 'Planning', link: '/planning' },
         { text: 'Research', link: '/research' },

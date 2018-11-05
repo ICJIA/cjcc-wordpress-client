@@ -10,7 +10,7 @@
     <v-card
       flat
       tile
-      class="indigo darken-2 white--text text-xs-center"
+      class="grey darken-3 white--text text-xs-center"
     >
       <v-card-text>
         <v-btn

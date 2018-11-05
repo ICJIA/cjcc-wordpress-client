@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import Hero from '@/components/Hero.vue'
+import Hero from '@/components/HeroSplit.vue'
 import HomeBoxes from '@/components/HomeBoxes.vue'
 import HomeAbout from '@/components/HomeAbout.vue'
 import { mapGetters } from 'vuex'

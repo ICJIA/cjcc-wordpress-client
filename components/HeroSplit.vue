@@ -3,12 +3,17 @@
   
     <div>
 
-<!-- <v-img :aspect-ratio="16/9" :max-height="500" :src="require('@/assets/img/iStock-947725966.jpg')" alt="Illinois Criminal Justice Coordinating Councils"> -->
- 
- <v-img :aspect-ratio="16/9" :max-height="350" alt="Illinois Criminal Justice Coordinating Councils" style="background: #e1e1e1">
+
+
+
+
+       <v-layout row wrap >
+     
+      <v-flex xs12 sm12 md6 >
+        <v-img :aspect-ratio="1/1" :max-height="500" alt="Illinois Criminal Justice Coordinating Councils" style="background: #ddd">
  
  <v-container fill-height class=" pb-5 pt-5">
-        <!--- vertical and horizontal alignment -->
+       
         <v-layout align-center justify-center >
             <v-flex xs12>
             
@@ -22,12 +27,29 @@
         </v-layout>
     </v-container>
       </v-img>
+      </v-flex>
+
+       <v-flex hidden-sm-and-down md6 >
+        <v-img :aspect-ratio="1/1" :max-height="500" :src="require('@/assets/img/iStock-637294178.jpg')" lazy-src="require('@/assets/img/iStock-637294178-lazy.jpg')" alt="Illinois Criminal Justice Coordinating Councils">
+        <v-layout
+                    slot="placeholder"
+                    fill-height
+                    align-center
+                    justify-center
+                    ma-0
+                  >
+                    <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                  </v-layout>
+        </v-img>
+      </v-flex>
+      
+       </v-layout>
 </div>
 </template>
 
 <style>
 .hero-section {
-  background: #999;
+  background: #bbb;
   background-size: cover;
   height: 550px;
   text-align: center;
@@ -64,7 +86,7 @@ h4 {
   /* background: #fff;
         padding: 3px 5px 3px 5px; */
   font-weight: 800;
-  color: #777 !important;
+  color: #888;
 }
 .logo {
   margin-top: 25px;

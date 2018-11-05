@@ -24,7 +24,7 @@
              <h5>{{post.date | formatDate}}</h5>
           </v-flex>
           <v-flex xs12>
-            <div class="exc excerpt">{{ post.excerpt }}&nbsp;  <router-link :to="post.route">read more</router-link>&raquo;</div>
+            <div class="exc excerpt">{{ post.excerpt }}&nbsp;  <router-link :to="post.route">more</router-link>&raquo;</div>
           </v-flex>
           </v-layout>
           

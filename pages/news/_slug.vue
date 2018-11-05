@@ -5,7 +5,7 @@
        :key="$store.state.forceRender" 
        :title="title" 
        type="News"
-       typeUrl = "/archive"
+       typeUrl = "/news"
        :contentID="contentID"></breadcrumb>
 
       

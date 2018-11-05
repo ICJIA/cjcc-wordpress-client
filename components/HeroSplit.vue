@@ -10,7 +10,7 @@
        <v-layout row wrap >
      
       <v-flex xs12 sm12 md6 >
-        <v-img :aspect-ratio="1/1" :max-height="500" alt="Illinois Criminal Justice Coordinating Councils" style="background: #ddd">
+        <v-img :aspect-ratio="1/1" :max-height="500" alt="Illinois Criminal Justice Coordinating Councils" style="background: #283593">
  
  <v-container fill-height class=" pb-5 pt-5">
        
@@ -74,13 +74,12 @@ img:before {
   font-size: 36px;
   text-transform: uppercase;
   font-weight: 900;
-  color: #1a237e;
+  color: #fff;
 }
 .brand-state.hero {
-  color: #222;
+  color: #666;
 }
-.highlight {
-}
+
 h4 {
   color: #222;
   font-weight: 400;
@@ -89,7 +88,7 @@ h4 {
   /* background: #fff;
         padding: 3px 5px 3px 5px; */
   font-weight: 800;
-  color: #888;
+  color: #aaa;
 }
 .logo {
   margin-top: 25px;

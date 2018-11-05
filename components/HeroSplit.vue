@@ -30,7 +30,10 @@
       </v-flex>
 
        <v-flex hidden-sm-and-down md6 >
-        <v-img :aspect-ratio="1/1" :max-height="500" :src="require('@/assets/img/iStock-637294178.jpg')" lazy-src="require('@/assets/img/iStock-637294178-lazy.jpg')" alt="Illinois Criminal Justice Coordinating Councils">
+        <v-img :aspect-ratio="1/1" :max-height="500" 
+        :src="require('@/assets/img/hero.png')" 
+        :lazy-src="require('@/assets/img/hero-lazy.png')" 
+        alt="Illinois Criminal Justice Coordinating Councils">
         <v-layout
                     slot="placeholder"
                     fill-height

@@ -3,7 +3,7 @@ import axios from './plugins/axios'
 import config from './config.js'
 import webpack from 'webpack'
 
-// generate routes for sitemap and static generation
+// generate routes for static generation
 const getRoutes = async function() {
   // get API routes
   const { data } = await axios.get(config.getRoutes)

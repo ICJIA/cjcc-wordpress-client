@@ -59,13 +59,16 @@
       </v-toolbar-title>
       </nuxt-link>
       <v-spacer></v-spacer>
-      <v-btn
+      <!-- <v-btn
         flat
        to="/search"
       >
         <span class="mr-2">Search</span>
         <v-icon>search</v-icon>
-      </v-btn>
+      </v-btn> -->
+       <a href="http://www.icjia.state.il.us" style="margin-top: 4px">
+      <img src="@/assets/img/logo-blue-filled.png" width="70">
+       </a>
     </v-toolbar>
 
     </div>
@@ -82,7 +85,7 @@ export default {
   },
   computed: {
     navTitle() {
-      if (this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs) {
+      if (this.$vuetify.breakpoint.xs) {
         return 'CJCC'
       } else {
         return 'Criminal Justice Coordinating Councils'

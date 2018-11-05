@@ -88,10 +88,11 @@ export default {
 a {
   text-decoration: none;
   font-weight: bold;
-  color: #555;
+  color: #0a1f61 !important;
 }
 h1 {
   text-transform: uppercase;
+  color: #0e2b85 !important;
 }
 .divider {
   border-right: 1px solid #aaa;

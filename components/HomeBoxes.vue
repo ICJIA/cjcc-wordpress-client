@@ -3,7 +3,7 @@
     <v-layout row wrap>
        <v-flex xs12 sm12 md4>
           <router-link to="/councils">
-        <v-card dark :color="color" height="100%" class=" pt-4 pb-4 pl-3 box">
+        <v-card dark :color="color" height="100%" class=" pt-4 pb-4 pl-3 box" >
          
          <h2 class="text-xs-center box-head">Find a Council</h2>
          
@@ -42,7 +42,7 @@
 export default {
   data() {
     return {
-      color: 'indigo darken-3'
+      color: '#0B216E'
     }
   }
 }
@@ -52,10 +52,11 @@ export default {
 a {
   text-decoration: none !important;
 }
-
 .box:hover {
-  background: #304ffe !important;
-
+  background: #bbb !important;
+}
+.box:hover > * {
+  color: #0b216e;
   cursor: pointer;
 }
 .box-head {

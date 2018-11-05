@@ -20,6 +20,7 @@
                 <div class="text-xs-center hero-section-text">
                      <span class=" brand-state hero">Illinois</span>
             <span class="brand-name hero ">&nbsp;Criminal Justice Coordinating Councils</span>
+            <hr class="mt-4 mb-5">
             <h3 class="mt-3 hero-sub">Sponsored by the Illinois Criminal Justice Information Authority</h3>
             
                 </div>
@@ -50,7 +51,7 @@
 </div>
 </template>
 
-<style>
+<style scoped>
 .hero-section {
   background: #bbb;
   background-size: cover;
@@ -71,13 +72,13 @@ img:before {
 .brand-name.hero,
 .brand-state.hero {
   font-family: 'Raleway', sans-serif;
-  font-size: 36px;
+  font-size: 40px;
   text-transform: uppercase;
   font-weight: 900;
   color: #fff;
 }
 .brand-state.hero {
-  color: #666;
+  color: #fff;
 }
 
 h4 {
@@ -88,7 +89,8 @@ h4 {
   /* background: #fff;
         padding: 3px 5px 3px 5px; */
   font-weight: 800;
-  color: #aaa;
+  color: #999;
+  font-size: 16px;
 }
 .logo {
   margin-top: 25px;
@@ -97,5 +99,9 @@ h4 {
 .desaturate {
   -webkit-filter: grayscale(100%) !important; /* Safari 6.0 - 9.0 */
   filter: grayscale(100%) !important;
+}
+
+hr {
+  border-top: 0px solid #fff !important;
 }
 </style>

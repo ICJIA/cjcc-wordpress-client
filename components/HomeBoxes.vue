@@ -1,5 +1,5 @@
 <template>
-    <v-container fill-height fluid class="px-0" style="margin-top: -23px;">
+    <v-container fill-height fluid class="px-0" style="margin-top: -25px;">
     <v-layout row wrap>
        <v-flex xs12 sm12 md4>
           <router-link to="/councils">

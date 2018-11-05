@@ -106,6 +106,10 @@ h1 {
   text-transform: uppercase;
   color: #444 !important;
 }
+
+h3 {
+  line-height: 1.4 !important;
+}
 .divider {
   border-right: 0px solid #aaa;
 }

@@ -55,7 +55,7 @@
       <nuxt-link to="/" class="nav">
       <v-toolbar-title class=" text-uppercase">
         <span class="" style="color: #111; font-weight: 900">ILLINOIS</span> | 
-        <span class="font-weight-light" style="color: #1A237E">{{navTitle}}</span>
+        <span class="font-weight-light" style="color: #25274D">{{navTitle}}</span>
       </v-toolbar-title>
       </nuxt-link>
       <v-spacer></v-spacer>
@@ -98,7 +98,7 @@ export default {
       expand: false,
       councils: this.$store.state.councilCache,
       items: [
-        { text: 'News & Events', link: '/archive' },
+        { text: 'News & Events', link: '/news' },
         { text: 'Resources', link: '/resources' },
         { text: 'Planning', link: '/planning' },
         { text: 'Research', link: '/research' },

@@ -83,7 +83,7 @@ export default {
 <style scoped>
 .breadcrumb {
   /* background: #1a237e; */
-  background: #303f9f;
+  background: #22327a;
   height: 50px;
   font-size: 12px;
   font-weight: bold;

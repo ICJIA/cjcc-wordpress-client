@@ -23,7 +23,7 @@
         </v-card>
       </v-flex>
        <v-flex xs12 sm12 md4>
-          <router-link to="/archive">
+          <router-link to="/news">
         <v-card dark :color="color" height="100%" class=" pt-4 pb-4 pl-3 box">
            <h2 class="text-xs-center box-head">News & Events</h2>
           <v-card-text class="px-3 font-weight-light box-text ">

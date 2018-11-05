@@ -12,6 +12,14 @@ const getRoutes = async function() {
   return routes
 }
 
+const getPublishedRoutes = async function() {
+  // get API routes
+  const { data } = await axios.get(config.getRoutes)
+  // merge with static Nuxt routes
+  const routes = [...data, ...config.dynamicRoutesToInclude]
+  return routes
+}
+
 module.exports = {
   mode: 'universal',
   env: {},

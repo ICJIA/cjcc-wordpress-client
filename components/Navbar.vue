@@ -12,27 +12,10 @@
     >
    
      <v-list dense>
-       <!-- <v-list subheader>
-          <v-subheader style="font-weight: bold; text-transform: uppercase; font-size: 20px;" class="mt-2">Illinois | <span class="font-weight-light" style="color: #1A237E">&nbsp;CJCC</span></v-subheader>
-       </v-list> -->
       
-          <v-list-group
-          v-model="expand" class="mt-2 pt-2">
-            <v-list-tile slot="activator">
-              <v-list-tile-content>
-                <v-list-tile-title>Councils</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-              <v-list-tile v-for="council in councils" :key="council.text" @click="drawer = false" style="background: #fbfbfb">
-              <v-list-tile-content @click.stop="pushRoute(council.link)">
-                <v-list-tile-title>  {{ council.text }}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            
-            
-          </v-list-group>
+         
      
-        <v-list-tile v-for="item in items" :key="item.text" @click="drawer = false">
+        <v-list-tile v-for="item in main" :key="item.text" @click="drawer = false">
          
          
           <v-list-tile-content @click.stop="pushRoute(item.link)">
@@ -44,6 +27,39 @@
           </v-list-tile-content>
         
         </v-list-tile>
+
+        
+
+         <v-list-group
+          v-model="expand" class="">
+            <v-list-tile slot="activator">
+              <v-list-tile-content>
+                <v-list-tile-title style="font-weight: bold">Councils</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+              <v-list-tile v-for="council in councils" :key="council.text" @click="drawer = false" style="background: #fbfbfb">
+              <v-list-tile-content @click.stop="pushRoute(council.link)">
+                <v-list-tile-title>  {{ council.text }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+            
+            
+          </v-list-group>
+          <v-divider></v-divider>
+      
+          <v-list-tile v-for="item in secondary" :key="item.text" @click="drawer = false">
+         
+         
+          <v-list-tile-content @click.stop="pushRoute(item.link)">
+            <v-list-tile-title>
+              
+              {{ item.text }}
+               
+            </v-list-tile-title>
+          </v-list-tile-content>
+        
+        </v-list-tile>
+        
       
        
       </v-list>
@@ -97,14 +113,19 @@ export default {
       drawer: false,
       expand: false,
       councils: this.$store.state.councilCache,
-      items: [
+      main: [
         { text: 'News & Events', link: '/news' },
-        { text: 'Resources', link: '/resources' },
-        { text: 'Planning', link: '/planning' },
+        {
+          text: 'Coordinating Council Advisory Committee',
+          link: '/ccac'
+        },
         { text: 'Research', link: '/research' },
-        { text: 'CCAC', link: '/ccac' },
-        { text: 'Contact', link: '/contact' },
-        { text: 'Search', link: '/search' }
+        { text: 'Resources', link: '/resources' },
+        { text: 'Planning', link: '/planning' }
+      ],
+      secondary: [
+        { icon: 'directions_run', text: 'Contact', link: '/contact' },
+        { icon: 'directions_run', text: 'Search', link: '/search' }
       ],
       councils: [
         { text: 'Cook County', link: '/council/cook-county' },

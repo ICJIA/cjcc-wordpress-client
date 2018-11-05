@@ -15,13 +15,13 @@
           
             
           <v-layout row wrap v-for="post in posts" :key="post.id" class="mb-5">
-          <v-flex xs12 sm12 md6>
+          <v-flex xs12 sm12 md8>
             <router-link :to="post.route">
               <h3 class="title mb-2">{{ post.title}}</h3>
             </router-link>
           </v-flex>
-          <v-flex xs12 sm12 md6 class="text-md-right">
-             <h5>{{post.date | formatDate}}</h5>
+          <v-flex xs12 sm12 md4 class="text-md-right">
+             <h5 class="date">{{post.date | formatDate}}</h5>
           </v-flex>
           <v-flex xs12>
             
@@ -108,8 +108,12 @@ h1 {
 }
 
 h3 {
-  line-height: 1.4 !important;
+  line-height: 1.3 !important;
 }
+h5.date {
+  color: #888;
+}
+
 .divider {
   border-right: 0px solid #aaa;
 }

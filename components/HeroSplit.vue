@@ -10,7 +10,7 @@
        <v-layout row wrap >
      
       <v-flex xs12 sm12 md6 >
-        <v-img :aspect-ratio="1/1" :max-height="500" alt="Illinois Criminal Justice Coordinating Councils" style="background: #283593">
+        <v-img :aspect-ratio="1/1" :max-height="500" alt="Illinois Criminal Justice Coordinating Councils" style="background: #25274D">
  
  <v-container fill-height class=" pb-5 pt-5">
        

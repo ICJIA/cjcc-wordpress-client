@@ -104,7 +104,7 @@ a.excerpt-link:hover {
 
 h1 {
   text-transform: uppercase;
-  color: #0e2b85 !important;
+  color: #444 !important;
 }
 .divider {
   border-right: 0px solid #aaa;

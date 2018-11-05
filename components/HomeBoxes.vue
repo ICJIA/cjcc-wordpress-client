@@ -42,7 +42,7 @@
 export default {
   data() {
     return {
-      color: '#BDBDBD'
+      color: '#E0E0E0'
     }
   }
 }
@@ -53,20 +53,20 @@ a {
   text-decoration: none !important;
 }
 .box:hover {
-  background: #0b216e !important;
+  background: #25274d !important;
 }
 .box:hover > * {
-  color: #ccc;
+  color: #fff;
   cursor: pointer;
 }
 .box-head {
   font-size: 28px;
   text-transform: uppercase;
-  color: #333;
+  color: #000;
 }
 .box-text {
   font-size: 18px;
   margin-top: -10px;
-  color: #444;
+  color: #000;
 }
 </style>

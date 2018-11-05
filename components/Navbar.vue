@@ -54,7 +54,7 @@
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <nuxt-link to="/" class="nav">
       <v-toolbar-title class=" text-uppercase">
-        <span class="font-weight-black">ILLINOIS</span> | 
+        <span class="" style="color: #111; font-weight: 900">ILLINOIS</span> | 
         <span class="font-weight-light" style="color: #1A237E">{{navTitle}}</span>
       </v-toolbar-title>
       </nuxt-link>

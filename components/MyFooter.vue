@@ -5,11 +5,12 @@
     height="auto"
     class="mt-5"
     
+    
   >
     <v-card
       flat
       tile
-      class="grey darken-2 white--text text-xs-center"
+      class="indigo darken-2 white--text text-xs-center"
     >
       <v-card-text>
         <v-btn

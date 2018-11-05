@@ -42,7 +42,7 @@
 export default {
   data() {
     return {
-      color: 'grey darken-2'
+      color: 'indigo darken-3'
     }
   }
 }
@@ -54,7 +54,7 @@ a {
 }
 
 .box:hover {
-  background: #333 !important;
+  background: #304ffe !important;
 
   cursor: pointer;
 }

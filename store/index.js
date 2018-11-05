@@ -14,7 +14,7 @@ export const state = () => ({
   mapMetaData: {},
   blobCache: [],
   councilCache: [],
-  setTestContent: {}
+  testCache: []
 })
 
 export const mutations = {
@@ -28,7 +28,6 @@ export const mutations = {
   setContent(state, data) {
     state.contentObject = data
   },
-
   cacheContent(state, data) {
     state.contentCache.push(data)
   },
@@ -49,6 +48,9 @@ export const mutations = {
   },
   setCouncils: (state, councilData) => {
     state.councilCache = councilData
+  },
+  setTestCache: (state, data) => {
+    state.testCache = data
   }
 }
 
@@ -75,15 +77,14 @@ export const actions = {
 
         commit('setContent', data[0])
         commit('cacheContent', data[0])
-        if (state.contentCache.length > config.contentCacheSize) {
-          commit('removeFromCache')
-          console.log('removeFromCache')
-        }
-        //console.log('new content -- not cached')
+        // if (state.contentCache.length > config.contentCacheSize) {
+        //   commit('removeFromCache')
+        //   console.log('removeFromCache')
+        // }
       } else {
-        //console.log('cached content')
         const contentId = findIndex(state.contentCache, { id: payload.id })
         commit('setContent', state.contentCache[contentId])
+        console.log('Cached content')
       }
     } else {
       const { data } = await axios.get(payload.apiUrlBySlug)
@@ -111,7 +112,7 @@ export const actions = {
 
   async nuxtServerInit(
     { commit, dispatch },
-    { store, route, isServer, params, redirect }
+    { store, route, params, redirect }
   ) {
     //get sitemeta
     const meta = await axios.get(config.getSiteMeta)
@@ -130,21 +131,6 @@ export const actions = {
 
     const data = await require(`~/assets/data/map.json`)
     commit('setMapMetaData', data)
-
-    // console.log('isServer? ', process.server)
-    // console.log('Slug: ', params.slug)
-
-    //console.log('Route: ', route.path.split('/'))
-
-    if (process.server && params.slug) {
-      const request = buildRequest(store.state.siteMeta, route.path)
-      if (request.id === undefined) {
-        redirect(config.redirect404)
-      } else {
-        const { data } = await axios.get(request.apiUrlBySlug + '&_embed')
-        commit('setContent', data[0])
-      }
-    }
   },
   SET_COUNTY({ commit, state }, payload) {
     commit('setCounty', payload)

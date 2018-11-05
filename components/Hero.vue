@@ -3,7 +3,7 @@
   
     <div>
 
-<v-img :aspect-ratio="16/9" :max-height="500" :src="require('@/assets/img/placeholder.png')" class="hero-section" alt="Illinois Criminal Justice Coordinating Councils">
+<v-img :aspect-ratio="16/9" :max-height="500" :src="require('@/assets/img/iStock-947725966.jpg')" alt="Illinois Criminal Justice Coordinating Councils">
  <v-container fill-height>
         <!--- vertical and horizontal alignment -->
         <v-layout align-center justify-center>
@@ -27,9 +27,9 @@
   background-size: cover;
   height: 550px;
   text-align: center;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   padding-right: 30px;
   /* margin-top: 71px; */
 }
@@ -45,9 +45,10 @@ img:before {
   font-size: 36px;
   text-transform: uppercase;
   font-weight: 900;
+  color: #1a237e;
 }
 .brand-state.hero {
-  color: #888;
+  color: #222;
 }
 .highlight {
 }
@@ -59,9 +60,14 @@ h4 {
   /* background: #fff;
         padding: 3px 5px 3px 5px; */
   font-weight: 800;
-  color: #aaa;
+  color: #fff;
 }
 .logo {
   margin-top: 25px;
+}
+
+.desaturate {
+  -webkit-filter: grayscale(100%) !important; /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%) !important;
 }
 </style>

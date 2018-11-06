@@ -12,7 +12,7 @@
       
      
 
-       <v-flex xs12 class="pr-5 pl-5" >
+       <!-- <v-flex xs12 class="pr-5 pl-5" >
         
            <h1 class="text-xs-center box-head mt-5 mb-5">News & Events</h1>
           
@@ -33,12 +33,32 @@
 
           </v-layout>
           
-           
+      </v-flex> -->
 
+      <v-flex xs12 class="pr-5 pl-5" :class="{divider: displayDivider}">
         
-         
-       
+           <h1 class="text-xs-center box-head mt-5 mb-5" style="border-bottom: 1px solid #ddd; padding-bottom: 10px;">News & Events</h1>
+          
+            
+          <v-layout row wrap v-for="post in posts" :key="post.id" class="mb-5">
+          <v-flex xs12 sm12 md8>
+            <router-link :to="post.route">
+              <h3 class="title mb-2">{{ post.title}}</h3>
+            </router-link>
+          </v-flex>
+          <v-flex xs12 sm12 md4 class="text-md-right">
+             <h5 class="date">{{post.date | formatDate}}</h5>
+          </v-flex>
+          <v-flex xs12>
+            
+            <div class="exc excerpt"><router-link :to="post.route" class="excerpt-link">{{ post.excerpt }}</router-link>&nbsp;  <router-link :to="post.route">more</router-link>&raquo;</div>
+          </v-flex>
+          </v-layout>
       </v-flex>
+
+
+
+
   <v-flex xs12>
     <div class="text-xs-center">
     <v-pagination
@@ -136,4 +156,31 @@ export default {
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #0a1f61 !important;
+}
+
+a.excerpt-link {
+  font-weight: normal !important;
+  color: #444 !important;
+  text-decoration: none;
+}
+
+a.excerpt-link:hover {
+  color: #666 !important;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: #444 !important;
+}
+
+h3 {
+  line-height: 1.3 !important;
+}
+h5.date {
+  color: #888;
+}
 </style>

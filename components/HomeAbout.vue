@@ -1,5 +1,5 @@
 <template>
-    <v-container fill-height fluid style="margin-top: -25px;">
+    <v-container fill-height fluid style="margin-top: -60px;">
     <v-layout row wrap v-resize="onResize">
        <!-- <v-flex xs12 sm12 md6 hidden-sm-and-down>
         <v-img :aspect-ratio="1/1" :height="580" src="/placeholder.png">
@@ -28,12 +28,6 @@
             <div class="exc excerpt"><router-link :to="post.route" class="excerpt-link">{{ post.excerpt }}</router-link>&nbsp;  <router-link :to="post.route">more</router-link>&raquo;</div>
           </v-flex>
           </v-layout>
-          
-           
-
-        
-         
-       
       </v-flex>
 
 

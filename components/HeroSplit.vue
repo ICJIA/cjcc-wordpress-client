@@ -7,7 +7,7 @@
 
 
 
-       <v-layout row wrap >
+       <v-layout row wrap class="rule" >
      
       <v-flex xs12 sm12 md6 >
         <v-img :aspect-ratio="1/1" :max-height="500" alt="Illinois Criminal Justice Coordinating Councils" style="background: #25274D">
@@ -103,5 +103,9 @@ h4 {
 
 hr {
   border-top: 0px solid #fff !important;
+}
+
+.rule {
+  border-bottom: 1px solid #ccc !important;
 }
 </style>

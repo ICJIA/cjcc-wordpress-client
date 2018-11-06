@@ -5,7 +5,7 @@
     <span v-if="displayType">
       <nuxt-link :to="typeUrl">{{type}}</nuxt-link> / </span>
     
-    {{title}}
+    {{title | ellipsize}}
     </div>
   </div>
 </template>
@@ -87,6 +87,7 @@ export default {
   height: 50px;
   font-size: 12px;
   font-weight: bold;
+  border-bottom: 1px solid #ccc !important;
 }
 .breadcrumb-content {
   padding-top: 15px;
@@ -103,5 +104,8 @@ a {
 
 a:hover {
   color: #fff !important;
+}
+
+.rule {
 }
 </style>

@@ -3,7 +3,7 @@
   <v-footer
     dark
     height="auto"
-    class="mt-5"
+    class="mt-5 rule"
     
     
   >
@@ -53,5 +53,10 @@ export default {
 
 .bottom-footer-text {
   font-size: 12px;
+}
+
+.rule {
+  border-bottom: 1px solid #ccc !important;
+  border-top: 1px solid #ccc !important;
 }
 </style>

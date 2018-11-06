@@ -1,9 +1,9 @@
 <template>
-    <v-container fill-height fluid class="px-0" style="margin-top: -25px;">
+    <v-container fill-height fluid class="px-0" style="margin-top: -0px;">
     <v-layout row wrap>
        <v-flex xs12 sm12 md4>
           <router-link to="/councils">
-        <v-card dark :color="color" height="100%" class=" pt-4 pb-4 pl-3 box" >
+        <v-card dark :color="color" height="100%" class="elevation-0 pt-4 pb-4 pl-3 box rule" >
          
          <h2 class="text-xs-center box-head">Find a Council</h2>
          
@@ -15,7 +15,7 @@
          </router-link>
       </v-flex>
        <v-flex xs12 sm12 md4>
-        <v-card dark :color="color" height="100%" class=" pt-4 pb-4 pl-3 box">
+        <v-card dark :color="color" height="100%" class="elevation-0 pt-4 pb-4 pl-3 box rule">
            <h2 class="text-xs-center box-head">What We Offer</h2>
           <v-card-text class="px-3 font-weight-light box-text ">
               Interested in crime trends and issues in your jurisdiction? Need assistance forming a criminal justice coordinating council? ICJIA can help.
@@ -24,7 +24,7 @@
       </v-flex>
        <v-flex xs12 sm12 md4>
           <router-link to="/news">
-        <v-card dark :color="color" height="100%" class=" pt-4 pb-4 pl-3 box">
+        <v-card dark :color="color" height="100%" class="elevation-0 pt-4 pb-4 pl-3 box rule">
            <h2 class="text-xs-center box-head">News & Events</h2>
           <v-card-text class="px-3 font-weight-light box-text ">
                Find out the latest news and information relevant to Criminal Justice Coordinating Councils  
@@ -68,5 +68,10 @@ a {
   font-size: 18px;
   margin-top: -10px;
   color: #000;
+}
+
+.rule {
+  border-bottom: 1px solid #ccc !important;
+  border-top: 1px solid #ccc !important;
 }
 </style>

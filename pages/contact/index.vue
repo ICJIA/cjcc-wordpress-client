@@ -15,8 +15,9 @@
 
          <h1 class="text-xs-left title-rule box-head">CONTACT CJCC</h1>
 
-        <div v-blob:contact-intro class="mt-3 mb-5"></div>
-        <!-- <blob title="contact-intro" class="mt-5"></blob> -->
+        <!-- <div v-blob:contact-intro class="mt-3 mb-5"></div> -->
+        <blob title="contact-intro" class="mt-5"></blob>
+        <div v-html="test"></div>
         
        
         <form>
@@ -86,6 +87,9 @@ import DOMPurify from 'dompurify'
 import config from '@/config'
 import Blob from '@/components/InjectBlob'
 const emailjs = require('emailjs-com')
+const f = function() {
+  return '<h1>Hello, World</h1>'
+}
 
 export default {
   mixins: [validationMixin],
@@ -117,7 +121,8 @@ export default {
       showAxiosError: false,
       axiosError: '',
       showLoader: false,
-      id: ''
+      id: '',
+      test: f()
     }
   },
   computed: {

@@ -114,11 +114,11 @@ export default {
       expand: false,
       councils: this.$store.state.councilCache,
       main: [
-        { text: 'News & Events', link: '/news' },
         {
-          text: 'Coordinating Council Advisory Committee',
+          text: 'CCAC Meeting Materials',
           link: '/ccac'
         },
+        { text: 'News & Events', link: '/news' },
         { text: 'Research', link: '/research' },
         { text: 'Resources', link: '/resources' },
         { text: 'Planning', link: '/planning' }

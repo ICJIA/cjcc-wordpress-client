@@ -23,13 +23,6 @@ export default {
     } else {
       this.displayType = false
     }
-    // console.log(
-    //   'Index: ',
-    //   findIndex(this.$store.state.siteMeta, {
-    //     id: this.$props.contentID
-    //   }),
-    //   this.$store.state.siteMeta[2].breadcrumb
-    // )
   },
   data() {
     return {

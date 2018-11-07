@@ -29,6 +29,4 @@ const buildRequest = function(siteMeta, path) {
   return request
 }
 
-const truncate = function(str, maxWords) {}
-
-export { buildRequest, truncate }
+export { buildRequest }

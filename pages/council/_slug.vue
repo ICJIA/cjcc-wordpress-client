@@ -2,7 +2,7 @@
     <div class="page-height">
          <breadcrumb 
        :key="$store.state.forceRender" 
-       title="Council Information" 
+       :title="title + ' Fact Sheet'" 
       
        showBreadcrumb></breadcrumb>
 

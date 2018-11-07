@@ -83,7 +83,7 @@
         <v-icon>search</v-icon>
       </v-btn> -->
        <a href="http://www.icjia.state.il.us" style="margin-top: 4px">
-      <img src="@/assets/img/logo-blue-filled.png" width="70">
+      <img src="@/assets/img/logo-blue-filled.png" width="70" alt="Illinois Criminal Justice Information Authority">
        </a>
     </v-toolbar>
 

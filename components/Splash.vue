@@ -49,7 +49,7 @@
              </v-flex>
             
  <v-flex xs10 offset-xs1>
-       <v-img :aspect-ratio="16/9" :max-height="450" :src="fullSrc" :lazy-src="lazySrc" >
+       <v-img :aspect-ratio="16/9" :max-height="450" :src="fullSrc" :lazy-src="lazySrc" alt="Illinois Criminal Justice Coordinating Councils splash photo">
 
             <v-layout
                     slot="placeholder"

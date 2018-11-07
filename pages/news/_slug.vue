@@ -54,7 +54,7 @@ import config from '@/config'
 import { buildRequest } from '@/utils.js'
 import Breadcrumb from '@/components/Breadcrumb'
 import findIndex from 'lodash.findindex'
-import Spacer from '@/components/Spacer'
+import { handleClicks } from '@/mixins/handleClicks'
 import Splash from '@/components/Splash'
 
 export default {
@@ -65,6 +65,7 @@ export default {
     //   consone.log('Not yet fetched')
     // }
   },
+  mixins: [handleClicks],
 
   async fetch({ store, params, redirect, route }) {
     const request = buildRequest(store.state.siteMeta, route.path)
@@ -113,7 +114,7 @@ export default {
 
   components: {
     Breadcrumb,
-    Spacer,
+
     Splash
   },
 

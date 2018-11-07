@@ -15,7 +15,7 @@
       
       <v-flex xs12 class="pr-5 pl-5">
         
-           <h1 class="text-xs-center box-head mt-5 mb-5" style="border-bottom: 1px solid #ddd; padding-bottom: 10px;">News & Events</h1>
+           <h1 class="text-xs-left box-head mt-5 mb-5 title-rule">News & Events</h1>
           
             
           <v-layout row wrap v-for="post in posts" :key="post.id" class="mb-5">

@@ -31,7 +31,7 @@
                <div class="date">{{published | formatDate}}</div>
              </v-flex>
              <v-flex xs10 offset-xs1 :class="titleDateAlignment">
-               <h1 class="mb-0">{{title}}</h1>
+               <h1 class="mb-0 title-rule">{{title | capitalize}}</h1>
              </v-flex>
            </v-layout>
       </v-container>
@@ -45,7 +45,7 @@
                <div class="date">{{published | formatDate}}</div>
              </v-flex>
              <v-flex xs10 offset-xs1 :class="titleDateAlignment">
-               <h1 class="mb-3">{{title}}</h1>
+               <h1 class="mb-3 title-rule">{{title | capitalize}}</h1>
              </v-flex>
             
  <v-flex xs10 offset-xs1>
@@ -87,7 +87,7 @@
                <div class="date">{{published | formatDate}}</div>
              </v-flex>
              <v-flex xs10 offset-xs1 :class="titleDateAlignment">
-               <h1 class="mb-1">{{title}}</h1>
+               <h1 class="mb-1 title-rule">{{title | capitalize}}</h1>
              </v-flex>
              
       

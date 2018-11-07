@@ -59,3 +59,8 @@ table.cjcc tr {
 table.cjcc tr:nth-child(2n) {
   background-color: #f6f8fa;
 }
+
+.title-rule {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}

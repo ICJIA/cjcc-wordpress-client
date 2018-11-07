@@ -25,7 +25,7 @@
           </v-layout>
 
           <v-flex xs12 text-xs-center>
-             <v-btn small outline to="/news"> <v-icon left dark>open_in_browser</v-icon>News & Events Archive</v-btn>
+             <v-btn small to="/news"> <v-icon left dark>open_in_browser</v-icon>News & Events Archive</v-btn>
             
           </v-flex>
       </v-flex>
@@ -40,7 +40,7 @@
             <div v-blob:home-about></div>
 
             <v-flex xs12 text-xs-center mt-4>
-             <v-btn small outline to="/what-we-offer"> <v-icon left dark>open_in_browser</v-icon>Read more</v-btn>
+             <v-btn small to="/what-we-offer"> <v-icon left dark>open_in_browser</v-icon>Read more</v-btn>
             
           </v-flex>
 

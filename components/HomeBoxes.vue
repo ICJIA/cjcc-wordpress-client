@@ -15,12 +15,14 @@
          </router-link>
       </v-flex>
        <v-flex xs12 sm12 md4>
+         <router-link to="/what-we-offer">
         <v-card dark :color="color" height="100%" class="elevation-0 pt-4 pb-4 pl-3 box rule">
            <h2 class="text-xs-center box-head">What We Offer</h2>
           <v-card-text class="px-3 font-weight-light box-text ">
               Interested in crime trends and issues in your jurisdiction? Need assistance forming a criminal justice coordinating council? ICJIA can help.
           </v-card-text>
         </v-card>
+         </router-link>
       </v-flex>
        <v-flex xs12 sm12 md4>
           <router-link to="/news">

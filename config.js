@@ -1,7 +1,7 @@
 const app = {
   clientURL: 'https://cjcc.icjia.cloud',
   apiUrl: 'https://cjcc.icjia-api.cloud/wp-json/',
-  frontPagePosts: 3,
+  frontPagePosts: 2,
   launchWebpackMonitor: false,
   redirect404: '/404.html',
   getRoutes: 'wp/v2/routes/',

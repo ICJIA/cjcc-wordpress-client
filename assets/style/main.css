@@ -34,3 +34,28 @@ a {
   font-weight: bold !important;
   color: #555 !important;
 }
+
+table.cjcc {
+  display: block;
+  width: 100%;
+  overflow: auto;
+}
+
+table.cjcc th {
+  font-weight: 600;
+}
+
+table.cjcc th,
+table.cjcc td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+table.cjcc tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+table.cjcc tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}

@@ -29,7 +29,9 @@
       <v-flex xs10 offset-xs1 class="rule">
        
         
-        <div v-html="content"> </div>
+        <div v-html="content"  
+        class="dynamic-content"
+          @click="handleClicks"> </div>
 
       
 

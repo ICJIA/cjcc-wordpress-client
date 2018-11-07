@@ -8,7 +8,7 @@
 
 
        <no-ssr>
-         <v-container fill-height class="px-3 mt-5" id="page-content" >
+         <v-container fill-height class="px-3 mt-5" >
     <v-layout row wrap>
       
       <v-flex xs10 offset-xs1>
@@ -16,7 +16,7 @@
          <h1 class="text-xs-left title-rule box-head">CONTACT CJCC</h1>
 
         <!-- <div v-blob:contact-intro class="mt-3 mb-5"></div> -->
-        <blob title="contact-intro" class="mt-5"></blob>
+        <blob title="contact-intro" class="mt-5" id="page-content" ></blob>
        
         <form>
     <v-text-field

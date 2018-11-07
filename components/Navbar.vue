@@ -118,6 +118,7 @@ export default {
           text: 'CCAC Meeting Materials',
           link: '/ccac'
         },
+        { text: 'What We Offer', link: '/what-we-offer' },
         { text: 'News & Events', link: '/news' },
         { text: 'Research', link: '/research' },
         { text: 'Resources', link: '/resources' },

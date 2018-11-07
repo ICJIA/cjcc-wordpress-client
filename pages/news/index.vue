@@ -12,30 +12,8 @@
       
      
 
-       <!-- <v-flex xs12 class="pr-5 pl-5" >
-        
-           <h1 class="text-xs-center box-head mt-5 mb-5">News & Events</h1>
-          
-            
-          <v-layout row wrap v-for="post in posts" :key="post.id" class="mb-5">
-          <v-flex xs12 sm12 md6>
-            <router-link :to="post.route">
-              <h3 class="title mb-2">{{ post.title}}</h3>
-            </router-link>
-          </v-flex>
-          <v-flex xs12 sm12 md6 class="text-md-right">
-             <h5>{{post.date | formatDate}}</h5>
-          </v-flex>
-          <v-flex xs12>
-            <div class="exc excerpt">{{ post.excerpt }}&nbsp;  <router-link :to="post.route">read more</router-link>&raquo;</div>
-          </v-flex>
-          
-
-          </v-layout>
-          
-      </v-flex> -->
-
-      <v-flex xs12 class="pr-5 pl-5" :class="{divider: displayDivider}">
+      
+      <v-flex xs12 class="pr-5 pl-5">
         
            <h1 class="text-xs-center box-head mt-5 mb-5" style="border-bottom: 1px solid #ddd; padding-bottom: 10px;">News & Events</h1>
           

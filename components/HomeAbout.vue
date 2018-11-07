@@ -20,8 +20,17 @@
             
             <div class="exc excerpt"><router-link :to="post.route" class="excerpt-link">{{ post.excerpt }}</router-link>&nbsp;  <router-link :to="post.route">more</router-link>&raquo;</div>
           </v-flex>
+
+          
           </v-layout>
+
+          <v-flex xs12 text-xs-center>
+             <v-btn small outline to="/news"> <v-icon left dark>open_in_browser</v-icon>News & Events Archive</v-btn>
+            
+          </v-flex>
       </v-flex>
+
+      
 
 
        <v-flex xs12 sm12 md6 class="pr-5 pl-5" :class="{topDivider: displayTopDivider}">
@@ -29,6 +38,11 @@
            <h1 class="text-xs-center box-head mt-5 mb-5" style="border-bottom: 1px solid #ddd; padding-bottom: 10px;">About the CJCC</h1>
          
             <div v-blob:home-about></div>
+
+            <v-flex xs12 text-xs-center mt-4>
+             <v-btn small outline to="/what-we-offer"> <v-icon left dark>open_in_browser</v-icon>Read more</v-btn>
+            
+          </v-flex>
 
          
       </v-flex>

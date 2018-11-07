@@ -5,7 +5,7 @@
     <span v-if="displayType">
       <nuxt-link :to="typeUrl">{{type}}</nuxt-link> / </span>
     
-    {{title | ellipsize}}
+    {{title | ellipsize(chars)}}
     </div>
   </div>
 </template>
@@ -45,6 +45,15 @@ export default {
         return this.$store.state.siteMeta[index].breadcrumb
       }
       return this.$store.state.siteMeta[index].breadcrumb
+    },
+    chars() {
+      if (this.$vuetify.breakpoint.xs) {
+        return 10
+      } else if (this.$vuetify.breakpoint.sm) {
+        return 15
+      } else if (this.$vuetify.breakpoint.md) {
+        return 20
+      } else return null
     }
   },
   props: {

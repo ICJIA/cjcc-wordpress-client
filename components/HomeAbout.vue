@@ -1,14 +1,7 @@
 <template>
     <v-container fill-height fluid style="margin-top: -60px;">
     <v-layout row wrap v-resize="onResize">
-       <!-- <v-flex xs12 sm12 md6 hidden-sm-and-down>
-        <v-img :aspect-ratio="1/1" :height="580" src="/placeholder.png">
        
-      </v-img>
-      </v-flex> -->
-
-     
-
       <v-flex xs12 sm12 md6 class="pr-5 pl-5" :class="{divider: displayDivider}">
         
            <h1 class="text-xs-center box-head mt-5 mb-5" style="border-bottom: 1px solid #ddd; padding-bottom: 10px;">News & Events</h1>

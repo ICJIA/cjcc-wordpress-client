@@ -6,14 +6,17 @@
        ></breadcrumb>
 
 <no-ssr>
-         <v-container fluid grid-list-md class="" id="about-ifvcc">
+         <v-container fluid grid-list-md class="" id="page-content">
       <v-layout row wrap>
 
          <v-flex xs12 class="text-xs-center">
             <h1>Find a Criminal Justice Coordinating Council</h1>
          </v-flex>
          <v-flex xs10 offset-xs1 class="pb-5 mt-5">
-           <div v-blob:councils-intro></div>
+
+           
+           <div v-html="blob('councils-intro')" class="dynamic-content"
+          @click="handleClicks"></div>
           </v-flex>
         <v-flex xs12 sm12 md6 hidden-sm-and-down order-sm2 order-xs2 order-md1 class="pt-3">
 
@@ -40,6 +43,7 @@
 </template>
 
 <script>
+import { blob } from '@/mixins/blob'
 import Illinois from '@/components/Illinois.vue'
 import SelectCouncil from '@/components/SelectCouncil.vue'
 import Breadcrumb from '@/components/Breadcrumb.vue'
@@ -49,6 +53,7 @@ export default {
     SelectCouncil,
     Breadcrumb
   },
+  mixins: [blob],
   head() {
     return {
       title: this.title

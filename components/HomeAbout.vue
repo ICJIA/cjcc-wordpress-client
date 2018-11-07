@@ -25,7 +25,7 @@
           </v-layout>
 
           <v-flex xs12 text-xs-center>
-             <v-btn small to="/news"> <v-icon left dark>open_in_browser</v-icon>News & Events Archive</v-btn>
+             <v-btn small to="/news">News & Events Archive<v-icon right dark>chevron_right</v-icon></v-btn>
             
           </v-flex>
       </v-flex>
@@ -37,10 +37,12 @@
        
            <h1 class="text-xs-center box-head mt-5 mb-5" style="border-bottom: 1px solid #ddd; padding-bottom: 10px;">About the CJCC</h1>
          
-            <div v-blob:home-about></div>
+          
+             <div v-html="blob('home-about')" class="dynamic-content"
+          @click="handleClicks"></div>
 
             <v-flex xs12 text-xs-center mt-4>
-             <v-btn small to="/what-we-offer"> <v-icon left dark>open_in_browser</v-icon>Read more</v-btn>
+             <v-btn small to="/what-we-offer">Read more<v-icon right dark>chevron_right</v-icon></v-btn>
             
           </v-flex>
 
@@ -53,10 +55,12 @@
 </template>
 
 <script>
+import { blob } from '@/mixins/blob'
 export default {
   mounted() {
     this.onResize()
   },
+  mixins: [blob],
   data() {
     return {
       color: 'grey lighten-5',

@@ -12,7 +12,7 @@
         <no-ssr>
 
             <ais-index :app-id="appId" :api-key="apiKey" index-name="cjcc">
-                <v-container grid-list-xl text-xs-center>
+                <v-container grid-list-xl text-xs-center id="page-content">
                     <v-layout row wrap>
                         <v-flex xs8 offset-xs2>
 

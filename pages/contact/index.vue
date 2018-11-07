@@ -13,14 +13,13 @@
       
       <v-flex xs10 offset-xs1>
 
-         <h1 class="text-xs-left title-rule box-head">CONTACT CJCC</h1>
+         <h1 class="text-xs-left title-rule box-head mb-5">CONTACT CJCC</h1>
 
-        <!-- <div v-blob:contact-intro class="mt-3 mb-5"></div> -->
-        <blob title="contact-intro" class="mt-5"></blob>
-        <div v-html="test" id="page-content" ></div>
+        <div v-html="blob('contact-intro')" class="dynamic-content"
+          @click="handleClicks"></div>
         
        
-        <form>
+        <form> 
     <v-text-field
       v-model="name"
       :error-messages="nameErrors"
@@ -85,27 +84,21 @@ import { validationMixin } from 'vuelidate'
 import { required, maxLength, email } from 'vuelidate/lib/validators'
 import DOMPurify from 'dompurify'
 import config from '@/config'
-import Blob from '@/components/InjectBlob'
 const emailjs = require('emailjs-com')
-const f = function() {
-  return '<h1>Hello, World</h1>'
-}
+import { blob } from '@/mixins/blob'
 
 export default {
-  mixins: [validationMixin],
+  mixins: [validationMixin, blob],
 
   components: {
-    Breadcrumb,
-    Blob
+    Breadcrumb
   },
   head() {
     return {
       title: this.title
     }
   },
-  mounted() {
-    console.log(this.$refs)
-  },
+  mounted() {},
 
   validations: {
     name: { required },
@@ -121,8 +114,7 @@ export default {
       showAxiosError: false,
       axiosError: '',
       showLoader: false,
-      id: '',
-      test: f()
+      id: ''
     }
   },
   computed: {
@@ -157,6 +149,7 @@ export default {
     clearAxiosError() {
       return (this.showAxiosError = false)
     },
+
     submit() {
       this.$v.$touch()
 

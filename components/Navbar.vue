@@ -46,14 +46,15 @@
             
           </v-list-group>
           <v-divider></v-divider>
-      
+       
           <v-list-tile v-for="item in secondary" :key="item.text" @click="drawer = false">
          
          
           <v-list-tile-content @click.stop="pushRoute(item.link)">
+           
             <v-list-tile-title>
               
-              {{ item.text }}
+             {{ item.text }}
                
             </v-list-tile-title>
           </v-list-tile-content>
@@ -115,6 +116,10 @@ export default {
       councils: this.$store.state.councilCache,
       main: [
         {
+          text: 'Home',
+          link: '/'
+        },
+        {
           text: 'CCAC Meeting Materials',
           link: '/ccac'
         },
@@ -125,8 +130,18 @@ export default {
         { text: 'Planning', link: '/planning' }
       ],
       secondary: [
-        { icon: 'directions_run', text: 'Contact', link: '/contact' },
-        { icon: 'directions_run', text: 'Search', link: '/search' }
+        {
+          icon: 'directions_run',
+          text: 'Contact',
+          link: '/contact',
+          icon: 'email'
+        },
+        {
+          icon: 'directions_run',
+          text: 'Search',
+          link: '/search',
+          icon: 'search'
+        }
       ],
       councils: [
         { text: 'Cook County', link: '/council/cook-county' },

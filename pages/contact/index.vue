@@ -17,7 +17,7 @@
 
         <!-- <div v-blob:contact-intro class="mt-3 mb-5"></div> -->
         <blob title="contact-intro" class="mt-5"></blob>
-        <div v-html="test"></div>
+        <div v-html="test" id="page-content" ></div>
         
        
         <form>

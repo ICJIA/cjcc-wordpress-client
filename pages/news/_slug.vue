@@ -58,29 +58,19 @@ import { handleClicks } from '@/mixins/handleClicks'
 import Splash from '@/components/Splash'
 
 export default {
-  mounted() {
-    // if (this.$store.state.contentObject) {
-    //   console.log('Server side prefetched')
-    // } else {
-    //   consone.log('Not yet fetched')
-    // }
-  },
+  mounted() {},
   mixins: [handleClicks],
 
   async fetch({ store, params, redirect, route }) {
     const request = buildRequest(store.state.siteMeta, route.path)
-
     if (request.id === undefined) {
       redirect(config.redirect404)
     } else {
       await store.dispatch('GET_CONTENT', request)
     }
-
     if (store.state.contentObject.length === 0) {
       return redirect(config.redirect404)
     }
-
-    this.request = request
   },
   created() {
     this.contentID = this.$store.state.contentObject.id

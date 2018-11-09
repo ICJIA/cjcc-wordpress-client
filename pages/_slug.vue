@@ -20,6 +20,8 @@
             class="dynamic-content"
           @click="handleClicks"> </div>
 
+      
+
        
  
       </v-flex>
@@ -42,17 +44,16 @@ export default {
   mixins: [handleClicks],
   async fetch({ store, params, redirect, route }) {
     const request = buildRequest(store.state.siteMeta, route.path)
-
     if (request.id === undefined) {
       redirect(config.redirect404)
     } else {
       await store.dispatch('GET_CONTENT', request)
     }
-
     if (store.state.contentObject.length === 0) {
       return redirect(config.redirect404)
     }
   },
+
   components: {
     Breadcrumb,
     Splash

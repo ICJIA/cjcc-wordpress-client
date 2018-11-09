@@ -10,7 +10,6 @@
     "start": "nuxt start",
     "generate": "node api && nuxt generate",
     "dev-debug": "node --inspect node_modules/.bin/nuxt",
-    "postgenerate": "node algolia.js",
     "postbuild": "node algolia.js"
   },
   "dependencies": {
@@ -64,7 +63,6 @@
     "eslint-plugin-prettier": "2.6.2",
     "nodemon": "^1.11.0",
     "prettier": "1.14.3",
-    "rollbar-sourcemap-webpack-plugin": "^2.4.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2"
   }

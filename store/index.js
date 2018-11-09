@@ -11,10 +11,7 @@ export const state = () => ({
   contentCache: [],
   forceRender: 1,
   countyData: {},
-  mapMetaData: {},
-  blobCache: [],
-  councilCache: [],
-  testCache: []
+  mapMetaData: {}
 })
 
 export const mutations = {
@@ -22,8 +19,8 @@ export const mutations = {
     state.siteMeta = siteMeta
   },
 
-  setRoutes(state) {
-    state.routes = state.siteMeta.map(x => x.route)
+  setRoutes(state, routes) {
+    state.routes = routes
   },
   setContent(state, data) {
     state.contentObject = data
@@ -42,15 +39,6 @@ export const mutations = {
   },
   setMapMetaData: (state, mapMetaData) => {
     state.mapMetaData = mapMetaData
-  },
-  setBlobs: (state, blobData) => {
-    state.blobCache = blobData
-  },
-  setCouncils: (state, councilData) => {
-    state.councilCache = councilData
-  },
-  setTestCache: (state, data) => {
-    state.testCache = data
   }
 }
 
@@ -68,69 +56,60 @@ export const getters = {
 
 export const actions = {
   async GET_CONTENT({ commit, state }, payload) {
-    //console.log(payload)
-
-    // Page content fetch
-    if (config.contentCacheEnabled) {
-      if (!find(state.contentCache, { id: payload.id })) {
-        const { data } = await axios.get(payload.apiUrlBySlug + '&_embed')
-
-        commit('setContent', data[0])
-        commit('cacheContent', data[0])
-        // if (state.contentCache.length > config.contentCacheSize) {
-        //   commit('removeFromCache')
-        //   console.log('removeFromCache')
-        // }
-      } else {
-        const contentId = findIndex(state.contentCache, { id: payload.id })
-        commit('setContent', state.contentCache[contentId])
-        console.log('Cached content')
-      }
-    } else {
-      const { data } = await axios.get(payload.apiUrlBySlug)
-      commit('setContent', data[0])
+    try {
+      const content = require(`@/api${payload.route}/index.json`)
+      console.log('Content: ', content)
+      commit('setContent', content[0])
+    } catch (e) {
+      commit('setContent', `Error fetching content: ${e}`)
     }
   },
 
   async INITIALIZE_APP({ commit, state }) {
-    const meta = await axios.get(config.getSiteMeta)
-    const siteMeta = meta.data
+    const sitemeta = await require('@/api/sitemeta.json')
+    commit('setSiteMeta', sitemeta)
 
-    // For now, grab all blobs with content
-    const b = await axios.get(config.getBlobMeta)
-    const blobs = b.data
-    // get councils
-    let c = await axios.get(config.getCouncilMeta)
-    const councils = c.data
-    commit('setCouncils', councils)
-    commit('setSiteMeta', siteMeta)
-    commit('setBlobs', blobs)
-    commit('setRoutes')
     const data = await require(`~/assets/data/map.json`)
     commit('setMapMetaData', data)
+
+    const routes = store.state.siteMeta
+      // remove blobs
+      .map(x => {
+        if (x.type !== 'blob') {
+          return x.route
+        }
+      })
+      // remove undefined elements
+      .filter(r => {
+        return r !== undefined
+      })
+
+    commit('setRoutes', routes)
   },
 
   async nuxtServerInit(
     { commit, dispatch },
     { store, route, params, redirect }
   ) {
-    //get sitemeta
-    const meta = await axios.get(config.getSiteMeta)
-    const siteMeta = meta.data
-    // get blobs
-    const b = await axios.get(config.getBlobMeta)
-    const blobs = b.data
-    //get councils
-    let c = await axios.get(config.getCouncilMeta)
-    const councils = c.data
-    //console.log(councils)
-    commit('setSiteMeta', siteMeta)
-    commit('setBlobs', blobs)
-    commit('setCouncils', councils)
-    commit('setRoutes')
+    const sitemeta = await require('@/api/sitemeta.json')
+    commit('setSiteMeta', sitemeta)
 
     const data = await require(`~/assets/data/map.json`)
     commit('setMapMetaData', data)
+
+    const routes = store.state.siteMeta
+      // remove blobs
+      .map(x => {
+        if (x.type !== 'blob') {
+          return x.route
+        }
+      })
+      // remove undefined elements
+      .filter(r => {
+        return r !== undefined
+      })
+
+    commit('setRoutes', routes)
   },
   SET_COUNTY({ commit, state }, payload) {
     commit('setCounty', payload)

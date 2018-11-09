@@ -6,16 +6,12 @@ export const blob = {
   mounted() {},
   mixins: [handleClicks],
   methods: {
-    blob(slug) {
-      const blob = this.$store.state.blobCache.filter(b => {
-        return b.title === slug
-      })
-
-      if (blob.length) {
-        return blob[0].content
-      } else {
-        return '<h2>Undefined blob: ' + slug + '</h2>'
-      }
+    blob(blobSlug) {
+      try {
+        const blob = require(`@/api/blob/${blobSlug}/index.json`)
+        return blob[0].content.rendered
+      } catch (e) {}
+      return '<h2>Blob undefined: ' + blobSlug + '</h2>'
     }
   }
 }

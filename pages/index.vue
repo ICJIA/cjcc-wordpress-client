@@ -32,13 +32,7 @@ export default {
     }
   },
   methods: {},
-  mounted() {
-    // try {
-    //   throw new Error('Something went wrong')
-    // } catch (e) {
-    //   this.rollbar.error(e)
-    // }
-  },
+  mounted() {},
 
   head() {
     return {

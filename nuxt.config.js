@@ -61,7 +61,7 @@ module.exports = {
     script: [
       {
         src:
-          'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js'
+          'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/7.0.0/polyfill.min.js'
       },
       {
         src:
@@ -90,8 +90,8 @@ module.exports = {
   plugins: [
     '@/plugins/vuetify',
     '~/plugins/filters.js',
-    { src: '~plugins/vueinstantsearch', ssr: false },
-    { src: '~/plugins/fusioncharts.js', ssr: false }
+    { src: '~plugins/vueinstantsearch', ssr: false }
+    // { src: '~/plugins/fusioncharts.js', ssr: false }
   ],
   sitemap: {
     path: '/sitemap.xml',

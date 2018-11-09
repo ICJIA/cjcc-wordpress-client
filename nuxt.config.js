@@ -56,6 +56,10 @@ module.exports = {
       {
         rel: 'stylesheet',
         href: 'https://pro.fontawesome.com/releases/v5.4.2/css/all.css'
+      },
+      {
+        rel: 'stylesheet',
+        href: '/usil-js-map/map-style.css'
       }
     ],
     script: [
@@ -69,6 +73,18 @@ module.exports = {
       },
       {
         src: '/outdatedbrowser/outdatedbrowser.min.js',
+        defer: true
+      },
+      {
+        src: 'https://code.jquery.com/jquery-3.2.1.min.js',
+        defer: true
+      },
+      {
+        src: '/usil-js-map/map-config.js',
+        defer: true
+      },
+      {
+        src: '/usil-js-map/map-interact.js',
         defer: true
       }
     ]

@@ -24,20 +24,6 @@ const writeToFile = async (filePath, apiFullUrl) => {
   )
 }
 
-const fetchRoutes = async function() {
-  const { data } = await axios.get(config.routesUrl)
-  await fs.mkpath(path.resolve(config.localApiDirectory))
-  await fs.writeFile(
-    path.resolve(`${config.localApiDirectory}/routes.json`),
-    JSON.stringify(data),
-    {
-      encoding: 'utf8'
-    }
-  )
-  console.log('Save to file: ', `${config.localApiDirectory}/routes.json`)
-  return
-}
-
 /**
  * For sitemeta construction, see: https://github.com/ICJIA/cjcc-wordpress-client/blob/master/wordpress/icjia-functions.php
  */
@@ -62,8 +48,6 @@ const resolvePromises = async function(res) {
 }
 
 rimraf.sync(path.resolve(config.localApiDirectory))
-
-fetchRoutes()
 
 fetchSitemeta()
   .then(

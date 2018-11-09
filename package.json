@@ -5,10 +5,10 @@
   "author": "cschweda",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
+    "dev": "node api && nuxt",
+    "build": "node api && nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
+    "generate": "node api && nuxt generate",
     "dev-debug": "node --inspect node_modules/.bin/nuxt",
     "postgenerate": "node algolia.js",
     "postbuild": "node algolia.js"
@@ -53,7 +53,11 @@
     "vuelidate": "^0.7.4",
     "vuetify": "^1.3.5",
     "website-to-json": "^1.0.22",
-    "xml2json": "^0.11.2"
+    "xml2json": "^0.11.2",
+    "fs-extra": "^7.0.1",
+    "nano-fs": "^1.2.5",
+    "pify": "^4.0.1",
+    "rimraf": "^2.6.2"
   },
   "devDependencies": {
     "eslint-config-prettier": "^3.1.0",

@@ -21,7 +21,7 @@
                      <span class=" brand-state hero">Illinois</span>
             <span class="brand-name hero ">&nbsp;Criminal Justice Coordinating Councils</span>
             <hr class="mt-4 mb-5">
-            <h3 class="mt-3 hero-sub">Sponsored by the Illinois Criminal Justice Information Authority</h3>
+            <h3 class="mt-3 hero-sub mb-5">Sponsored by the Illinois Criminal Justice Information Authority</h3>
             
                 </div>
             </v-flex>

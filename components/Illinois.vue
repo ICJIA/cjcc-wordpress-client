@@ -16,7 +16,7 @@
            
       </no-ssr>
       
-    
+     
     </div>
 </template>
 
@@ -28,7 +28,6 @@ export default {
   mounted() {
     //console.log(this.dataSource)
     this.renderChart(this)
-    console.log(this.$vuetify.breakpoint)
   },
   methods: {
     ...mapActions([

@@ -97,12 +97,14 @@ export default {
       return
     },
     getFactSheet() {
-      const councilInfo = this.$store.state.councilCache.filter(c => {
-        // console.log(c.slug, this.selectedCountyMetaData.slug)
-        return c.slug === this.selectedCountyMetaData.slug
-      })
-      const { content } = councilInfo[0]
-      this.content = content
+      try {
+        const content = require(`@/api/council/${
+          this.selectedCountyMetaData.slug
+        }/index.json`)
+        this.content = content[0].content.rendered
+      } catch (e) {
+        this.content = `${e}`
+      }
     },
     getCountyMetaData: function(key, value) {
       var myObj

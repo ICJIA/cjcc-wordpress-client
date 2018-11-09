@@ -51,7 +51,7 @@ const fetchSitemeta = async function() {
       encoding: 'utf8'
     }
   )
-  console.log('Save to file: ', `${config.localApiDirectory}/index.json`)
+  console.log('Save to file: ', `${config.localApiDirectory}/sitemeta.json`)
 
   return data
 }

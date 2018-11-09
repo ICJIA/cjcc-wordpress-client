@@ -58,7 +58,6 @@ export const actions = {
   async GET_CONTENT({ commit, state }, payload) {
     try {
       const content = require(`@/api${payload.route}/index.json`)
-      console.log('Content: ', content)
       commit('setContent', content[0])
     } catch (e) {
       commit('setContent', `Error fetching content: ${e}`)

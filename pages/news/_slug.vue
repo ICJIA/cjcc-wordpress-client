@@ -49,7 +49,6 @@
 </template>
 
 <script>
-import axios from '@/plugins/axios'
 import config from '@/config'
 import { buildRequest } from '@/utils.js'
 import Breadcrumb from '@/components/Breadcrumb'

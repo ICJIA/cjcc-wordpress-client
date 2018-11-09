@@ -1,19 +1,17 @@
 <template>
   <v-app light>
-    <no-ssr>
+    <!-- <no-ssr>
 <outdated-browser></outdated-browser>
-    </no-ssr>
+    </no-ssr> -->
     
     <v-content id="content">
       
       <navbar/>
-      <no-ssr>
-        
-      </no-ssr>
+     
        
           <nuxt/>
         
-       <my-footer/>
+       <!-- <my-footer/> -->
      
     </v-content>
     

@@ -4,7 +4,7 @@ const usiljsconfig = {
     hover: 'ADAMS', //info of the popup
     url: 'https://www.html5interactivemaps.com/', //link to any webpage
     target: 'event', // use "new_window", "same_window", "modal", or "none"
-    upColor: '#FFFFF3', //default color
+    upColor: '#FFFFFF', //default color
     overColor: '#ECFFB3', //highlight color
     downColor: '#cae9af', //clicking color
     active: true //true/false to activate/deactivate
@@ -13,7 +13,7 @@ const usiljsconfig = {
     hover: 'ALEXANDER',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -22,7 +22,7 @@ const usiljsconfig = {
     hover: 'BOND',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -31,7 +31,7 @@ const usiljsconfig = {
     hover: 'BOONE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -40,7 +40,7 @@ const usiljsconfig = {
     hover: 'BROWN',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -49,7 +49,7 @@ const usiljsconfig = {
     hover: 'BUREAU',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -58,7 +58,7 @@ const usiljsconfig = {
     hover: 'CALHOUN',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -67,7 +67,7 @@ const usiljsconfig = {
     hover: 'CARROLL',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -76,7 +76,7 @@ const usiljsconfig = {
     hover: 'CASS',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -85,7 +85,7 @@ const usiljsconfig = {
     hover: 'CHAMPAIGN',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -94,7 +94,7 @@ const usiljsconfig = {
     hover: 'CHRISTIAN',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -103,7 +103,7 @@ const usiljsconfig = {
     hover: 'CLARK',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -112,7 +112,7 @@ const usiljsconfig = {
     hover: 'CLAY',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -121,7 +121,7 @@ const usiljsconfig = {
     hover: 'CLINTON',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -130,7 +130,7 @@ const usiljsconfig = {
     hover: 'COLES',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -139,7 +139,7 @@ const usiljsconfig = {
     hover: 'COOK',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -148,7 +148,7 @@ const usiljsconfig = {
     hover: 'CRAWFORD',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -157,7 +157,7 @@ const usiljsconfig = {
     hover: 'CUMBERLAND',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -166,7 +166,7 @@ const usiljsconfig = {
     hover: 'DEKALB',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -175,7 +175,7 @@ const usiljsconfig = {
     hover: 'DEWITT',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -184,7 +184,7 @@ const usiljsconfig = {
     hover: 'DOUGLAS',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -193,7 +193,7 @@ const usiljsconfig = {
     hover: 'DUPAGE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -202,7 +202,7 @@ const usiljsconfig = {
     hover: 'EDGAR',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -211,7 +211,7 @@ const usiljsconfig = {
     hover: 'EDWARDS',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -220,7 +220,7 @@ const usiljsconfig = {
     hover: 'EFFINGHAM',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -229,7 +229,7 @@ const usiljsconfig = {
     hover: 'FAYETTE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -238,7 +238,7 @@ const usiljsconfig = {
     hover: 'FORD',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -247,7 +247,7 @@ const usiljsconfig = {
     hover: 'FRANKLIN',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -256,7 +256,7 @@ const usiljsconfig = {
     hover: 'FULTON',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -265,7 +265,7 @@ const usiljsconfig = {
     hover: 'GALLATIN',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -274,7 +274,7 @@ const usiljsconfig = {
     hover: 'GREENE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -283,7 +283,7 @@ const usiljsconfig = {
     hover: 'GRUNDY',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -292,7 +292,7 @@ const usiljsconfig = {
     hover: 'HAMILTON',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -301,7 +301,7 @@ const usiljsconfig = {
     hover: 'HANCOCK',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -310,7 +310,7 @@ const usiljsconfig = {
     hover: 'HARDIN',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -319,7 +319,7 @@ const usiljsconfig = {
     hover: 'HENDERSON',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -328,7 +328,7 @@ const usiljsconfig = {
     hover: 'HENRY',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -337,7 +337,7 @@ const usiljsconfig = {
     hover: 'IROQUOIS',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -346,7 +346,7 @@ const usiljsconfig = {
     hover: 'JACKSON',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -355,7 +355,7 @@ const usiljsconfig = {
     hover: 'JASPER',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -364,7 +364,7 @@ const usiljsconfig = {
     hover: 'JEFFERSON',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -373,7 +373,7 @@ const usiljsconfig = {
     hover: 'JERSEY',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -382,7 +382,7 @@ const usiljsconfig = {
     hover: 'JO DAVIESS',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -391,7 +391,7 @@ const usiljsconfig = {
     hover: 'JOHNSON',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -400,7 +400,7 @@ const usiljsconfig = {
     hover: 'KANE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -409,7 +409,7 @@ const usiljsconfig = {
     hover: 'KANKAKEE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -418,7 +418,7 @@ const usiljsconfig = {
     hover: 'KENDALL',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -427,7 +427,7 @@ const usiljsconfig = {
     hover: 'KNOX',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -436,7 +436,7 @@ const usiljsconfig = {
     hover: 'LAKE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -445,7 +445,7 @@ const usiljsconfig = {
     hover: 'LASALLE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -454,7 +454,7 @@ const usiljsconfig = {
     hover: 'LAWRENCE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -463,7 +463,7 @@ const usiljsconfig = {
     hover: 'LEE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -472,7 +472,7 @@ const usiljsconfig = {
     hover: 'LIVINGSTON',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -481,7 +481,7 @@ const usiljsconfig = {
     hover: 'LOGAN',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -490,7 +490,7 @@ const usiljsconfig = {
     hover: 'MACON',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -499,7 +499,7 @@ const usiljsconfig = {
     hover: 'MACOUPIN',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -508,7 +508,7 @@ const usiljsconfig = {
     hover: 'MADISON',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -517,7 +517,7 @@ const usiljsconfig = {
     hover: 'MARION',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -526,7 +526,7 @@ const usiljsconfig = {
     hover: 'MARSHALL',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -535,7 +535,7 @@ const usiljsconfig = {
     hover: 'MASON',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -544,7 +544,7 @@ const usiljsconfig = {
     hover: 'MASSAC',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -553,7 +553,7 @@ const usiljsconfig = {
     hover: 'MCDONOUGH',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -562,7 +562,7 @@ const usiljsconfig = {
     hover: 'MCHENRY',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -571,7 +571,7 @@ const usiljsconfig = {
     hover: 'MCLEAN',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -580,7 +580,7 @@ const usiljsconfig = {
     hover: 'MENARD',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -589,7 +589,7 @@ const usiljsconfig = {
     hover: 'MERCER',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -598,7 +598,7 @@ const usiljsconfig = {
     hover: 'MONROE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -607,7 +607,7 @@ const usiljsconfig = {
     hover: 'MONTGOMERY',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -616,7 +616,7 @@ const usiljsconfig = {
     hover: 'MORGAN',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -625,7 +625,7 @@ const usiljsconfig = {
     hover: 'MOULTRIE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -634,7 +634,7 @@ const usiljsconfig = {
     hover: 'OGLE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -643,7 +643,7 @@ const usiljsconfig = {
     hover: 'PEORIA',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -652,7 +652,7 @@ const usiljsconfig = {
     hover: 'PERRY',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -661,7 +661,7 @@ const usiljsconfig = {
     hover: 'PIATT',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -670,7 +670,7 @@ const usiljsconfig = {
     hover: 'PIKE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -679,7 +679,7 @@ const usiljsconfig = {
     hover: 'POPE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -688,7 +688,7 @@ const usiljsconfig = {
     hover: 'PULASKI',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -697,7 +697,7 @@ const usiljsconfig = {
     hover: 'PUTNAM',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -706,7 +706,7 @@ const usiljsconfig = {
     hover: 'RANDOLPH',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -715,7 +715,7 @@ const usiljsconfig = {
     hover: 'RICHLAND',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -724,7 +724,7 @@ const usiljsconfig = {
     hover: 'ROCK ISLAND',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -733,7 +733,7 @@ const usiljsconfig = {
     hover: 'SALINE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -742,7 +742,7 @@ const usiljsconfig = {
     hover: 'SANGAMON',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -751,7 +751,7 @@ const usiljsconfig = {
     hover: 'SCHUYLER',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -760,7 +760,7 @@ const usiljsconfig = {
     hover: 'SCOTT',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -769,7 +769,7 @@ const usiljsconfig = {
     hover: 'SHELBY',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -778,7 +778,7 @@ const usiljsconfig = {
     hover: 'ST. CLAIR',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -787,7 +787,7 @@ const usiljsconfig = {
     hover: 'STARK',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -796,7 +796,7 @@ const usiljsconfig = {
     hover: 'STEPHENSON',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -805,7 +805,7 @@ const usiljsconfig = {
     hover: 'TAZEWELL',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -814,7 +814,7 @@ const usiljsconfig = {
     hover: 'UNION',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -823,7 +823,7 @@ const usiljsconfig = {
     hover: 'VERMILION',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -832,7 +832,7 @@ const usiljsconfig = {
     hover: 'WABASH',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -841,7 +841,7 @@ const usiljsconfig = {
     hover: 'WARREN',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -850,7 +850,7 @@ const usiljsconfig = {
     hover: 'WASHINGTON',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -859,7 +859,7 @@ const usiljsconfig = {
     hover: 'WAYNE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -868,7 +868,7 @@ const usiljsconfig = {
     hover: 'WHITE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -877,7 +877,7 @@ const usiljsconfig = {
     hover: 'WHITESIDE',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -886,7 +886,7 @@ const usiljsconfig = {
     hover: 'WILL',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -895,7 +895,7 @@ const usiljsconfig = {
     hover: 'WILLIAMSON',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -904,7 +904,7 @@ const usiljsconfig = {
     hover: 'WINNEBAGO',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true
@@ -913,7 +913,7 @@ const usiljsconfig = {
     hover: 'WOODFORD',
     url: 'https://www.html5interactivemaps.com/',
     target: 'same_window',
-    upColor: '#FFFFF3',
+    upColor: '#FFFFFF',
     overColor: '#ECFFB3',
     downColor: '#cae9af',
     active: true

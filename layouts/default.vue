@@ -10,9 +10,9 @@
       <no-ssr>
         
       </no-ssr>
-        <div>
+       
           <nuxt/>
-        </div>
+        
        <my-footer/>
      
     </v-content>

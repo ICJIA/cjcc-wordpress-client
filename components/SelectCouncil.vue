@@ -94,6 +94,7 @@ export default {
       // Finally, remove any elements that don't contain 'title' keys
       data = filter(data, o => typeof o.title !== 'undefined')
       this.items = data
+      console.log(this.items)
       return
     },
     getFactSheet() {

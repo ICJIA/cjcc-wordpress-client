@@ -2,925 +2,937 @@
 const usiljsconfig = {
   usiljs1: {
     hover: 'ADAMS', //info of the popup
-    url: 'https://www.html5interactivemaps.com/', //link to any webpage
+    url: '', //link to any webpage
     target: 'event', // use "new_window", "same_window", "modal", or "none"
     upColor: '#FFFFFF', //default color
-    overColor: '#ECFFB3', //highlight color
+    overColor: '#2979FF', //highlight color
     downColor: '#cae9af', //clicking color
-    active: true //true/false to activate/deactivate
+    active: false //true/false to activate/deactivate
   },
   usiljs2: {
     hover: 'ALEXANDER',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs3: {
     hover: 'BOND',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs4: {
     hover: 'BOONE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs5: {
     hover: 'BROWN',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs6: {
     hover: 'BUREAU',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs7: {
     hover: 'CALHOUN',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs8: {
     hover: 'CARROLL',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs9: {
     hover: 'CASS',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs10: {
     hover: 'CHAMPAIGN',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs11: {
     hover: 'CHRISTIAN',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs12: {
     hover: 'CLARK',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs13: {
     hover: 'CLAY',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs14: {
     hover: 'CLINTON',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs15: {
     hover: 'COLES',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs16: {
     hover: 'COOK',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
-    upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    url: '',
+    target: 'vue',
+    upColor: '#42A5F5',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: true,
+    cid: '031',
+    slug: 'cook-county'
   },
   usiljs17: {
     hover: 'CRAWFORD',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs18: {
     hover: 'CUMBERLAND',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs19: {
     hover: 'DEKALB',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs20: {
     hover: 'DEWITT',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs21: {
     hover: 'DOUGLAS',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs22: {
     hover: 'DUPAGE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs23: {
     hover: 'EDGAR',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs24: {
     hover: 'EDWARDS',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs25: {
     hover: 'EFFINGHAM',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs26: {
     hover: 'FAYETTE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs27: {
     hover: 'FORD',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs28: {
     hover: 'FRANKLIN',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs29: {
     hover: 'FULTON',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs30: {
     hover: 'GALLATIN',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs31: {
     hover: 'GREENE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs32: {
     hover: 'GRUNDY',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs33: {
     hover: 'HAMILTON',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs34: {
     hover: 'HANCOCK',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs35: {
     hover: 'HARDIN',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs36: {
     hover: 'HENDERSON',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs37: {
     hover: 'HENRY',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs38: {
     hover: 'IROQUOIS',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs39: {
     hover: 'JACKSON',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs40: {
     hover: 'JASPER',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs41: {
     hover: 'JEFFERSON',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs42: {
     hover: 'JERSEY',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs43: {
     hover: 'JO DAVIESS',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs44: {
     hover: 'JOHNSON',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs45: {
     hover: 'KANE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs46: {
     hover: 'KANKAKEE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs47: {
     hover: 'KENDALL',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs48: {
     hover: 'KNOX',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs49: {
     hover: 'LAKE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
-    upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    url: '',
+    target: 'vue',
+    upColor: '#42A5F5',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: true,
+    cid: '083',
+    slug: 'lake-county'
   },
   usiljs50: {
     hover: 'LASALLE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs51: {
     hover: 'LAWRENCE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs52: {
     hover: 'LEE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs53: {
     hover: 'LIVINGSTON',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs54: {
     hover: 'LOGAN',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs55: {
     hover: 'MACON',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs56: {
     hover: 'MACOUPIN',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs57: {
     hover: 'MADISON',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs58: {
     hover: 'MARION',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs59: {
     hover: 'MARSHALL',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs60: {
     hover: 'MASON',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs61: {
     hover: 'MASSAC',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs62: {
     hover: 'MCDONOUGH',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs63: {
     hover: 'MCHENRY',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
-    upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    url: '',
+    target: 'vue',
+    upColor: '#42A5F5',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: true,
+    cid: '111',
+    slug: 'mchenry-county'
   },
   usiljs64: {
     hover: 'MCLEAN',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
-    upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    url: '',
+    target: 'vue',
+    upColor: '#42A5F5',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: true,
+    cid: '113',
+    slug: 'mclean-county'
   },
   usiljs65: {
     hover: 'MENARD',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs66: {
     hover: 'MERCER',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs67: {
     hover: 'MONROE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs68: {
     hover: 'MONTGOMERY',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs69: {
     hover: 'MORGAN',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs70: {
     hover: 'MOULTRIE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs71: {
     hover: 'OGLE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs72: {
     hover: 'PEORIA',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs73: {
     hover: 'PERRY',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs74: {
     hover: 'PIATT',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs75: {
     hover: 'PIKE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs76: {
     hover: 'POPE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs77: {
     hover: 'PULASKI',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs78: {
     hover: 'PUTNAM',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs79: {
     hover: 'RANDOLPH',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs80: {
     hover: 'RICHLAND',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs81: {
     hover: 'ROCK ISLAND',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs82: {
     hover: 'SALINE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs83: {
     hover: 'SANGAMON',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs84: {
     hover: 'SCHUYLER',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs85: {
     hover: 'SCOTT',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs86: {
     hover: 'SHELBY',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs87: {
     hover: 'ST. CLAIR',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
-    upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    url: '',
+    target: 'vue',
+    upColor: '#42A5F5',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: true,
+    cid: '163',
+    slug: 'st-clair-county'
   },
   usiljs88: {
     hover: 'STARK',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs89: {
     hover: 'STEPHENSON',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs90: {
     hover: 'TAZEWELL',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs91: {
     hover: 'UNION',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs92: {
     hover: 'VERMILION',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs93: {
     hover: 'WABASH',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs94: {
     hover: 'WARREN',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs95: {
     hover: 'WASHINGTON',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs96: {
     hover: 'WAYNE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs97: {
     hover: 'WHITE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs98: {
     hover: 'WHITESIDE',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs99: {
     hover: 'WILL',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs100: {
     hover: 'WILLIAMSON',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   usiljs101: {
     hover: 'WINNEBAGO',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
-    upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    url: '',
+    target: 'vue',
+    upColor: '#42A5F5',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: true,
+    cid: '201',
+    slug: 'winnebago-county'
   },
   usiljs102: {
     hover: 'WOODFORD',
-    url: 'https://www.html5interactivemaps.com/',
-    target: 'same_window',
+    url: '',
+    target: 'vue',
     upColor: '#FFFFFF',
-    overColor: '#ECFFB3',
+    overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true
+    active: false
   },
   general: {
     borderColor: '#9CA8B6',
-    visibleNames: '#adadad'
+    visibleNames: '#000000'
   }
 }
 

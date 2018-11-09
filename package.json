@@ -26,6 +26,7 @@
     "emailjs-com": "^2.2.4",
     "fs-extra": "^7.0.1",
     "html-metadata": "^1.7.0",
+    "jquery": "^3.3.1",
     "jsonfile": "^4.0.0",
     "lodash.filter": "^4.6.0",
     "lodash.find": "^4.6.0",

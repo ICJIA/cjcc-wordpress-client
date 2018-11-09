@@ -1,9 +1,11 @@
 <template>
     <div>
-        <span id="usiljstip"></span>
+   <v-container fill-height class="px-3 mt-5" id="page-content" >
+    <v-layout row wrap>
+         <v-flex xs4 text-xs-center>
 <div id="mapwrapper">
   <div id="mapbase"><!-- V4.1 -->
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 700" xml:space="preserve">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 900" xml:space="preserve">
       <g>
         <path id="usiljs1" fill="#EBECED" stroke="#FFFFFF" vector-effect="non-scaling-stroke" d="M76.884,342.107l0.307-32.024l0.107-11.241l-60.37-0.302c-1.924,2.829-0.113,12.561,1.132,17.54c1.245,4.979,3.96,12.447,7.016,14.259c3.055,1.811,0.113,3.62-1.358,4.639s-1.697,3.055,0,6.224s5.997,4.074,7.695,5.998c1.697,1.924,0.226,3.168-0.679,4.865H76.79L76.884,342.107z"/>
         <path id="usiljs2" fill="#EBECED" stroke="#FFFFFF" vector-effect="non-scaling-stroke" d="M252.468,678.868c-0.622-0.396-0.904-0.736-2.206-0.566s-4.13-1.754-5.437-2.716c-1.307-0.961-0.052-1.132,0-2.828c0.051-1.697,0.685-2.037,0.164-3.904c-0.521-1.867,0.351-1.754,0.521-3.678c0.169-1.924-0.623-2.603-0.511-3.791c0.113-1.188,1.302-1.924,1.528-3.056c0.227-1.131,3.396-3.733,4.3-4.47c0.906-0.735,1.188-2.659-0.113-3.621c-1.301-0.962-1.584-2.15-1.584-2.15h-26.366c-2.263,0.68-1.584,1.133-2.603,3.282c-1.019,2.15-1.697,3.621,0,5.771c1.698,2.149,2.263,0.792,4.867,0.792c2.602,0,2.037,1.357,0.226,1.924s-0.793,3.621,0.679,7.469c1.472,3.847,5.997,8.373,7.355,9.505c1.357,1.132,0.792,3.733-0.78,4.75c-1.183,0.765-0.332,1.661,2.327,3.322c2.657,1.661,6.146,3.322,7.308,4.983c1.163,1.661,3.322,0.665,3.654-2.324c0.333-2.991-4.317-2.327-4.484-4.486c-0.165-2.159,2.658-2.658,4.152-2.491c1.496,0.166,2.825,3.322,4.984,5.481c2.159,2.16,1.33,2.326,1.496,4.818s2.491,1.328,5.647,0.995c3.155-0.332,0.165-2.325-2.99-4.152c-3.156-1.826-1.163-4.817-0.499-6.645C254.104,681.083,253.09,679.264,252.468,678.868z"/>
@@ -212,15 +214,144 @@
         <text id="usiljsvn101" transform="matrix(1 0 0 1 216 30)" font-size="14">Winnebago</text>
         <text id="usiljsvn102" transform="matrix(1 0 0 1 222 226)" font-size="12">Woodford</text>
       </g>
-      <g id="usiljspins"></g>
+      
     </svg>
   </div>
 </div>
+         </v-flex>
+    </v-layout>
+   </v-container>
     </div>
 </template>
 
 <script>
-export default {}
+import { usiljsconfig } from '@/assets/data/usiljsconfig'
+export default {
+  methods: {
+    mapClick(id) {
+      console.log('Click:', id)
+    }
+  },
+  mounted() {
+    const vm = this
+
+    function isTouchEnabled() {
+      return (
+        'ontouchstart' in window ||
+        navigator.MaxTouchPoints > 0 ||
+        navigator.msMaxTouchPoints > 0
+      )
+    }
+    jQuery(function() {
+      jQuery('path[id^=usiljs]').each(function(i, e) {
+        usiladdEvent(jQuery(e).attr('id'))
+      })
+    })
+    function usiladdEvent(id, relationId) {
+      var _obj = jQuery('#' + id)
+      var arr = id.split('')
+      var _Textobj = jQuery(
+        '#' + id + ',' + '#usiljsvn' + arr.slice(6).join('')
+      )
+      jQuery('#' + ['visnames']).attr({
+        fill: usiljsconfig.general.visibleNames
+      })
+      _obj.attr({
+        fill: usiljsconfig[id].upColor,
+        stroke: usiljsconfig.general.borderColor
+      })
+      _Textobj.attr({ cursor: 'default' })
+      if (usiljsconfig[id].active === true) {
+        _Textobj.attr({ cursor: 'pointer' })
+        _Textobj.hover(
+          function() {
+            jQuery('#usiljstip')
+              .show()
+              .html(usiljsconfig[id].hover)
+            _obj.css({ fill: usiljsconfig[id].overColor })
+          },
+          function() {
+            jQuery('#usiljstip').hide()
+            jQuery('#' + id).css({ fill: usiljsconfig[id].upColor })
+          }
+        )
+        if (usiljsconfig[id].target !== 'none') {
+          _Textobj.mousedown(function() {
+            jQuery('#' + id).css({ fill: usiljsconfig[id].downColor })
+          })
+        }
+        _Textobj.mouseup(function() {
+          jQuery('#' + id).css({ fill: usiljsconfig[id].overColor })
+          if (usiljsconfig[id].target === 'new_window') {
+            window.open(usiljsconfig[id].url)
+          } else if (usiljsconfig[id].target === 'same_window') {
+            window.parent.location.href = usiljsconfig[id].url
+          } else if (usiljsconfig[id].target === 'modal') {
+            jQuery(usiljsconfig[id].url).modal('show')
+          } else if (usiljsconfig[id].target === 'event') {
+            // jQuery(usiljsconfig[id].url).modal("show");
+            console.log('Click id: ', id, ' Vue: ', vm)
+            //vm.mapClick(id)
+          }
+        })
+        _Textobj.mousemove(function(e) {
+          var x = e.pageX + 10,
+            y = e.pageY + 15
+          var tipw = jQuery('#usiljstip').outerWidth(),
+            tiph = jQuery('#usiljstip').outerHeight(),
+            x =
+              x + tipw > jQuery(document).scrollLeft() + jQuery(window).width()
+                ? x - tipw - 20 * 2
+                : x
+          y =
+            y + tiph > jQuery(document).scrollTop() + jQuery(window).height()
+              ? jQuery(document).scrollTop() +
+                jQuery(window).height() -
+                tiph -
+                10
+              : y
+          jQuery('#usiljstip').css({ left: x, top: y })
+        })
+        if (isTouchEnabled()) {
+          _Textobj.on('touchstart', function(e) {
+            var touch = e.originalEvent.touches[0]
+            var x = touch.pageX + 10,
+              y = touch.pageY + 15
+            var tipw = jQuery('#usiljstip').outerWidth(),
+              tiph = jQuery('#usiljstip').outerHeight(),
+              x =
+                x + tipw >
+                jQuery(document).scrollLeft() + jQuery(window).width()
+                  ? x - tipw - 20 * 2
+                  : x
+            y =
+              y + tiph > jQuery(document).scrollTop() + jQuery(window).height()
+                ? jQuery(document).scrollTop() +
+                  jQuery(window).height() -
+                  tiph -
+                  10
+                : y
+            jQuery('#' + id).css({ fill: usiljsconfig[id].downColor })
+            jQuery('#usiljstip')
+              .show()
+              .html(usiljsconfig[id].hover)
+            jQuery('#usiljstip').css({ left: x, top: y })
+          })
+          _Textobj.on('touchend', function() {
+            jQuery('#' + id).css({ fill: usiljsconfig[id].upColor })
+            if (usiljsconfig[id].target === 'new_window') {
+              window.open(usiljsconfig[id].url)
+            } else if (usiljsconfig[id].target === 'same_window') {
+              window.parent.location.href = usiljsconfig[id].url
+            } else if (usiljsconfig[id].target === 'modal') {
+              jQuery(usiljsconfig[id].url).modal('show')
+            }
+          })
+        }
+      }
+    }
+  }
+}
 </script>
 
 <style scoped>

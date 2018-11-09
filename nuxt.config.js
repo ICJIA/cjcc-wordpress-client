@@ -78,15 +78,15 @@ module.exports = {
       {
         src: 'https://code.jquery.com/jquery-3.2.1.min.js',
         defer: true
-      },
-      {
-        src: '/usil-js-map/map-config.js',
-        defer: true
-      },
-      {
-        src: '/usil-js-map/map-interact.js',
-        defer: true
       }
+      // {
+      //   src: '/usil-js-map/map-config.js',
+      //   defer: true
+      // },
+      // {
+      //   src: '/usil-js-map/map-interact.js',
+      //   defer: true
+      // }
     ]
   },
 
@@ -106,8 +106,7 @@ module.exports = {
   plugins: [
     '@/plugins/vuetify',
     '~/plugins/filters.js',
-    { src: '~plugins/vueinstantsearch', ssr: false },
-    { src: '~/plugins/fusioncharts.js', ssr: false }
+    { src: '~plugins/vueinstantsearch', ssr: false }
   ],
   sitemap: {
     path: '/sitemap.xml',

@@ -290,8 +290,9 @@ export default {
             jQuery(usiljsconfig[id].url).modal('show')
           } else if (usiljsconfig[id].target === 'event') {
             // jQuery(usiljsconfig[id].url).modal("show");
-            console.log('Click id: ', id, ' Vue: ', vm)
+            // console.log('Click id: ', id, ' Vue: ', vm)
             //vm.mapClick(id)
+            console.log(usiljsconfig[id])
           }
         })
         _Textobj.mousemove(function(e) {

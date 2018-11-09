@@ -66,6 +66,10 @@ module.exports = {
       {
         src:
           'https://cdnjs.cloudflare.com/ajax/libs/event-source-polyfill/0.0.9/eventsource.min.js'
+      },
+      {
+        src: '/outdatedbrowser/outdatedbrowser.min.js',
+        defer: true
       }
     ]
   },

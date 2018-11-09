@@ -1,9 +1,15 @@
 <template>
   <v-app light>
+    <no-ssr>
+<outdated-browser></outdated-browser>
+    </no-ssr>
     
     <v-content id="content">
+      
       <navbar/>
-     
+      <no-ssr>
+        
+      </no-ssr>
         <div>
           <nuxt/>
         </div>
@@ -18,11 +24,13 @@
 import Breadcrumb from '@/components/Breadcrumb'
 import Navbar from '@/components/Navbar'
 import MyFooter from '@/components/MyFooter'
+import OutdatedBrowser from '@/components/OutdatedBrowser'
 export default {
   components: {
     Breadcrumb,
     Navbar,
-    MyFooter
+    MyFooter,
+    OutdatedBrowser
   },
   scrollToTop: true,
   watch: {

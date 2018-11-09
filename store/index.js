@@ -1,4 +1,3 @@
-import axios from '~/plugins/axios'
 import config from '@/config.js'
 import find from 'lodash.find'
 import findIndex from 'lodash.findindex'
@@ -72,7 +71,7 @@ export const actions = {
     commit('setMapMetaData', data)
 
     const routes = store.state.siteMeta
-      // remove blobs
+      // remove blobs from routes
       .map(x => {
         if (x.type !== 'blob') {
           return x.route
@@ -97,7 +96,7 @@ export const actions = {
     commit('setMapMetaData', data)
 
     const routes = store.state.siteMeta
-      // remove blobs
+      // remove blobs from routes
       .map(x => {
         if (x.type !== 'blob') {
           return x.route

@@ -1,5 +1,5 @@
 <template>
-<!-- <div class="page-height">
+<div class="page-height">
 <hero/>
    
  <div id="page-content">
@@ -11,10 +11,8 @@
 
 
 
-  </div> -->
-  <div>
-    home here
   </div>
+  
 </template>
 
 <script>

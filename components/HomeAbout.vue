@@ -4,7 +4,9 @@
        
       <v-flex xs12 sm12 md6 class="pr-5 pl-5" :class="{divider: displayDivider}">
         
+        <router-link to="/news">
            <h1 class="text-xs-center box-head mt-5 mb-5" style="border-bottom: 1px solid #ddd; padding-bottom: 10px;">News & Events</h1>
+           </router-link>
           
             
           <v-layout row wrap v-for="post in posts" :key="post.id" class="mb-5">
@@ -34,10 +36,11 @@
 
 
        <v-flex xs12 sm12 md6 class="pr-5 pl-5" :class="{topDivider: displayTopDivider}">
+         <router-link to="/what-we-offer">
        
            <h1 class="text-xs-center box-head mt-5 mb-5" style="border-bottom: 1px solid #ddd; padding-bottom: 10px;">About the CJCC</h1>
          
-          
+         </router-link>
              <div v-html="blob('home-about')" class="dynamic-content"
           @click="handleClicks"></div>
 

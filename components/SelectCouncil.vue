@@ -99,7 +99,7 @@ export default {
     },
     getFactSheet() {
       try {
-        const content = require(`@/api/council/${
+        const content = require(`@/static/api/council/${
           this.selectedCountyMetaData.slug
         }/index.json`)
         this.content = content[0].content.rendered

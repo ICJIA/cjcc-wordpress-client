@@ -56,7 +56,7 @@ export const getters = {
 export const actions = {
   async GET_CONTENT({ commit, state }, payload) {
     try {
-      const content = require(`@/api${payload.route}/index.json`)
+      const content = require(`@/static/api${payload.route}/index.json`)
       commit('setContent', content[0])
     } catch (e) {
       commit('setContent', `Error fetching content: ${e}`)
@@ -64,7 +64,7 @@ export const actions = {
   },
 
   async INITIALIZE_APP({ commit, state }) {
-    const sitemeta = await require('@/api/sitemeta.json')
+    const sitemeta = await require('@/static/api/sitemeta.json')
     commit('setSiteMeta', sitemeta)
 
     const data = await require(`~/assets/data/map.json`)
@@ -89,7 +89,7 @@ export const actions = {
     { commit, dispatch },
     { store, route, params, redirect }
   ) {
-    const sitemeta = await require('@/api/sitemeta.json')
+    const sitemeta = await require('@/static/api/sitemeta.json')
     commit('setSiteMeta', sitemeta)
 
     const data = await require(`~/assets/data/map.json`)

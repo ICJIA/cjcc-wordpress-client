@@ -8,7 +8,7 @@ export const blob = {
   methods: {
     blob(blobSlug) {
       try {
-        const blob = require(`@/api/blob/${blobSlug}/index.json`)
+        const blob = require(`@/static/api/blob/${blobSlug}/index.json`)
         return blob[0].content.rendered
       } catch (e) {}
       return '<h2>Blob undefined: ' + blobSlug + '</h2>'

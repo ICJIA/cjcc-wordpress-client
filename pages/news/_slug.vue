@@ -12,19 +12,11 @@
      
        <splash></splash>
        
-     
-
+    
 
    <v-container fill-height class="px-3" id="page-content">
     <v-layout row wrap>
       
-
-      <!-- <v-flex xs10 offset-xs1>
-       
-
-      <h1>{{title}}</h1>
-      
-      </v-flex> -->
       
       <v-flex xs10 offset-xs1 class="rule">
        
@@ -54,11 +46,12 @@ import { buildRequest } from '@/utils.js'
 import Breadcrumb from '@/components/Breadcrumb'
 import findIndex from 'lodash.findindex'
 import { handleClicks } from '@/mixins/handleClicks'
+import { pageComponents } from '@/mixins/pageComponents'
 import Splash from '@/components/Splash'
 
 export default {
   mounted() {},
-  mixins: [handleClicks],
+  mixins: [handleClicks, pageComponents],
 
   async fetch({ store, params, redirect, route }) {
     const request = buildRequest(store.state.siteMeta, route.path)
@@ -71,9 +64,6 @@ export default {
       return redirect(config.redirect404)
     }
   },
-  created() {
-    this.contentID = this.$store.state.contentObject.id
-  },
 
   data() {
     return {
@@ -82,24 +72,7 @@ export default {
     }
   },
 
-  head() {
-    return {
-      title: this.title
-    }
-  },
   methods: {},
-
-  computed: {
-    title() {
-      return this.$store.state.contentObject.title.rendered
-        ? this.$store.state.contentObject.title.rendered
-        : config.defaultPageTitle
-    },
-
-    content() {
-      return this.$store.state.contentObject.content.rendered
-    }
-  },
 
   components: {
     Breadcrumb,

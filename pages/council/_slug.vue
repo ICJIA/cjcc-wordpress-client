@@ -14,7 +14,9 @@
              </v-flex>
 
              <v-flex xs10 offset-xs1 id="page-content" >
-                 <div v-html="content"></div>
+                  <div v-html="content"  
+        class="dynamic-content"
+          @click="handleClicks"> </div>
              </v-flex>
              
       
@@ -29,14 +31,13 @@
 </template>
 
 <script>
+import { pageComponents } from '@/mixins/pageComponents'
 import Breadcrumb from '@/components/Breadcrumb'
 import { buildRequest } from '@/utils.js'
+import { handleClicks } from '@/mixins/handleClicks'
 export default {
-  head() {
-    return {
-      title: this.title + ' Fact Sheet'
-    }
-  },
+  mixins: [handleClicks, pageComponents],
+
   async fetch({ store, params, redirect, route }) {
     const request = buildRequest(store.state.siteMeta, route.path)
 
@@ -52,14 +53,7 @@ export default {
   components: {
     Breadcrumb
   },
-  computed: {
-    title() {
-      return this.$store.state.contentObject.title.rendered
-    },
-    content() {
-      return this.$store.state.contentObject.content.rendered
-    }
-  },
+
   methods: {}
 }
 </script>

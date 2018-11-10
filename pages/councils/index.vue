@@ -44,8 +44,8 @@
 
 <script>
 import { blob } from '@/mixins/blob'
-import Illinois from '@/components/IllinoisAlt.vue'
-import SelectCouncil from '@/components/SelectCouncilAlt.vue'
+import Illinois from '@/components/Illinois.vue'
+import SelectCouncil from '@/components/SelectCouncil.vue'
 import Breadcrumb from '@/components/Breadcrumb.vue'
 export default {
   components: {
@@ -56,7 +56,7 @@ export default {
   mixins: [blob],
   head() {
     return {
-      title: this.title
+      title: 'Find a Council'
     }
   },
   computed: {

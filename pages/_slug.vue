@@ -37,10 +37,11 @@ import { buildRequest } from '@/utils.js'
 import Breadcrumb from '@/components/Breadcrumb'
 import Splash from '@/components/Splash'
 import { handleClicks } from '@/mixins/handleClicks'
+import { pageComponents } from '@/mixins/pageComponents'
 
 export default {
   mounted() {},
-  mixins: [handleClicks],
+  mixins: [handleClicks, pageComponents],
   async fetch({ store, params, redirect, route }) {
     const request = buildRequest(store.state.siteMeta, route.path)
     if (request.id === undefined) {
@@ -60,32 +61,6 @@ export default {
   methods: {},
   data() {
     return {}
-  },
-
-  head() {
-    return {
-      title: this.title
-    }
-  },
-  created() {
-    this.contentID = this.$store.state.contentObject.id
-  },
-  computed: {
-    title() {
-      return this.$store.state.contentObject.title.rendered
-        ? this.$store.state.contentObject.title.rendered
-        : config.defaultPageTitle
-    },
-    content() {
-      return this.$store.state.contentObject.content.rendered
-    },
-    splash() {
-      if (this.$store.state.contentObject.featured_media === 0) {
-        return false
-      } else {
-        return true
-      }
-    }
   },
 
   watchQuery: true

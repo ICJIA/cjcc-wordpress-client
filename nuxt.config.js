@@ -40,10 +40,37 @@ module.exports = {
         hid: 'description',
         name: 'description',
         content: 'Illinois Criminal Justice Coordinating Councils'
+      },
+      {
+        name: 'msapplication-TileColor',
+        content: '#2b5797'
+      },
+      {
+        name: 'theme-color',
+        content: '#ffffff'
       }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/apple-touch-icon.png'
+      },
+      { rel: 'icon', type: 'image/png', sizes: '', href: '/favicon.ico' },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/favicon-32x32.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/favicon-16x16.png'
+      },
+      { rel: 'manifest', href: '/site.webmanifest' },
+      { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#1c6bc1' },
       {
         rel: 'stylesheet',
         href:
@@ -93,7 +120,11 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#22327A' },
+
+  loading: {
+    color: '#22327A',
+    height: '2px'
+  },
 
   /*
   ** Global CSS

@@ -63,7 +63,7 @@
 <script>
 import Breadcrumb from '@/components/Breadcrumb'
 import MyResults from '~/components/MyResults'
-const config = require('@/config')
+import config from '@/config'
 export default {
   head() {
     return {

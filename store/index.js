@@ -35,6 +35,9 @@ export const mutations = {
   },
   setCounty(state, countyData) {
     state.countyData = countyData
+  },
+  setMapMetaData: (state, mapMetaData) => {
+    state.mapMetaData = mapMetaData
   }
 }
 
@@ -46,7 +49,6 @@ export const getters = {
     return posts
   },
   getAllNews: state => {
-    // 'News' equals default WP 'post' type
     return state.siteMeta.filter(post => post.type === 'post')
   }
 }
@@ -90,14 +92,17 @@ export const actions = {
     const sitemeta = await require('@/static/api/sitemeta.json')
     commit('setSiteMeta', sitemeta)
 
+    const data = await require(`~/assets/data/map.json`)
+    commit('setMapMetaData', data)
+
     const routes = store.state.siteMeta
-      // remove 'blob' types from routes
+      // remove blobs from routes
       .map(x => {
         if (x.type !== 'blob') {
           return x.route
         }
       })
-      // remove undefined elements from routes array
+      // remove undefined elements
       .filter(r => {
         return r !== undefined
       })

@@ -41,7 +41,7 @@
 </template>
 
 <script>
-const config = require('@/config')
+import config from '@/config'
 import { buildRequest } from '@/utils.js'
 import Breadcrumb from '@/components/Breadcrumb'
 import findIndex from 'lodash.findindex'

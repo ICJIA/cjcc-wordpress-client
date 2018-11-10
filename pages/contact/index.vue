@@ -83,7 +83,7 @@ import Breadcrumb from '@/components/Breadcrumb'
 import { validationMixin } from 'vuelidate'
 import { required, maxLength, email } from 'vuelidate/lib/validators'
 import DOMPurify from 'dompurify'
-const config = require('@/config')
+import config from '@/config'
 const emailjs = require('emailjs-com')
 import { blob } from '@/mixins/blob'
 

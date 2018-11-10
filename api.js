@@ -1,8 +1,13 @@
 const fs = require('nano-fs')
 const axios = require('axios')
 const rimraf = require('rimraf')
-const path = require('path')
-const config = require('./config')
+var path = require('path')
+
+const config = {
+  sitemetaUrl: 'https://cjcc.icjia-api.cloud/wp-json/wp/v2/sitemeta/',
+  routesUrl: 'https://cjcc.icjia-api.cloud/wp-json/wp/v2/routes/',
+  localApiDirectory: './static/api'
+}
 
 const writeToFile = async (filePath, apiFullUrl) => {
   const { data } = await axios.get(`${apiFullUrl}`)

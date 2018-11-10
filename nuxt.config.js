@@ -1,7 +1,7 @@
 const pkg = require('./package')
 import axios from './plugins/axios'
+import config from './config.js'
 import webpack from 'webpack'
-const config = require('./config')
 
 // generate routes for static generation
 const getRoutes = async function() {

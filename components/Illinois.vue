@@ -1,7 +1,7 @@
 <template>
     <div>
    
-        
+        <span id="usiljstip"></span>
 <div id="mapwrapper">
   <div id="mapbase"><!-- V4.1 -->
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 900" xml:space="preserve">
@@ -210,12 +210,12 @@ export default {
           } else if (usiljsconfig[id].target === 'vue') {
             vm.countyData = usiljsconfig[id]
             vm.SET_COUNTY(vm.countyData)
-            console.log(usiljsconfig[id])
+            // console.log(usiljsconfig[id])
           }
         })
         _Textobj.mousemove(function(e) {
-          var x = e.pageX + 10,
-            y = e.pageY + 15
+          var x = e.pageX + 20,
+            y = e.pageY - 75
           var tipw = jQuery('#usiljstip').outerWidth(),
             tiph = jQuery('#usiljstip').outerHeight(),
             x =
@@ -229,6 +229,7 @@ export default {
                 tiph -
                 10
               : y
+
           jQuery('#usiljstip').css({ left: x, top: y })
         })
         if (isTouchEnabled()) {
@@ -265,7 +266,7 @@ export default {
             } else if (usiljsconfig[id].target === 'modal') {
               jQuery(usiljsconfig[id].url).modal('show')
             } else if (usiljsconfig[id].target === 'vue') {
-              console.log(usiljsconfig[id])
+              // console.log(usiljsconfig[id])
             }
           })
         }

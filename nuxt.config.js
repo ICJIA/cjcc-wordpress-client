@@ -150,7 +150,15 @@ module.exports = {
     }
   },
 
-  modules: [['@nuxtjs/sitemap']],
+  modules: [
+    ['@nuxtjs/sitemap'],
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-10798495-30'
+      }
+    ]
+  ],
 
   generate: {
     routes: async function() {

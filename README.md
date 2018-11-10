@@ -45,15 +45,15 @@ $ npm run generate
 
 ### Custom endpoints
 
-See `icjia-functions.php` in `/wordpress`
+- See `icjia-functions.php` in `/wordpress`
 
 ### Advanced Custom fields
 
-See `acf-export-*.json` in `/wordpress`
+- See `acf-export-*.json` in `/wordpress`
 
 ### Custom post types
 
-See `cpt.json` in `/wordpress`
+- See `cpt.json` in `/wordpress`
 
 ### Plugins
 
@@ -99,8 +99,8 @@ See `cpt.json` in `/wordpress`
 
 ### Client URL
 
-[https://cjcc.icjia.cloud](https://cjcc.icjia.cloud)
+- [https://cjcc.icjia.cloud](https://cjcc.icjia.cloud)
 
 ### Wordpress API:
 
-[https://cjcc.icjia-api.cloud/wp-json](https://cjcc.icjia-api.cloud/wp-json)
+- [https://cjcc.icjia-api.cloud/wp-json](https://cjcc.icjia-api.cloud/wp-json)

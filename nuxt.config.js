@@ -2,22 +2,22 @@ const pkg = require('./package')
 import axios from './plugins/axios'
 import config from './config.js'
 import webpack from 'webpack'
+const sitemeta = require('./static/api/sitemeta.json')
 
 // generate routes for static generation
-const getRoutes = async function() {
-  // get API routes
-  const { data } = await axios.get(config.getRoutes)
-  // merge with static Nuxt routes
-  const routes = [...data, ...config.dynamicRoutesToInclude]
-  return routes
-}
-
-const getPublishedRoutes = async function() {
-  // get API routes
-  const { data } = await axios.get(config.getRoutes)
-  // merge with static Nuxt routes
-  const routes = [...data, ...config.dynamicRoutesToInclude]
-  return routes
+const getRoutes = function() {
+  const wordpressRoutes = sitemeta
+    // remove blobs from routes
+    .map(x => {
+      if (x.type !== 'blob') {
+        return x.route
+      }
+    })
+    // remove undefined elements
+    .filter(r => {
+      return r !== undefined
+    })
+  return [...wordpressRoutes, ...config.dynamicRoutesToInclude]
 }
 
 module.exports = {

@@ -57,43 +57,43 @@ See `cpt.json` in `/wordpress`
 
 ### Plugins
 
-> ACF TO REST API
+#### ACF TO REST API
 
 Exposes Advanced Custom Fields Endpoints in the WordPress REST API
 
-> Advanced Custom Fields
+#### Advanced Custom Fields
 
 Update posts and pages with custom fields.
 
-> Custom Post Type UI
+#### Custom Post Type UI
 
 Admin panel for creating custom post types and custom taxonomies in WordPress
 
-> Disable Comments
+#### Disable Comments
 
 Permanently disable comments from all posts.
 
-> FakerPress
+#### FakerPress
 
 Generate mock data for testing.
 
-> Rename Default Post
+#### Rename Default Post
 
 Rename default "post" to "news".
 
-> Smush
+#### Smush
 
 Reduce image file sizes, improve performance.
 
-> Tuxedo Big File Uploads
+#### Tuxedo Big File Uploads
 
 Adjust upload file size from default 2mb.
 
-> [JAMstack Deployments](https://github.com/crgeary/wp-jamstack-deployments)
+#### [JAMstack Deployments](https://github.com/crgeary/wp-jamstack-deployments)
 
 Trigger Netlify build with hook. Hit `deploy` in wp-admin to trigger Netlify webbook.
 
-> Better REST API Featured Images
+#### Better REST API Featured Images
 
 Adds a top-level field with featured image data including available sizes and URLs to the post object returned by the REST API.
 

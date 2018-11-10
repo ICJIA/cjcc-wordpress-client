@@ -27,6 +27,10 @@ $ npm start
 $ npm run generate
 ```
 
+### Wordpress REST API-to-local API:
+
+- https://github.com/ICJIA/cjcc-wordpress-client/blob/master/api.js
+
 #### Email:
 
 - [EmailJS](http://www.emailjs.com/)
@@ -35,7 +39,7 @@ $ npm run generate
 #### Search:
 
 - [Algolia](https://www.algolia.com/products)
-- [Algolia Site Indexer](https://github.com/ICJIA/algolia-site-indexer)
+- [Algolia Site Indexer](https://github.com/ICJIA/cjcc-wordpress-client/blob/master/algolia.js)
 
 ## Wordpress Installation
 

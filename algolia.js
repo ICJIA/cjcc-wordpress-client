@@ -9,7 +9,6 @@ let algoliaIndex = []
 let parser = require('xml2json')
 let algoliasearch = require('algoliasearch')
 let crypto = require('crypto')
-let logger = require('./logger').createLogger()
 let previouslyIndexed
 
 const site = {
@@ -71,7 +70,7 @@ arrayOfUrls.map(async function(url) {
     //console.log(res.data);
     if (num === 0) {
       // Finished generating
-      logger.info(`Finished querying URLs`)
+      console.log(`Finished querying URLs`)
       setSearchObjects(algoliaIndex)
     }
   })
@@ -87,11 +86,11 @@ function setSearchObjects(objects) {
   let index = client.initIndex(`${appIndex}`)
   index.clearIndex(function(err, content) {
     if (err) throw err
-    logger.info('Index cleared.')
-    logger.info(content)
+    console.log('Index cleared.')
+    console.log(content)
   })
   index.addObjects(objects, function(err, content) {
     if (err) throw err
-    logger.info('Indexing complete.')
+    console.log('Indexing complete.')
   })
 }

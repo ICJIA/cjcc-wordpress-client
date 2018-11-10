@@ -9,8 +9,7 @@
     "build": "node api && nuxt build",
     "start": "nuxt start",
     "generate": "node api && nuxt generate && node algolia",
-    "dev-debug": "node --inspect node_modules/.bin/nuxt",
-    "postbuild": "node algolia.js"
+    "dev-debug": "node --inspect node_modules/.bin/nuxt"
   },
   "dependencies": {
     "@nuxtjs/sitemap": "^0.1.1",

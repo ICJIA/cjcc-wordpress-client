@@ -1,0 +1,266 @@
+[
+  {
+    "key": "group_5bd4aabfb5e7f",
+    "title": "News Meta",
+    "fields": [
+      {
+        "key": "field_5bd4aac769e02",
+        "label": "breadcrumb",
+        "name": "breadcrumb",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "row-1",
+          "id": ""
+        },
+        "message": "Show breadcrumb above content?",
+        "default_value": 0,
+        "ui": 1,
+        "ui_on_text": "Show",
+        "ui_off_text": "Hide"
+      },
+      {
+        "key": "field_5bd6325057da7",
+        "label": "Display Caption",
+        "name": "display_caption",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "Display Featured Image Caption?",
+        "default_value": 0,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_5bd9ad3676308",
+        "label": "Splash Type",
+        "name": "splash_type",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "text": "Text only (no image)",
+          "centered": "Center image",
+          "full": "Full width image"
+        },
+        "default_value": [],
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 0,
+        "return_format": "value",
+        "ajax": 0,
+        "placeholder": ""
+      },
+      {
+        "key": "field_5bd9be03d07b9",
+        "label": "Display Date",
+        "name": "display_date",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 1,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_5bd9be52b1b71",
+        "label": "Title/Date Alignment",
+        "name": "title_date_alignment",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "text-xs-left": "left",
+          "text-xs-center": "center",
+          "text-xs-right": "right"
+        },
+        "default_value": ["center"],
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 1,
+        "ajax": 0,
+        "return_format": "value",
+        "placeholder": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "post"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": ""
+  },
+  {
+    "key": "group_5bd9c3d721d92",
+    "title": "Page Meta",
+    "fields": [
+      {
+        "key": "field_5bd9c3d723ddf",
+        "label": "breadcrumb",
+        "name": "breadcrumb",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "50",
+          "class": "row-1",
+          "id": ""
+        },
+        "message": "Show breadcrumb above content?",
+        "default_value": 0,
+        "ui": 1,
+        "ui_on_text": "Show",
+        "ui_off_text": "Hide"
+      },
+      {
+        "key": "field_5bd9c3d723e26",
+        "label": "Display Caption",
+        "name": "display_caption",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "Display Featured Image Caption?",
+        "default_value": 0,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_5bd9c3d723e67",
+        "label": "Splash Type",
+        "name": "splash_type",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "text": "Text only (no image)",
+          "centered": "Center image",
+          "full": "Full width image"
+        },
+        "default_value": [],
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 0,
+        "return_format": "value",
+        "ajax": 0,
+        "placeholder": ""
+      },
+      {
+        "key": "field_5bd9c3d723ea7",
+        "label": "Display Date",
+        "name": "display_date",
+        "type": "true_false",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "message": "",
+        "default_value": 0,
+        "ui": 1,
+        "ui_on_text": "",
+        "ui_off_text": ""
+      },
+      {
+        "key": "field_5bd9c3d723eeb",
+        "label": "Title/Date Alignment",
+        "name": "title_date_alignment",
+        "type": "select",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "choices": {
+          "text-xs-left": "left",
+          "text-xs-center": "center",
+          "text-xs-right": "right"
+        },
+        "default_value": ["left"],
+        "allow_null": 0,
+        "multiple": 0,
+        "ui": 1,
+        "ajax": 0,
+        "return_format": "value",
+        "placeholder": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "post_type",
+          "operator": "==",
+          "value": "page"
+        }
+      ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": ""
+  }
+]

@@ -39,6 +39,18 @@ $ npm run generate
 
 ## Wordpress Installation
 
+### Custom endpoints
+
+See `icjia-functions.php` in `/wordpress`
+
+### Advanced Custom fields
+
+See `acf-export-*.json` in `/wordpress`
+
+### Custom post types
+
+See `cpt.json` in `/wordpress`
+
 ### Plugins
 
 > ACF TO REST API
@@ -73,11 +85,17 @@ Reduce image file sizes, improve performance.
 
 Adjust upload file size from default 2mb.
 
-...
+> [JAMstack Deployments](https://github.com/crgeary/wp-jamstack-deployments)
 
-### Client URL (during development)
+Trigger Netlify build with hook. Hit `deploy` in wp-admin to trigger Netlify webbook.
 
-[https://cjcc.netlify.com](https://cjcc.netlify.com)
+> Better REST API Featured Images
+
+Adds a top-level field with featured image data including available sizes and URLs to the post object returned by the REST API.
+
+### Client URL
+
+[https://cjcc.icjia.cloud](https://cjcc.icjia.cloud)
 
 ### Wordpress API:
 

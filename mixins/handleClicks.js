@@ -7,6 +7,9 @@ export const handleClicks = {
     handleClicks($event) {
       // intercepts <a></a> tag clicks and routes within app
       const { target } = $event
+      if (!target.prototype.matches) {
+        target.prototype.matches = target.prototype.msMatchesSelector
+      }
       // handle only links that occur inside the component and do not reference external resources
       if (
         target &&

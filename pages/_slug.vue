@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import config from '@/config'
+const config = require('@/config')
 import { buildRequest } from '@/utils.js'
 import Breadcrumb from '@/components/Breadcrumb'
 import Splash from '@/components/Splash'

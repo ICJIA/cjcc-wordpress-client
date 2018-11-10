@@ -64,7 +64,7 @@
 </template>
 
 <script>
-import config from '@/config.js'
+const config = require('@/config')
 import Breadcrumb from '@/components/Breadcrumb'
 
 export default {

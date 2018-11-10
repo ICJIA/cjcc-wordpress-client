@@ -18,16 +18,16 @@
            <div v-html="blob('councils-intro')" class="dynamic-content"
           @click="handleClicks"></div>
           </v-flex>
-        <v-flex xs12 sm12 md6 hidden-sm-and-down order-sm2 order-xs2 order-md1 class="pt-3">
+        <v-flex xs12 sm12 md4 hidden-sm-and-down order-sm2 order-xs2 order-md1 class="pt-3">
 
-          <!-- <div id="chart-container-parent" v-if="displayMap">
+         
              
            <illinois/>
            
            
-        </div> -->
+      
         </v-flex>
-        <v-flex xs12 order-sm1 order-xs1 order-md2 class="pt-5" id="page-content">
+        <v-flex xs12 sm12 md8 order-sm1 order-xs1 order-md2 class="pt-5" id="page-content">
         
           <div >
             <select-council/>
@@ -44,12 +44,12 @@
 
 <script>
 import { blob } from '@/mixins/blob'
-// import Illinois from '@/components/Illinois.vue'
-import SelectCouncil from '@/components/SelectCouncil.vue'
+import Illinois from '@/components/IllinoisAlt.vue'
+import SelectCouncil from '@/components/SelectCouncilAlt.vue'
 import Breadcrumb from '@/components/Breadcrumb.vue'
 export default {
   components: {
-    // Illinois,
+    Illinois,
     SelectCouncil,
     Breadcrumb
   },

@@ -22,11 +22,11 @@ import HomeAbout from '@/components/HomeAbout.vue'
 import { mapGetters } from 'vuex'
 
 export default {
-  async fetch({ store, params, redirect, route }) {
-    if (store.state.siteMeta.length === 0) {
-      await store.dispatch('INITIALIZE_APP')
-    }
-  },
+  // async fetch({ store, params, redirect, route }) {
+  //   if (store.state.siteMeta.length === 0) {
+  //     await store.dispatch('INITIALIZE_APP')
+  //   }
+  // },
   methods: {},
   mounted() {},
 

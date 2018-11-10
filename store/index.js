@@ -63,27 +63,27 @@ export const actions = {
     }
   },
 
-  async INITIALIZE_APP({ commit, state }) {
-    const sitemeta = await require('@/static/api/sitemeta.json')
-    commit('setSiteMeta', sitemeta)
+  // async INITIALIZE_APP({ commit, state }, { store, route, params, redirect }) {
+  //   const sitemeta = await require('@/static/api/sitemeta.json')
+  //   commit('setSiteMeta', sitemeta)
 
-    const data = await require(`~/assets/data/map.json`)
-    commit('setMapMetaData', data)
+  //   const data = await require(`~/assets/data/map.json`)
+  //   commit('setMapMetaData', data)
 
-    const routes = store.state.siteMeta
-      // remove blobs from routes
-      .map(x => {
-        if (x.type !== 'blob') {
-          return x.route
-        }
-      })
-      // remove undefined elements
-      .filter(r => {
-        return r !== undefined
-      })
+  //   const routes = store.state.siteMeta
+  //     // remove blobs from routes
+  //     .map(x => {
+  //       if (x.type !== 'blob') {
+  //         return x.route
+  //       }
+  //     })
+  //     // remove undefined elements
+  //     .filter(r => {
+  //       return r !== undefined
+  //     })
 
-    commit('setRoutes', routes)
-  },
+  //   commit('setRoutes', routes)
+  // },
 
   async nuxtServerInit(
     { commit, dispatch },

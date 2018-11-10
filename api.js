@@ -5,7 +5,6 @@ var path = require('path')
 
 const config = {
   sitemetaUrl: 'https://cjcc.icjia-api.cloud/wp-json/wp/v2/sitemeta/',
-  routesUrl: 'https://cjcc.icjia-api.cloud/wp-json/wp/v2/routes/',
   localApiDirectory: './static/api'
 }
 

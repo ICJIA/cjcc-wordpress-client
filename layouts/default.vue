@@ -11,7 +11,7 @@
        
           <nuxt/>
         
-       <!-- <my-footer/> -->
+       <my-footer/>
      
     </v-content>
     

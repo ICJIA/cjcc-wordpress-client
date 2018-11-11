@@ -3,7 +3,7 @@
 
      <breadcrumb 
        :key="$store.state.forceRender" 
-       title="News Archive"></breadcrumb>
+       title="News & Events"></breadcrumb>
      
     
 

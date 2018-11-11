@@ -2,7 +2,7 @@
     <v-container fill-height fluid class="px-0" style="margin-top: -0px;">
     <v-layout row wrap>
        <v-flex xs12 sm12 md4>
-          <router-link to="/councils">
+          <router-link to="/council">
         <v-card dark :color="color" height="100%" class="elevation-0 pt-4 pb-4 pl-3 box rule" >
          
          <h2 class="text-xs-center box-head">Find a Council</h2>

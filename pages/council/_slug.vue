@@ -2,7 +2,9 @@
     <div class="page-height">
          <breadcrumb 
        :key="$store.state.forceRender" 
-       :title="title" 
+        :title="title" 
+       type="Council"
+       typeUrl = "/council"
       
        showBreadcrumb></breadcrumb>
 

@@ -74,6 +74,12 @@ export default {
           name: 'description',
           content: 'CJCC Search'
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: config.clientURL + 'search'
+        }
       ]
     }
   },

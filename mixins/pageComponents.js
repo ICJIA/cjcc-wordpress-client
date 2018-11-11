@@ -1,3 +1,4 @@
+import config from '@/config'
 export const pageComponents = {
   data() {
     return {}
@@ -10,6 +11,12 @@ export const pageComponents = {
   head() {
     return {
       title: this.title,
+      link: [
+        {
+          rel: 'canonical',
+          href: this.permalink
+        }
+      ],
       meta: [
         {
           hid: 'description',
@@ -35,6 +42,17 @@ export const pageComponents = {
 
     content() {
       return this.$store.state.contentObject.content.rendered
+    },
+    permalink() {
+      if (this.$store.state.contentObject.type === 'post') {
+        return config.clientURL + 'news/' + this.$store.state.contentObject.slug
+      } else if (this.$store.state.contentObject.type === 'council') {
+        return (
+          config.clientURL + 'council/' + this.$store.state.contentObject.slug
+        )
+      } else {
+        return config.clientURL + this.$store.state.contentObject.slug
+      }
     }
   }
 }

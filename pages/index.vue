@@ -20,7 +20,7 @@ import Hero from '@/components/HeroSplit.vue'
 import HomeBoxes from '@/components/HomeBoxes.vue'
 import HomeAbout from '@/components/HomeAbout.vue'
 import { mapGetters } from 'vuex'
-
+import config from '@/config'
 export default {
   async fetch({ store, params, redirect, route }) {
     if (store.state.siteMeta.length === 0) {
@@ -32,7 +32,20 @@ export default {
 
   head() {
     return {
-      title: 'Home'
+      title: 'Home',
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: 'Illinois Criminal Justice Coordinating Councils'
+        }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: config.clientURL
+        }
+      ]
     }
   },
   components: {

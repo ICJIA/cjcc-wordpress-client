@@ -102,6 +102,12 @@ export default {
           name: 'description',
           content: 'Contact the Illinois CJCC'
         }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: this.permalink
+        }
       ]
     }
   },
@@ -127,6 +133,9 @@ export default {
   computed: {
     title() {
       return 'Contact CJCC'
+    },
+    permalink() {
+      return config.clientURL + 'contact'
     },
     nameErrors() {
       const errors = []

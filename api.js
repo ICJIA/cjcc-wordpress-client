@@ -24,7 +24,11 @@ const writeToFile = async (filePath, apiFullUrl) => {
 }
 
 /**
- * For sitemeta construction, see: https://github.com/ICJIA/cjcc-wordpress-client/blob/master/wordpress/icjia-functions.php
+ *
+ * For endpoint code, see: https://github.com/ICJIA/cjcc-wordpress-client/blob/master/wordpress/icjia-functions.php
+ *
+ * Sitemeta endpoint: https://cjcc.icjia-api.cloud/wp-json/wp/v2/sitemeta/
+ *
  */
 const fetchSitemeta = async function() {
   const { data } = await axios.get(config.sitemetaUrl)
@@ -48,6 +52,9 @@ const resolvePromises = async function(res) {
 
 rimraf.sync(path.resolve(config.localApiDirectory))
 
+/**
+ * Fetch sitemeta index, fetch each
+ */
 fetchSitemeta()
   .then(
     res =>

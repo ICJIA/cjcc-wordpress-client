@@ -48,6 +48,7 @@ import { blob } from '@/mixins/blob'
 import Illinois from '@/components/Illinois.vue'
 import SelectCouncil from '@/components/SelectCouncil.vue'
 import Breadcrumb from '@/components/Breadcrumb.vue'
+import config from '@/config'
 export default {
   components: {
     Illinois,
@@ -57,12 +58,28 @@ export default {
   mixins: [blob],
   head() {
     return {
-      title: 'Find a Council'
+      title: 'Find a Council',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: 'Find an Illinois Criminal Justice Coordinating Council'
+        }
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: this.permalink
+        }
+      ]
     }
   },
   computed: {
     title() {
       return 'Councils'
+    },
+    permalink() {
+      return config.clientURL + 'council'
     },
     displayMap() {
       if (this.$vuetify.breakpoint.sm || this.$vuetify.breakpoint.xs) {

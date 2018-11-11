@@ -37,6 +37,7 @@ import { pageComponents } from '@/mixins/pageComponents'
 import Breadcrumb from '@/components/Breadcrumb'
 import { buildRequest } from '@/utils.js'
 import { handleClicks } from '@/mixins/handleClicks'
+
 export default {
   mixins: [handleClicks, pageComponents],
 

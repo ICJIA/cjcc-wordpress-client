@@ -18,7 +18,7 @@
            <h1 class="text-xs-left box-head mt-5 mb-5 title-rule">News & Events</h1>
           
             
-          <v-layout row wrap v-for="post in posts" :key="post.id" class="mb-5">
+          <v-layout row wrap v-for="post in displayPosts" :key="post.id" class="mb-5">
           <v-flex xs12 sm12 md8>
             <router-link :to="post.route">
               <h3 class="title mb-2">{{ post.title}}</h3>

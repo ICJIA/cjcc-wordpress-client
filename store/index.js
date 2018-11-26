@@ -35,10 +35,10 @@ export const mutations = {
   },
   setCounty(state, countyData) {
     state.countyData = countyData
-  },
-  setMapMetaData: (state, mapMetaData) => {
-    state.mapMetaData = mapMetaData
   }
+  // setMapMetaData: (state, mapMetaData) => {
+  //   state.mapMetaData = mapMetaData
+  // }
 }
 
 export const getters = {
@@ -92,8 +92,8 @@ export const actions = {
     const sitemeta = await require('@/static/api/sitemeta.json')
     commit('setSiteMeta', sitemeta)
 
-    const data = await require(`~/assets/data/map.json`)
-    commit('setMapMetaData', data)
+    // const data = await require(`~/assets/data/map.json`)
+    // commit('setMapMetaData', data)
 
     const routes = store.state.siteMeta
       // remove blobs from routes

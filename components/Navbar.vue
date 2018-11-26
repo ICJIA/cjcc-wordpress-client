@@ -39,7 +39,7 @@
       <nuxt-link to="/" class="nav">
         <v-toolbar-title class="text-uppercase">
           <span class style="color: #111; font-weight: 900">ILLINOIS</span> |
-          <span class="font-weight-light" style="color: #25274D">{{navTitle}}</span>
+          <span class="font-weight: 900" style="color: #25274D">{{navTitle}}</span>
         </v-toolbar-title>
       </nuxt-link>
       <v-spacer></v-spacer>

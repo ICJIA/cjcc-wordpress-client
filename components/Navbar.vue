@@ -1,79 +1,46 @@
 <template>
-    <div>
-        
-
-   <v-navigation-drawer
-      v-model="drawer"
-      fixed
-      clipped
-      app
-      disable-resize-watcher
-      
-    >
-   
-     <v-list dense>
-      
-         
-     
+  <div>
+    <v-navigation-drawer v-model="drawer" fixed clipped app disable-resize-watcher>
+      <v-list dense>
         <v-list-tile v-for="item in main" :key="item.text" @click="drawer = false">
-         
-         
           <v-list-tile-content @click.stop="pushRoute(item.link)">
-            <v-list-tile-title>
-              
-              {{ item.text }}
-               
-            </v-list-tile-title>
+            <v-list-tile-title>{{ item.text }}</v-list-tile-title>
           </v-list-tile-content>
-        
         </v-list-tile>
 
-        
+        <v-list-group v-model="expand" class>
+          <v-list-tile slot="activator">
+            <v-list-tile-content>
+              <v-list-tile-title style="font-weight: bold">Councils</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+          <v-list-tile
+            v-for="council in councils"
+            :key="council.text"
+            @click="drawer = false"
+            style="background: #fbfbfb"
+          >
+            <v-list-tile-content @click.stop="pushRoute(council.link)">
+              <v-list-tile-title>{{ council.text }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list-group>
+        <v-divider></v-divider>
 
-         <v-list-group
-          v-model="expand" class="">
-            <v-list-tile slot="activator">
-              <v-list-tile-content>
-                <v-list-tile-title style="font-weight: bold">Councils</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-              <v-list-tile v-for="council in councils" :key="council.text" @click="drawer = false" style="background: #fbfbfb">
-              <v-list-tile-content @click.stop="pushRoute(council.link)">
-                <v-list-tile-title>  {{ council.text }}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            
-            
-          </v-list-group>
-          <v-divider></v-divider>
-       
-          <v-list-tile v-for="item in secondary" :key="item.text" @click="drawer = false">
-         
-         
+        <v-list-tile v-for="item in secondary" :key="item.text" @click="drawer = false">
           <v-list-tile-content @click.stop="pushRoute(item.link)">
-           
-            <v-list-tile-title>
-              
-             {{ item.text }}
-               
-            </v-list-tile-title>
+            <v-list-tile-title>{{ item.text }}</v-list-tile-title>
           </v-list-tile-content>
-        
         </v-list-tile>
-        
-      
-       
       </v-list>
-
-     
     </v-navigation-drawer>
     <v-toolbar app>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <nuxt-link to="/" class="nav">
-      <v-toolbar-title class=" text-uppercase">
-        <span class="" style="color: #111; font-weight: 900">ILLINOIS</span> | 
-        <span class="font-weight-light" style="color: #25274D">{{navTitle}}</span>
-      </v-toolbar-title>
+        <v-toolbar-title class="text-uppercase">
+          <span class style="color: #111; font-weight: 900">ILLINOIS</span> |
+          <span class="font-weight-light" style="color: #25274D">{{navTitle}}</span>
+        </v-toolbar-title>
       </nuxt-link>
       <v-spacer></v-spacer>
       <!-- <v-btn
@@ -82,13 +49,16 @@
       >
         <span class="mr-2">Search</span>
         <v-icon>search</v-icon>
-      </v-btn> -->
-       <a href="http://www.icjia.state.il.us" style="margin-top: 4px">
-      <img src="@/assets/img/logo-blue-filled.png" width="70" alt="Illinois Criminal Justice Information Authority">
-       </a>
+      </v-btn>-->
+      <a href="http://www.icjia.state.il.us" style="margin-top: 4px">
+        <img
+          src="@/assets/img/logo-blue-filled.png"
+          width="70"
+          alt="Illinois Criminal Justice Information Authority"
+        >
+      </a>
     </v-toolbar>
-
-    </div>
+  </div>
 </template>
 
 <script>
@@ -118,6 +88,10 @@ export default {
         {
           text: 'Home',
           link: '/'
+        },
+        {
+          text: 'Find a Council',
+          link: '/council'
         },
         {
           text: 'CCAC Meeting Materials',

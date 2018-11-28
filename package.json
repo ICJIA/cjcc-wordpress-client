@@ -23,7 +23,7 @@
     "dompurify": "^1.0.8",
     "dotenv": "^5.0.1",
     "ellipsize": "^0.1.0",
-    "emailjs-com": "^2.2.4",
+    "emailjs-com": "^2.3.2",
     "fs-extra": "^7.0.1",
     "html-metadata": "^1.7.0",
     "jquery": "^3.3.1",
@@ -44,8 +44,8 @@
     "lodash.uniqby": "^4.7.0",
     "lodash.upperfirst": "^4.3.1",
     "nano-fs": "^1.2.5",
-    "node-fetch": "^2.1.2",
-    "nuxt": "^2.2.0",
+    "node-fetch": "^2.3.0",
+    "nuxt": "^2.3.4",
     "outdatedbrowser": "^1.1.5",
     "pify": "^4.0.1",
     "preq": "^0.5.6",
@@ -60,9 +60,9 @@
     "xml2json": "^0.11.2"
   },
   "devDependencies": {
-    "eslint-config-prettier": "^3.1.0",
+    "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-prettier": "2.6.2",
-    "nodemon": "^1.11.0",
+    "nodemon": "^1.18.7",
     "prettier": "1.14.3",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2"

@@ -14,9 +14,9 @@ let previouslyIndexed
 const site = {
   index: 'cjcc',
   sitemap: 'https://cjcc.icjia.cloud/sitemap.xml',
-  urlBase: 'https://www.icjia.cloud/',
+  urlBase: 'https://cjcc.icjia.cloud/',
   bodyContentId: '#page-content',
-  titleReplacement: 'ILLINOIS CJCC | '
+  titleReplacement: 'ILLINOIS cjcc | '
 }
 
 appIndex = site.index
@@ -24,6 +24,18 @@ sitemap = site.sitemap
 urlBase = site.urlBase
 titleReplacement = site.titleReplacement
 bodyContentId = site.bodyContentId
+
+let client = algoliasearch(
+  process.env.ALGOLIA_APP_ID,
+  process.env.ALGOLIA_ADMIN_API_KEY
+)
+
+let index = client.initIndex(`${appIndex}`)
+index.clearIndex(function(err, content) {
+  if (err) throw err
+  console.log('Index cleared.')
+  console.log(content)
+})
 
 // Get Sitemap from URL
 let request = require('sync-request')
@@ -53,7 +65,9 @@ function get(url) {
         title: $('title')
           .text()
           .replace(titleReplacement, ''),
-        body: $('#page-content').text(),
+        body: $('#page-content')
+          .text()
+          .substring(0, 9300),
         description: $("meta[name='description' i]").attr('content'),
         url: url.replace(/.*\/\/[^\/]*/, ''),
         fullUrl: url,
@@ -67,7 +81,7 @@ arrayOfUrls.map(async function(url) {
   await get(url).then(function(res) {
     num--
     algoliaIndex.push(res.data)
-    //console.log(res.data);
+    console.log('Index successful: ', res.data.fullUrl)
     if (num === 0) {
       // Finished generating
       console.log(`Finished querying URLs`)
@@ -78,17 +92,7 @@ arrayOfUrls.map(async function(url) {
 
 function setSearchObjects(objects) {
   // Send pages to Algolia
-  let client = algoliasearch(
-    process.env.ALGOLIA_APP_ID,
-    process.env.ALGOLIA_ADMIN_API_KEY
-  )
 
-  let index = client.initIndex(`${appIndex}`)
-  index.clearIndex(function(err, content) {
-    if (err) throw err
-    console.log('Index cleared.')
-    console.log(content)
-  })
   index.addObjects(objects, function(err, content) {
     if (err) throw err
     console.log('Indexing complete.')

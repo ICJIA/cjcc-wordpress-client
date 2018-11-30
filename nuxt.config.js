@@ -1,6 +1,6 @@
 const pkg = require('./package')
 import axios from './plugins/axios'
-import config from './config.js'
+const config = require('./config.json')
 import webpack from 'webpack'
 const sitemeta = require('./static/api/sitemeta.json')
 
@@ -137,7 +137,8 @@ module.exports = {
   plugins: [
     '@/plugins/vuetify',
     '~/plugins/filters.js',
-    { src: '~plugins/vueinstantsearch', ssr: false }
+    { src: '~plugins/vueinstantsearch', ssr: false },
+    { src: '~plugins/browserDetect', ssr: false }
   ],
   sitemap: {
     path: '/sitemap.xml',

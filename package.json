@@ -51,6 +51,7 @@
     "preq": "^0.5.6",
     "rimraf": "^2.6.2",
     "sync-request": "^6.0.0",
+    "vue-browser-detect-plugin": "^0.1.2",
     "vue-dummy": "^1.1.3",
     "vue-instantsearch": "^1.7.0",
     "vue-rollbar": "^0.2.3",

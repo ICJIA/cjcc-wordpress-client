@@ -1,80 +1,79 @@
 <template>
-    <div class="page-height">
-        <breadcrumb 
-       :key="$store.state.forceRender" 
-       title="Contact" 
-      
-       showBreadcrumb></breadcrumb>
+  <div class="page-height">
+    <breadcrumb :key="$store.state.forceRender" title="Contact" showBreadcrumb></breadcrumb>
 
+    <no-ssr>
+      <v-container fill-height class="px-3 mt-5" id="page-content">
+        <v-layout row wrap>
+          <v-flex xs10 offset-xs1>
+            <h1 class="mb-3 title-rule">{{title}}</h1>
+          </v-flex>
 
-       <no-ssr>
-         <v-container fill-height class="px-3 mt-5" id="page-content" >
-    <v-layout row wrap>
-      
-      <v-flex xs10 offset-xs1>
+          <v-flex xs10 offset-xs1 style="margin-top: 10px">
+            <div v-html="blob('contact-intro')" class="dynamic-content" @click="handleClicks"></div>
 
-         <h1 class="text-xs-left title-rule box-head mb-5">CONTACT CJCC</h1>
+            <div v-if="!isIE">
+              <form style="margin-top: 0px">
+                <v-text-field
+                  v-model="name"
+                  :error-messages="nameErrors"
+                  label="Name"
+                  required
+                  @input="$v.name.$touch()"
+                  @blur="$v.name.$touch()"
+                  @click="clearAxiosError"
+                ></v-text-field>
+                <v-text-field
+                  v-model="email"
+                  :error-messages="emailErrors"
+                  label="E-mail"
+                  required
+                  @input="$v.email.$touch()"
+                  @blur="$v.email.$touch()"
+                  @click="clearAxiosError"
+                ></v-text-field>
+                <v-textarea
+                  v-model="comment"
+                  :error-messages="commentErrors"
+                  auto-grow
+                  box
+                  required
+                  label="Comment"
+                  rows="10"
+                  class="mt-3"
+                  @click="clearAxiosError"
+                ></v-textarea>
 
-        <div v-html="blob('contact-intro')" class="dynamic-content"
-          @click="handleClicks"></div>
-        
-       
-        <form> 
-    <v-text-field
-      v-model="name"
-      :error-messages="nameErrors"
-      
-      label="Name"
-      required
-      @input="$v.name.$touch()"
-      @blur="$v.name.$touch()"
-      @click="clearAxiosError"
-    ></v-text-field>
-    <v-text-field
-      v-model="email"
-      :error-messages="emailErrors"
-      label="E-mail"
-      required
-      @input="$v.email.$touch()"
-      @blur="$v.email.$touch()"
-       @click="clearAxiosError"
-    ></v-text-field>
-   <v-textarea
-        v-model="comment"
-         :error-messages="commentErrors"
-        auto-grow
-        box
-        required
-        label="Comment"
-        rows="10"
-       class="mt-3"
-        @click="clearAxiosError"
-      ></v-textarea>
-   
-    <div v-if="showSubmit" class="text-xs-center">
-    <v-btn @click="submit">submit</v-btn>
-    <v-btn @click="clear">clear</v-btn>&nbsp;
-    <span v-if="showLoader">
-    <v-progress-circular
-      indeterminate
-      color="primary"
-    ></v-progress-circular>
-    </span>
-    </div>
-    
-    <div v-if="!showSubmit" class="text-xs-center"> Your comment was successfully submitted</div>
-    <div v-if="showAxiosError" style="color: red; font-size: 14px;" class="text-xs-center">
-    {{axiosError.text}}
-    </div>
-  </form>
-  
-        
-      </v-flex>
-    </v-layout>
-        </v-container>
-         </no-ssr>
-         
-    </div>
+                <div v-if="showSubmit" class="text-xs-center">
+                  <v-btn @click="submit">submit</v-btn>
+                  <v-btn @click="clear">clear</v-btn>&nbsp;
+                  <span v-if="showLoader">
+                    <v-progress-circular indeterminate color="primary"></v-progress-circular>
+                  </span>
+                </div>
+
+                <div
+                  v-if="!showSubmit"
+                  class="text-xs-center"
+                  style="color: green"
+                >{{successMessage}}</div>
+                <div
+                  v-if="showAxiosError"
+                  style="color: red; font-size: 14px;"
+                  class="mt-3 text-xs-center"
+                >
+                  <b style="font-size: 20px">ERROR: COMMENT NOT SENT</b>
+                  <br>
+                  <br>
+                  {{axiosError}}
+                </div>
+              </form>
+            </div>
+          </v-flex>
+        </v-layout>
+      </v-container>
+    </no-ssr>
+  </div>
 </template>
 
 <script>
@@ -83,9 +82,10 @@ import Breadcrumb from '@/components/Breadcrumb'
 import { validationMixin } from 'vuelidate'
 import { required, maxLength, email } from 'vuelidate/lib/validators'
 import DOMPurify from 'dompurify'
-import config from '@/config'
-const emailjs = require('emailjs-com')
+const config = require('@/config.json')
+
 import { blob } from '@/mixins/blob'
+import axios from 'axios'
 
 export default {
   mixins: [validationMixin, blob],
@@ -111,7 +111,9 @@ export default {
       ]
     }
   },
-  mounted() {},
+  mounted() {
+    this.isIE = this.$browserDetect.isIE
+  },
 
   validations: {
     name: { required },
@@ -127,13 +129,16 @@ export default {
       showAxiosError: false,
       axiosError: '',
       showLoader: false,
-      id: ''
+      id: '',
+      successMessage: '',
+      isIE: null
     }
   },
   computed: {
     title() {
       return 'Contact CJCC'
     },
+
     permalink() {
       return config.clientURL + 'contact'
     },
@@ -179,37 +184,37 @@ export default {
 
         this.comment = cleanComment
 
-        const templateParams = {
+        let data = {
           name: this.name,
           email: this.email,
           comment: this.comment
         }
-
         const vm = this
-
-        emailjs
-          .send(
-            'mailgun',
-            'template_ba2OUtYG_clone',
-            templateParams,
-            config.emailjsUserID
-          )
-          .then(
-            function(response) {
-              console.log('SUCCESS!', response.status, response.text)
-              vm.showSubmit = false
-              vm.showAxiosError = false
-              vm.showError = ''
-              vm.showLoader = false
-            },
-            function(error) {
-              console.log('FAILED...', error)
-              vm.showAxiosError = true
-              vm.axiosError = error
-              vm.showLoader = false
-              vm.$forceUpdate()
-            }
-          )
+        let obj = axios({
+          method: 'post',
+          url: 'https://mail.icjia.cloud/cjcc',
+          data: data,
+          config: { headers: { 'Content-Type': 'multipart/form-data' } }
+        })
+          .then(function(response) {
+            //handle success
+            //console.log(response.data)
+            console.log('SUCCESS!', response.data.status, response.data.msg)
+            vm.showSubmit = false
+            vm.showAxiosError = false
+            vm.showError = ''
+            vm.successMessage = response.data.msg
+            vm.showLoader = false
+          })
+          .catch(function(err) {
+            //handle error
+            //console.log(err)
+            console.log('FAILED...', err)
+            vm.showAxiosError = true
+            vm.axiosError = err
+            vm.showLoader = false
+            vm.$forceUpdate()
+          })
       }
     },
     clear() {

@@ -1,4 +1,4 @@
-import config from '@/config.js'
+const config = require('@/config.json')
 import find from 'lodash.find'
 import findIndex from 'lodash.findindex'
 import { buildRequest } from '@/utils.js'

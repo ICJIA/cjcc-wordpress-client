@@ -1,70 +1,48 @@
 <template>
-     <div class="page-height">
+  <div class="page-height">
+    <breadcrumb :key="$store.state.forceRender" title="News & Events"></breadcrumb>
 
-     <breadcrumb 
-       :key="$store.state.forceRender" 
-       title="News & Events"></breadcrumb>
-     
-    
+    <v-container fill-height class="px-3" id="page-content">
+      <v-layout row wrap>
+        <v-flex xs12 class="pr-5 pl-5">
+          <h1 class="text-xs-left box-head mt-5 mb-5 title-rule">News & Events</h1>
 
-    <v-container fill-height class="px-3"  id="page-content" >
-    <v-layout row wrap>
-      
-     
-
-      
-      <v-flex xs12 class="pr-5 pl-5">
-        
-           <h1 class="text-xs-left box-head mt-5 mb-5 title-rule">News & Events</h1>
-          
-            
           <v-layout row wrap v-for="post in displayPosts" :key="post.id" class="mb-5">
-          <v-flex xs12 sm12 md8>
-            <router-link :to="post.route">
-              <h3 class="title mb-2">{{ post.title}}</h3>
-            </router-link>
-          </v-flex>
-          <v-flex xs12 sm12 md4 class="text-md-right">
-             <h5 class="date">{{post.date | formatDate}}</h5>
-          </v-flex>
-          <v-flex xs12>
-            
-            <div class="exc excerpt"><router-link :to="post.route" class="excerpt-link">{{ post.excerpt }}</router-link>&nbsp;  <router-link :to="post.route">more</router-link>&raquo;</div>
-          </v-flex>
+            <v-flex xs12 sm12 md8>
+              <router-link :to="post.route">
+                <h3 class="title mb-2">{{ post.title}}</h3>
+              </router-link>
+            </v-flex>
+            <v-flex xs12 sm12 md4 class="text-md-right">
+              <h5 class="date">{{post.date | formatDate}}</h5>
+            </v-flex>
+            <v-flex xs12>
+              <div class="exc excerpt">
+                <router-link :to="post.route" class="excerpt-link">{{ post.excerpt }}</router-link>&nbsp;
+                <router-link :to="post.route">more</router-link>&raquo;
+              </div>
+            </v-flex>
           </v-layout>
-      </v-flex>
+        </v-flex>
 
-
-
-
-  <v-flex xs12>
-    <div class="text-xs-center">
-    <v-pagination
-      v-model="page"
-      :length="pagerLength"
-      @input="getPage"
-      circle
-      :total-visible="7"
-    ></v-pagination>
-    
-  </div>
-  </v-flex>
-
-    </v-layout>
+        <v-flex xs12>
+          <div class="text-xs-center">
+            <v-pagination
+              v-model="page"
+              :length="pagerLength"
+              @input="getPage"
+              circle
+              :total-visible="7"
+            ></v-pagination>
+          </div>
+        </v-flex>
+      </v-layout>
     </v-container>
-
-
-
- 
-
-    
-
-      
-   </div>
+  </div>
 </template>
 
 <script>
-import config from '@/config.js'
+const config = require('@/config.json')
 import Breadcrumb from '@/components/Breadcrumb'
 
 export default {

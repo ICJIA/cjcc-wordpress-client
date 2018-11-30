@@ -6,9 +6,9 @@
           <v-card dark :color="color1" height="100%" class="elevation-0 pt-5 pb-5 pl-3 box rule">
             <h2 class="text-xs-center box-head">Find a Council</h2>
 
-            <v-card-text
-              class="px-3 font-weight-light box-text"
-            >Locate other criminal justice coordinating councils or similar groups across Illinois.</v-card-text>
+            <v-card-text class="px-3 font-weight-light box-text">
+              <div v-html="blob('home-box1-text')" class="dynamic-content" @click="handleClicks"></div>
+            </v-card-text>
           </v-card>
         </router-link>
       </v-flex>
@@ -16,9 +16,9 @@
         <router-link to="/what-we-offer">
           <v-card dark :color="color2" height="100%" class="elevation-0 pt-5 pb-5 pl-3 box rule">
             <h2 class="text-xs-center box-head">What We Offer</h2>
-            <v-card-text
-              class="px-3 font-weight-light box-text"
-            >Interested in crime trends and issues in your jurisdiction? Need assistance forming a criminal justice coordinating council? ICJIA can help.</v-card-text>
+            <v-card-text class="px-3 font-weight-light box-text">
+              <div v-html="blob('home-box2-text')" class="dynamic-content" @click="handleClicks"></div>
+            </v-card-text>
           </v-card>
         </router-link>
       </v-flex>
@@ -26,9 +26,9 @@
         <router-link to="/news">
           <v-card dark :color="color3" height="100%" class="elevation-0 pt-5 pb-5 pl-3 box rule">
             <h2 class="text-xs-center box-head">News & Events</h2>
-            <v-card-text
-              class="px-3 font-weight-light box-text"
-            >Find out the latest news and information relevant to Criminal Justice Coordinating Councils</v-card-text>
+            <v-card-text class="px-3 font-weight-light box-text">
+              <div v-html="blob('home-box3-text')" class="dynamic-content" @click="handleClicks"></div>
+            </v-card-text>
           </v-card>
         </router-link>
       </v-flex>
@@ -37,7 +37,9 @@
 </template>
 
 <script>
+import { blob } from '@/mixins/blob'
 export default {
+  mixins: [blob],
   data() {
     return {
       color1: '#E0E0E0',

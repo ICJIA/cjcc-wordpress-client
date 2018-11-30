@@ -90,6 +90,10 @@ export default {
           link: '/'
         },
         {
+          text: 'About the CJCC',
+          link: '/about'
+        },
+        {
           text: 'Find a Council',
           link: '/council'
         },
@@ -118,7 +122,6 @@ export default {
         }
       ],
       councils: [
-        { text: 'Cook County', link: '/council/cook-county' },
         { text: 'Lake County', link: '/council/lake-county' },
         { text: 'McLean County', link: '/council/mclean-county' },
         { text: 'McHenry County', link: '/council/mchenry-county' },

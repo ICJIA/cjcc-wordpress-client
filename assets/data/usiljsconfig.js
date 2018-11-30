@@ -139,12 +139,10 @@ const usiljsconfig = {
     hover: 'COOK',
     url: '',
     target: 'vue',
-    upColor: '#42A5F5',
+    upColor: '#FFFFFF',
     overColor: '#2979FF',
     downColor: '#cae9af',
-    active: true,
-    cid: '031',
-    slug: 'cook-county'
+    active: false
   },
   usiljs17: {
     hover: 'CRAWFORD',

@@ -1,0 +1,2 @@
+# Redirect domain aliases to primary domain
+https://cjcc.icjia.cloud/* https://ilcjcc.org/:splat 301!

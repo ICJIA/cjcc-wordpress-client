@@ -8,7 +8,7 @@
     "dev": "node api && nuxt",
     "build": "node api && nuxt build",
     "start": "nuxt start",
-    "generate": "node api && nuxt generate",
+    "generate": "node api && nuxt generate && node algolia",
     "dev-debug": "node --inspect node_modules/.bin/nuxt"
   },
   "dependencies": {

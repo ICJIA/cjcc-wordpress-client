@@ -13,8 +13,8 @@ let previouslyIndexed
 
 const site = {
   index: 'cjcc',
-  sitemap: 'https://cjcc.icjia.cloud/sitemap.xml',
-  urlBase: 'https://cjcc.icjia.cloud/',
+  sitemap: 'https://ilcjcc.org/sitemap.xml',
+  urlBase: 'https://ilcjcc.org',
   bodyContentId: '#page-content',
   titleReplacement: 'ILLINOIS cjcc | '
 }

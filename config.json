@@ -1,5 +1,5 @@
 {
-  "clientURL": "https://cjcc.icjia.cloud/",
+  "clientURL": "https://ilcjcc.org/",
   "apiUrl": "https://cjcc.icjia-api.cloud/wp-json/",
   "sitemetaUrl": "https://cjcc.icjia-api.cloud/wp-json/wp/v2/sitemeta/",
   "localApiDirectory": "./static/api",

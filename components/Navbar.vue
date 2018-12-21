@@ -104,7 +104,7 @@ export default {
         { text: 'What We Offer', link: '/what-we-offer' },
         { text: 'News & Events', link: '/news' },
         { text: 'Research', link: '/research' },
-        { text: 'Resources', link: '/resources' },
+        { text: 'Webinars & Trainings', link: '/webinars-and-tranings' },
         { text: 'Planning', link: '/planning' }
       ],
       secondary: [

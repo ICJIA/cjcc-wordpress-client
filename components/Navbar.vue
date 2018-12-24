@@ -90,7 +90,7 @@ export default {
           link: '/'
         },
         {
-          text: 'About the CJCC',
+          text: 'About CJCCs',
           link: '/about'
         },
         {
@@ -102,6 +102,7 @@ export default {
           link: '/ccac'
         },
         { text: 'What We Offer', link: '/what-we-offer' },
+        { text: 'Funding Opportunities', link: '/funding-opportunities' },
         { text: 'News & Events', link: '/news' },
         { text: 'Research', link: '/research' },
         { text: 'Webinars & Trainings', link: '/webinars-and-tranings' },

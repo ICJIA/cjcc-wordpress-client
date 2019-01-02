@@ -18,7 +18,10 @@
             </v-flex>
             <v-flex xs12>
               <div class="exc excerpt">
-                <router-link :to="post.route" class="excerpt-link">{{ post.excerpt }}</router-link>&nbsp;
+                <router-link
+                  :to="post.route"
+                  class="excerpt-link"
+                >{{ post.excerpt | stripShortcodes}}</router-link>&nbsp;
                 <router-link :to="post.route">more</router-link>&raquo;
               </div>
             </v-flex>
@@ -56,6 +59,12 @@ export default {
       color: 'grey lighten-5',
       maxPosts: config.maxPaginationItems,
       numberOfPosts: null
+    }
+  },
+  filters: {
+    stripShortcodes: function(value) {
+      let string = value.replace(/(\[.+\])/g, '')
+      return string.trim()
     }
   },
   components: {

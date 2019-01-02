@@ -1,58 +1,56 @@
 <template>
-    <v-container fill-height fluid style="margin-top: -60px;">
+  <v-container fill-height fluid style="margin-top: -60px;">
     <v-layout row wrap v-resize="onResize">
-       
       <v-flex xs12 sm12 md6 class="pr-5 pl-5" :class="{divider: displayDivider}">
-        
         <router-link to="/news">
-           <h1 class="text-xs-center box-head mt-5 mb-5" style="border-bottom: 1px solid #ddd; padding-bottom: 10px;">News & Events</h1>
-           </router-link>
-          
-            
-          <v-layout row wrap v-for="post in posts" :key="post.id" class="mb-5">
+          <h1
+            class="text-xs-center box-head mt-5 mb-5"
+            style="border-bottom: 1px solid #ddd; padding-bottom: 10px;"
+          >News & Events</h1>
+        </router-link>
+
+        <v-layout row wrap v-for="post in posts" :key="post.id" class="mb-5">
           <v-flex xs12 sm12 md8>
             <router-link :to="post.route">
               <h3 class="title mb-2">{{ post.title}}</h3>
             </router-link>
           </v-flex>
           <v-flex xs12 sm12 md4 class="text-md-right">
-             <h5 class="date">{{post.date | formatDate}}</h5>
+            <h5 class="date">{{post.date | formatDate}}</h5>
           </v-flex>
           <v-flex xs12>
-            
-            <div class="exc excerpt"><router-link :to="post.route" class="excerpt-link">{{ post.excerpt }}</router-link>&nbsp;  <router-link :to="post.route">more</router-link>&raquo;</div>
+            <div class="exc excerpt">
+              <router-link
+                :to="post.route"
+                class="excerpt-link"
+              >{{ post.excerpt | stripShortcodes }}</router-link>&nbsp;
+              <router-link :to="post.route">more</router-link>&raquo;
+            </div>
           </v-flex>
+        </v-layout>
 
-          
-          </v-layout>
-
-          <v-flex xs12 text-xs-center>
-             <v-btn small to="/news">News & Events Archive<v-icon right dark>chevron_right</v-icon></v-btn>
-            
-          </v-flex>
+        <v-flex xs12 text-xs-center>
+          <v-btn small to="/news">News & Events Archive
+            <v-icon right dark>chevron_right</v-icon>
+          </v-btn>
+        </v-flex>
       </v-flex>
 
-      
+      <v-flex xs12 sm12 md6 class="pr-5 pl-5" :class="{topDivider: displayTopDivider}">
+        <router-link to="/what-we-offer">
+          <h1
+            class="text-xs-center box-head mt-5 mb-5"
+            style="border-bottom: 1px solid #ddd; padding-bottom: 10px;"
+          >About the CJCC</h1>
+        </router-link>
+        <div v-html="blob('home-about')" class="dynamic-content" @click="handleClicks"></div>
 
-
-       <v-flex xs12 sm12 md6 class="pr-5 pl-5" :class="{topDivider: displayTopDivider}">
-         <router-link to="/what-we-offer">
-       
-           <h1 class="text-xs-center box-head mt-5 mb-5" style="border-bottom: 1px solid #ddd; padding-bottom: 10px;">About the CJCC</h1>
-         
-         </router-link>
-             <div v-html="blob('home-about')" class="dynamic-content"
-          @click="handleClicks"></div>
-
-            <v-flex xs12 text-xs-center mt-4>
-             <v-btn small to="/what-we-offer">Read more<v-icon right dark>chevron_right</v-icon></v-btn>
-            
-          </v-flex>
-
-         
+        <v-flex xs12 text-xs-center mt-4>
+          <v-btn small to="/what-we-offer">Read more
+            <v-icon right dark>chevron_right</v-icon>
+          </v-btn>
+        </v-flex>
       </v-flex>
-      
-       
     </v-layout>
   </v-container>
 </template>
@@ -62,6 +60,12 @@ import { blob } from '@/mixins/blob'
 export default {
   mounted() {
     this.onResize()
+  },
+  filters: {
+    stripShortcodes: function(value) {
+      let string = value.replace(/(\[.+\])/g, '')
+      return string.trim()
+    }
   },
   mixins: [blob],
   data() {

@@ -41,7 +41,7 @@
           <h1
             class="text-xs-center box-head mt-5 mb-5"
             style="border-bottom: 1px solid #ddd; padding-bottom: 10px;"
-          >About the CJCC</h1>
+          >About CJCCs</h1>
         </router-link>
         <div v-html="blob('home-about')" class="dynamic-content" @click="handleClicks"></div>
 

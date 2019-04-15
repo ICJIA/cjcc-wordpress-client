@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" fixed clipped app disable-resize-watcher>
+    <v-navigation-drawer v-model="drawer" right fixed clipped app disable-resize-watcher>
       <v-list dense>
         <v-list-tile v-for="item in main" :key="item.text" @click="drawer = false">
           <v-list-tile-content @click.stop="pushRoute(item.link)">
@@ -35,7 +35,14 @@
       </v-list>
     </v-navigation-drawer>
     <v-toolbar app>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+       <a href="http://www.icjia.state.il.us" style="margin-top: 4px" class="pr-3">
+        <img
+          src="@/assets/img/logo-blue-filled.png"
+          width="70"
+          alt="Illinois Criminal Justice Information Authority"
+        >
+      </a>
+      
       <nuxt-link to="/" class="nav">
         <v-toolbar-title class="text-uppercase">
           <span class style="color: #111; font-weight: 900">ILLINOIS</span> |
@@ -50,13 +57,7 @@
         <span class="mr-2">Search</span>
         <v-icon>search</v-icon>
       </v-btn>-->
-      <a href="http://www.icjia.state.il.us" style="margin-top: 4px">
-        <img
-          src="@/assets/img/logo-blue-filled.png"
-          width="70"
-          alt="Illinois Criminal Justice Information Authority"
-        >
-      </a>
+      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
     </v-toolbar>
   </div>
 </template>

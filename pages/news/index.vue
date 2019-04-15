@@ -8,16 +8,16 @@
           <h1 class="text-xs-left box-head mt-5 mb-5 title-rule">News & Events</h1>
 
           <v-layout row wrap v-for="post in displayPosts" :key="post.id" class="mb-5">
-            <v-flex xs12 sm12 md8>
+            <v-flex xs12 sm12 md12>
               <router-link :to="post.route">
                 <h3 class="title mb-2">{{ post.title}}</h3>
               </router-link>
             </v-flex>
-            <v-flex xs12 sm12 md4 class="text-md-right">
-              <h5 class="date">{{post.date | formatDate}}</h5>
+            <v-flex xs12 sm12 md12 class="text-md-left pb-3">
+              <h5 class="date">Posted: {{post.date | formatDate}}</h5>
             </v-flex>
             <v-flex xs12>
-              <div class="exc excerpt">
+              <div class="exc excerpt pb-3">
                 <router-link
                   :to="post.route"
                   class="excerpt-link"

@@ -21,6 +21,7 @@ const getRoutes = function() {
 }
 
 module.exports = {
+  target: 'static',
   mode: 'universal',
   env: {},
 
@@ -140,16 +141,16 @@ module.exports = {
     { src: '~plugins/vueinstantsearch', ssr: false },
     { src: '~plugins/browserDetect', ssr: false }
   ],
-  sitemap: {
-    path: '/sitemap.xml',
-    hostname: config.clientURL,
-    cacheTime: 1000 * 60 * 15,
-    gzip: false,
-    generate: true,
-    routes: async function() {
-      return await getRoutes()
-    }
-  },
+  // sitemap: {
+  //   path: '/sitemap.xml',
+  //   hostname: config.clientURL,
+  //   cacheTime: 1000 * 60 * 15,
+  //   gzip: false,
+  //   generate: true,
+  //   routes: async function() {
+  //     return await getRoutes()
+  //   }
+  // },
 
   modules: [
     ['@nuxtjs/sitemap'],

@@ -21,7 +21,7 @@
     "cheerio": "^1.0.0-rc.2",
     "cross-env": "^5.2.0",
     "date-fns": "^1.29.0",
-    "dompurify": "^1.0.8",
+    "dompurify": "^2.0.17",
     "dotenv": "^5.0.1",
     "ellipsize": "^0.1.0",
     "emailjs-com": "^2.3.2",
